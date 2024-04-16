@@ -34,4 +34,8 @@ class AppRoutes {
 
   static const String getAllFavorites = "/all_favorites";
  //static const String doneAddToFavorite = "/done_add_to_favorite";
+
+  static const String getAllCoaches = "/get_all_coaches";
+  static const String adviceByCoach = "/advice_by_coach";
+
 }

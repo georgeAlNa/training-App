@@ -34,4 +34,8 @@ class AppLink {
   static const String addFavorite = '$root/Favorite';
   static const String getAllFavorites = '$root/GetFavorite';
   static const String deleteFavorite = '$root/deleteFav';
+
+  //coaches
+  static const String allCoaches = '$root/getCoach';
+  static const String adviceByCoach = '$root/Get';
 }

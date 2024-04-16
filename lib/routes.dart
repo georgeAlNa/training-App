@@ -13,6 +13,7 @@ import 'package:training_app/view/screen/auth/success_signup.dart';
 import 'package:training_app/view/screen/auth/verifycodesignup.dart';
 import 'package:training_app/view/screen/calories%20-%20terget%20weight/calories.dart';
 import 'package:training_app/view/screen/calories%20-%20terget%20weight/tergetweight.dart';
+import 'package:training_app/view/screen/coaches/advicebycoach.dart';
 import 'package:training_app/view/screen/favorite/allfavorite.dart';
 import 'package:training_app/view/screen/home.dart';
 import 'package:training_app/view/screen/language.dart';
@@ -26,6 +27,7 @@ import 'package:training_app/view/screen/level-category-exercises_screen/exercis
 import 'package:training_app/view/screen/level-category-exercises_screen/level.dart';
 import 'package:training_app/view/screen/on_boarding.dart';
 import 'package:training_app/view/screen/userinfo.dart';
+import 'package:training_app/view/screen/coaches/getallcoaches.dart';
 
 List<GetPage<dynamic>>? routes = [
   //language
@@ -147,5 +149,15 @@ List<GetPage<dynamic>>? routes = [
   GetPage(
     name: AppRoutes.getAllFavorites,
     page: () => const AllFavoritePage(),
+  ),
+
+  //coaches
+  GetPage(
+    name: AppRoutes.getAllCoaches,
+    page: () => const AllCoachesPage(),
+  ),
+  GetPage(
+    name: AppRoutes.adviceByCoach,
+    page: () => const AdviceByCoachPage(),
   ),
 ];

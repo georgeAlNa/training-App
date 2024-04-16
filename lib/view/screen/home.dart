@@ -129,6 +129,14 @@ class HomePage extends StatelessWidget {
                   print('All Favorites');
                 },
               ),
+              CustomButtomAuth(
+                color: AppColor.primaryColor,
+                text: 'All Coaches',
+                onPressed: () {
+                  Get.toNamed(AppRoutes.getAllCoaches);
+                  print('All Coaches');
+                },
+              ),
               const SizedBox(
                 height: 120,
               ),
