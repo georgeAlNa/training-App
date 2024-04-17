@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:get/get.dart';
 import 'package:training_app/core/class/statusrequest.dart';
 import 'package:training_app/core/functions/handlingdatacontroller.dart';
@@ -8,10 +10,9 @@ import 'package:training_app/data/datasource/remote/level-category-exercises/exe
 
 abstract class ExerciseDetailController extends GetxController {
   getExerciseDetailData();
-  // goToDoneExercise();
-  // goToDoneAddToFavorite();
   addExersiceToFavorite();
   doneExercise();
+  startTimerCountDown();
 }
 
 class ExerciseDetailControllerImp extends ExerciseDetailController {
@@ -24,12 +25,12 @@ class ExerciseDetailControllerImp extends ExerciseDetailController {
   List exercisedetail = [];
   Map fav = {};
 
-  // Map doneExerciseMap = {};
   String? token;
   dynamic idOfLevel;
   dynamic idOfCategory;
   dynamic idOfExercise;
   dynamic isDone = 1;
+  dynamic timeLeft;
 
   @override
   void onInit() {
@@ -55,6 +56,7 @@ class ExerciseDetailControllerImp extends ExerciseDetailController {
     if (StatusRequest.success == statusRequest) {
       if (response['message'] == 'third page') {
         exercisedetail.addAll(response['Categories']);
+        timeLeft = exercisedetail[idOfExercise]['date'];
       } else {
         statusRequest = StatusRequest.failuer;
       }
@@ -115,7 +117,19 @@ class ExerciseDetailControllerImp extends ExerciseDetailController {
       Get.defaultDialog(title: 'warning', middleText: 'error');
     }
     update();
-    // print('valid');
+  }
+
+  @override
+  startTimerCountDown() {
+    Timer.periodic(const Duration(seconds: 1), (timer) {
+      if (timeLeft > 0) {
+        update();
+        timeLeft--;
+      } else {
+        doneExercise();
+        timer.cancel();
+      }
+    });
   }
 
   // @override

@@ -46,8 +46,26 @@ class ExerciseDetailPage extends StatelessWidget {
                             onTap: () {},
                           ),
                         ),
+                        Center(
+                          child: Text(
+                            '${controller.timeLeft}',
+                            style: const TextStyle(
+                              fontSize: 35,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+
                         const SizedBox(
-                          height: 400,
+                          height: 300,
+                        ),
+                        CustomButtonAuth(
+                          color: AppColor.greenColor,
+                          text: 'Start',
+                          onPressed: () {
+                            controller.startTimerCountDown();
+                            print('Start Exercise');
+                          },
                         ),
                         CustomButtonAuth(
                           color: AppColor.greenColor,
@@ -57,14 +75,14 @@ class ExerciseDetailPage extends StatelessWidget {
                             print('add to fav');
                           },
                         ),
-                        CustomButtonAuth(
-                          color: AppColor.greenColor,
-                          text: 'Done',
-                          onPressed: () {
-                            controller.doneExercise();
-                            print('Done Exercise');
-                          },
-                        ),
+                        // CustomButtonAuth(
+                        //   color: AppColor.greenColor,
+                        //   text: 'Done',
+                        //   onPressed: () {
+                        //     controller.doneExercise();
+                        //     print('Done Exercise');
+                        //   },
+                        // ),
                       ],
                     ),
                   ),
