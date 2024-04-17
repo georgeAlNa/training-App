@@ -13,6 +13,8 @@ import 'package:training_app/view/screen/auth/success_signup.dart';
 import 'package:training_app/view/screen/auth/verifycodesignup.dart';
 import 'package:training_app/view/screen/calories%20-%20terget%20weight/calories.dart';
 import 'package:training_app/view/screen/calories%20-%20terget%20weight/tergetweight.dart';
+import 'package:training_app/view/screen/challenge/allchallenge.dart';
+import 'package:training_app/view/screen/challenge/challengeinfo.dart';
 import 'package:training_app/view/screen/coaches/advicebycoach.dart';
 import 'package:training_app/view/screen/coaches/rateadvice.dart';
 import 'package:training_app/view/screen/favorite/allfavorite.dart';
@@ -164,5 +166,15 @@ List<GetPage<dynamic>>? routes = [
   GetPage(
     name: AppRoutes.rateAdvice,
     page: () => const RateAdvicePage(),
+  ),
+
+  //challenge
+  GetPage(
+    name: AppRoutes.getAllChallenges,
+    page: () => const AllChallengePage(),
+  ),
+  GetPage(
+    name: AppRoutes.challengeInfo,
+    page: () => const ChallengeInfoPage(),
   ),
 ];

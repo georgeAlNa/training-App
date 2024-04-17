@@ -24,7 +24,7 @@ class AdviceByCoachPage extends StatelessWidget {
               child: ListView.builder(
                 itemCount: controller.adviceByCoachList.length,
                 itemBuilder: (context, index) {
-                  return CustomButtomAuth(
+                  return CustomButtonAuth(
                     color: AppColor.primaryColor,
                     text: '${controller.adviceByCoachList[index]['message']}',
                     onPressed: () {

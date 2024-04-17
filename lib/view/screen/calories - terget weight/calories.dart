@@ -68,7 +68,7 @@ class CaloriesPage extends StatelessWidget {
                     isNumber: true,
                   ),
 
-                  CustomButtomAuth(
+                  CustomButtonAuth(
                     text: 'Add',
                     color: AppColor.primaryColor,
                     onPressed: () {

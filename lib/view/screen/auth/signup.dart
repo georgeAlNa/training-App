@@ -89,7 +89,7 @@ class SignUp extends StatelessWidget {
                       labeltext: '19'.tr,
                       iconData: Icons.lock_clock_outlined,
                     ),
-                    CustomButtomAuth(
+                    CustomButtonAuth(
                         color: AppColor.primaryColor,
                         text: '17'.tr,
                         onPressed: () {

@@ -46,7 +46,8 @@ class VerifyCodeSignUp extends StatelessWidget {
                     height: 25,
                   ),
                   CustomTextBodyAuth(
-                    text: 'Please Enter Code That Received in ${controller.email}',
+                    text:
+                        'Please Enter Code That Received in ${controller.email}',
                   ),
                   const SizedBox(
                     height: 20,
@@ -61,7 +62,7 @@ class VerifyCodeSignUp extends StatelessWidget {
                     labeltext: 'Enter Code',
                     iconData: Icons.code_off_outlined,
                   ),
-                  CustomButtomAuth(
+                  CustomButtonAuth(
                     color: AppColor.primaryColor,
                     text: '42'.tr,
                     onPressed: () {

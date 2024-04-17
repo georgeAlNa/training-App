@@ -17,7 +17,7 @@ class Test extends StatelessWidget {
       ),
       body: GetBuilder<TestController>(
         builder: (controller) => Center(
-          child: CustomButtomAuth(
+          child: CustomButtonAuth(
             text: 'done',
             color: AppColor.greenColor,
             onPressed: () {

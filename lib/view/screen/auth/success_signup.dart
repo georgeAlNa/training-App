@@ -53,7 +53,7 @@ class SuccessSignup extends StatelessWidget {
                 ),
                 SizedBox(
                   width: double.infinity,
-                  child: CustomButtomAuth(
+                  child: CustomButtonAuth(
                     color: AppColor.primaryColor,
                     text: '31'.tr,
                     onPressed: () {

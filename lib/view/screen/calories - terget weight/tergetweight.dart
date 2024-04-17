@@ -38,7 +38,7 @@ class TargetWeightPage extends StatelessWidget {
                     isNumber: true,
                   ),
 
-                  CustomButtomAuth(
+                  CustomButtonAuth(
                     text: 'Submit',
                     color: AppColor.primaryColor,
                     onPressed: () {

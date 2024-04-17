@@ -49,7 +49,7 @@ class ExerciseDetailPage extends StatelessWidget {
                         const SizedBox(
                           height: 400,
                         ),
-                        CustomButtomAuth(
+                        CustomButtonAuth(
                           color: AppColor.greenColor,
                           text: 'Add to Favorite',
                           onPressed: () {
@@ -57,7 +57,7 @@ class ExerciseDetailPage extends StatelessWidget {
                             print('add to fav');
                           },
                         ),
-                        CustomButtomAuth(
+                        CustomButtonAuth(
                           color: AppColor.greenColor,
                           text: 'Done',
                           onPressed: () {

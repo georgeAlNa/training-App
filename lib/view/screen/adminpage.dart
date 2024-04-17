@@ -47,7 +47,7 @@ class AdminPage extends StatelessWidget {
         padding: const EdgeInsets.all(15),
         child: ListView(
           children: [
-            CustomButtomAuth(
+            CustomButtonAuth(
               text: 'Add Exercise',
               color: AppColor.primaryColor,
               onPressed: () {
@@ -55,7 +55,7 @@ class AdminPage extends StatelessWidget {
                 print('add exercise');
               },
             ),
-            CustomButtomAuth(
+            CustomButtonAuth(
               text: 'Add Challenge',
               color: AppColor.primaryColor,
               onPressed: () {

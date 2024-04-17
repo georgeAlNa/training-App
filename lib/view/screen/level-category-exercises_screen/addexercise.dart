@@ -87,7 +87,7 @@ class AddExercisePage extends StatelessWidget {
                     },
                     isNumber: false,
                   ),
-                  CustomButtomAuth(
+                  CustomButtonAuth(
                     text: 'Add',
                     color: AppColor.primaryColor,
                     onPressed: () {

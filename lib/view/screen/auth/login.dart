@@ -91,7 +91,7 @@ class Login extends StatelessWidget {
                         textAlign: TextAlign.end,
                       ),
                     ),
-                    CustomButtomAuth(
+                    CustomButtonAuth(
                       color: AppColor.primaryColor,
                       text: '15'.tr,
                       onPressed: () {
@@ -99,7 +99,7 @@ class Login extends StatelessWidget {
                         print('sign in');
                       },
                     ),
-                    CustomButtomAuth(
+                    CustomButtonAuth(
                       color: AppColor.primaryColor,
                       text: 'Sign in As Admin',
                       onPressed: () {

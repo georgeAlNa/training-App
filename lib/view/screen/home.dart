@@ -89,7 +89,7 @@ class HomePage extends StatelessWidget {
                 ),
               ),
 
-              CustomButtomAuth(
+              CustomButtonAuth(
                 color: AppColor.primaryColor,
                 text: 'level',
                 onPressed: () {
@@ -97,7 +97,7 @@ class HomePage extends StatelessWidget {
                   print('level');
                 },
               ),
-              CustomButtomAuth(
+              CustomButtonAuth(
                 color: AppColor.primaryColor,
                 text: 'user info',
                 onPressed: () {
@@ -105,7 +105,7 @@ class HomePage extends StatelessWidget {
                   print('user info');
                 },
               ),
-              CustomButtomAuth(
+              CustomButtonAuth(
                 color: AppColor.primaryColor,
                 text: 'All Category Complete',
                 onPressed: () {
@@ -113,7 +113,7 @@ class HomePage extends StatelessWidget {
                   print('All Category Complete');
                 },
               ),
-              CustomButtomAuth(
+              CustomButtonAuth(
                 color: AppColor.primaryColor,
                 text: 'Target Weight',
                 onPressed: () {
@@ -121,7 +121,7 @@ class HomePage extends StatelessWidget {
                   print('Target weight');
                 },
               ),
-              CustomButtomAuth(
+              CustomButtonAuth(
                 color: AppColor.primaryColor,
                 text: 'All Favorites',
                 onPressed: () {
@@ -129,7 +129,7 @@ class HomePage extends StatelessWidget {
                   print('All Favorites');
                 },
               ),
-              CustomButtomAuth(
+              CustomButtonAuth(
                 color: AppColor.primaryColor,
                 text: 'All Coaches',
                 onPressed: () {
@@ -137,10 +137,18 @@ class HomePage extends StatelessWidget {
                   print('All Coaches');
                 },
               ),
+              CustomButtonAuth(
+                color: AppColor.primaryColor,
+                text: 'All Challenge with Completed Challenge',
+                onPressed: () {
+                  Get.toNamed(AppRoutes.getAllChallenges);
+                  print('All Challenge');
+                },
+              ),
               const SizedBox(
                 height: 120,
               ),
-              CustomButtomAuth(
+              CustomButtonAuth(
                 text: 'log out',
                 color: AppColor.redColor,
                 onPressed: () {

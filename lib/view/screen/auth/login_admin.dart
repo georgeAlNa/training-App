@@ -91,7 +91,7 @@ class LoginAdmin extends StatelessWidget {
                         textAlign: TextAlign.end,
                       ),
                     ),
-                    CustomButtomAuth(
+                    CustomButtonAuth(
                       color: AppColor.primaryColor,
                       text: '15'.tr,
                       onPressed: () {

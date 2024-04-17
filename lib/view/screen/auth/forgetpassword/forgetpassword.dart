@@ -53,7 +53,7 @@ class ForgetPassword extends StatelessWidget {
                     labeltext: '18'.tr,
                     iconData: Icons.email_outlined,
                   ),
-                  CustomButtomAuth(
+                  CustomButtonAuth(
                     color: AppColor.primaryColor,
                     text: '30'.tr,
                     onPressed: () {

@@ -83,7 +83,7 @@ class RateAdvicePage extends StatelessWidget {
                       print(val);
                     },
                   ),
-                  CustomButtomAuth(
+                  CustomButtonAuth(
                     color: AppColor.primaryColor,
                     text: 'Rate',
                     onPressed: () {

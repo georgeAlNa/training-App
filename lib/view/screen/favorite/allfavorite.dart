@@ -25,7 +25,7 @@ class AllFavoritePage extends StatelessWidget {
               child: ListView.builder(
                 itemCount: controller.allFavoriteList.length,
                 itemBuilder: (context, index) {
-                  return CustomButtomAuth(
+                  return CustomButtonAuth(
                     color: AppColor.primaryColor,
                     text:
                         'id of exercise : ${controller.allFavoriteList[index]['exercise_id']}',

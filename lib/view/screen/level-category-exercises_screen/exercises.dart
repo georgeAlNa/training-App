@@ -24,7 +24,7 @@ class ExercisesPage extends StatelessWidget {
               child: ListView.builder(
                 itemCount: controller.exercise.length,
                 itemBuilder: (context, index) {
-                  return CustomButtomAuth(
+                  return CustomButtonAuth(
                     color: AppColor.primaryColor,
                     text: '${controller.exercise[index]['name']}',
                     onPressed: () {

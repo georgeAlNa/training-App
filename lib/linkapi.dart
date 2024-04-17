@@ -39,4 +39,8 @@ class AppLink {
   static const String allCoaches = '$root/getCoach';
   static const String adviceByCoach = '$root/Get';
   static const String rateAdvice = '$root/experience';
+
+  //challenge
+  static const String allChallenges = '$root/allchallenges';
+  static const String challengeInfo = '$root/getChallInfo';
 }
