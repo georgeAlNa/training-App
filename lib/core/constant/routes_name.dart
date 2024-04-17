@@ -37,5 +37,6 @@ class AppRoutes {
 
   static const String getAllCoaches = "/get_all_coaches";
   static const String adviceByCoach = "/advice_by_coach";
+  static const String rateAdvice = "/rate_advice";
 
 }

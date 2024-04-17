@@ -1,11 +1,13 @@
 import 'package:get/get.dart';
 import 'package:training_app/core/class/statusrequest.dart';
+import 'package:training_app/core/constant/routes_name.dart';
 import 'package:training_app/core/functions/handlingdatacontroller.dart';
 import 'package:training_app/core/services/services.dart';
 import 'package:training_app/data/datasource/remote/coaches/advicebycoach_data.dart';
 
 abstract class AdviceByCoachController extends GetxController {
   getAdviceByCoach();
+  goToRateAdvice(dynamic idofAdvice);
 }
 
 class AdviceByCoachControllerImp extends AdviceByCoachController {
@@ -40,5 +42,12 @@ class AdviceByCoachControllerImp extends AdviceByCoachController {
       }
     }
     update();
+  }
+
+  @override
+  goToRateAdvice(idofAdvice) {
+    Get.toNamed(AppRoutes.rateAdvice, arguments: {
+      'idOfAdvice': idofAdvice,
+    });
   }
 }

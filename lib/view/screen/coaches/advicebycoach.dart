@@ -28,7 +28,7 @@ class AdviceByCoachPage extends StatelessWidget {
                     color: AppColor.primaryColor,
                     text: '${controller.adviceByCoachList[index]['message']}',
                     onPressed: () {
-                      //controller.goToAdviceCreateByCoach(index + 1);
+                      controller.goToRateAdvice(index + 1);
                       print('advice');
                     },
                   );

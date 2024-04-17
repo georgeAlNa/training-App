@@ -14,6 +14,7 @@ import 'package:training_app/view/screen/auth/verifycodesignup.dart';
 import 'package:training_app/view/screen/calories%20-%20terget%20weight/calories.dart';
 import 'package:training_app/view/screen/calories%20-%20terget%20weight/tergetweight.dart';
 import 'package:training_app/view/screen/coaches/advicebycoach.dart';
+import 'package:training_app/view/screen/coaches/rateadvice.dart';
 import 'package:training_app/view/screen/favorite/allfavorite.dart';
 import 'package:training_app/view/screen/home.dart';
 import 'package:training_app/view/screen/language.dart';
@@ -159,5 +160,9 @@ List<GetPage<dynamic>>? routes = [
   GetPage(
     name: AppRoutes.adviceByCoach,
     page: () => const AdviceByCoachPage(),
+  ),
+  GetPage(
+    name: AppRoutes.rateAdvice,
+    page: () => const RateAdvicePage(),
   ),
 ];
