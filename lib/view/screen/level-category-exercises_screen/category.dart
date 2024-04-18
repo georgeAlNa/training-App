@@ -25,6 +25,7 @@ class CategoryPage extends StatelessWidget {
                 itemCount: controller.category.length,
                 itemBuilder: (context, index) {
                   return CustomButtonAuth(
+                   // pathImage: '${controller.category[index]['image']}',
                     color: AppColor.primaryColor,
                     text: '${controller.category[index]['name']}',
                     onPressed: () {

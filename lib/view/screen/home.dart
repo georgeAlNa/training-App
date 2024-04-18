@@ -90,8 +90,8 @@ class HomePage extends StatelessWidget {
               ),
 
               CustomButtonAuth(
-                color: AppColor.primaryColor,
-                text: 'level',
+                color: AppColor.blueColor,
+                text: 'Level',
                 onPressed: () {
                   Get.toNamed(AppRoutes.level);
                   print('level');
@@ -99,14 +99,14 @@ class HomePage extends StatelessWidget {
               ),
               CustomButtonAuth(
                 color: AppColor.primaryColor,
-                text: 'user info',
+                text: 'User Info',
                 onPressed: () {
                   Get.toNamed(AppRoutes.userInfo);
                   print('user info');
                 },
               ),
               CustomButtonAuth(
-                color: AppColor.primaryColor,
+                color: AppColor.blueColor,
                 text: 'All Category Complete',
                 onPressed: () {
                   Get.toNamed(AppRoutes.allCategoryComplete);
@@ -122,7 +122,7 @@ class HomePage extends StatelessWidget {
                 },
               ),
               CustomButtonAuth(
-                color: AppColor.primaryColor,
+                color: AppColor.blueColor,
                 text: 'All Favorites',
                 onPressed: () {
                   Get.toNamed(AppRoutes.getAllFavorites);
@@ -138,7 +138,7 @@ class HomePage extends StatelessWidget {
                 },
               ),
               CustomButtonAuth(
-                color: AppColor.primaryColor,
+                color: AppColor.blueColor,
                 text: 'All Challenge with Completed Challenge',
                 onPressed: () {
                   Get.toNamed(AppRoutes.getAllChallenges);
@@ -146,7 +146,7 @@ class HomePage extends StatelessWidget {
                 },
               ),
               const SizedBox(
-                height: 120,
+                height: 30,
               ),
               CustomButtonAuth(
                 text: 'log out',

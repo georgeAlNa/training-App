@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:training_app/controller/challenge/challengeinfo_controller.dart';
 import 'package:training_app/core/class/handlingdataview.dart';
 import 'package:training_app/core/constant/color.dart';
+import 'package:training_app/view/widget/auth/custombuttonauth.dart';
 import 'package:training_app/view/widget/challenge/custombuttonchallengedetail.dart';
 
 class ChallengeInfoPage extends StatelessWidget {
@@ -30,23 +31,40 @@ class ChallengeInfoPage extends StatelessWidget {
             statusRequest: controller.statusRequest,
             widget: Container(
               padding: const EdgeInsets.all(10),
-              child: ListView.builder(
-                itemCount: controller.challengeInfoExerciseList.length,
-                itemBuilder: (context, index) {
-                  return CustomButtonChallengeDetail(
-                    color: AppColor.primaryColor,
-                    textTitle:
-                        '${controller.challengeInfoExerciseList[index]['name']}\n',
-                    textSubject:
-                        '${controller.challengeInfoExerciseList[index]['description']}\n',
-                    textDate:
-                        'Date : ${controller.challengeInfoExerciseList[index]['date']}\n',
-                    onPressed: () {
-                      //controller.goToChallengeDetail(index + 1);
-                      print('Challenge detail');
+              child: Stack(
+                children: [
+                  ListView.builder(
+                    itemCount: controller.challengeInfoExerciseList.length,
+                    itemBuilder: (context, index) {
+                      return CustomButtonChallengeDetail(
+                        color: AppColor.primaryColor,
+                        textTitle:
+                            '${controller.challengeInfoExerciseList[index]['name']}\n',
+                        textSubject:
+                            '${controller.challengeInfoExerciseList[index]['description']}\n',
+                        textDate:
+                            'Date : ${controller.challengeInfoExerciseList[index]['date']}\n',
+                        onPressed: () {
+                          //controller.goToChallengeDetail(index + 1);
+                          print('Challenge detail');
+                        },
+                      );
                     },
-                  );
-                },
+                  ),
+                  Positioned(
+                    width: 250,
+                    bottom: 0,
+                    right: 70,
+                    child: CustomButtonAuth(
+                      text: 'Enroll in the challenge',
+                      color: AppColor.blueColor,
+                      onPressed: () {
+                        controller.goToEnrollChallenge();
+                        print('enroll');
+                      },
+                    ),
+                  ),
+                ],
               ),
             ),
           ),

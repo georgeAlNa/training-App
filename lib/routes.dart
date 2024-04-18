@@ -15,6 +15,7 @@ import 'package:training_app/view/screen/calories%20-%20terget%20weight/calories
 import 'package:training_app/view/screen/calories%20-%20terget%20weight/tergetweight.dart';
 import 'package:training_app/view/screen/challenge/allchallenge.dart';
 import 'package:training_app/view/screen/challenge/challengeinfo.dart';
+import 'package:training_app/view/screen/challenge/enrollchallenge.dart';
 import 'package:training_app/view/screen/coaches/advicebycoach.dart';
 import 'package:training_app/view/screen/coaches/rateadvice.dart';
 import 'package:training_app/view/screen/favorite/allfavorite.dart';
@@ -176,5 +177,9 @@ List<GetPage<dynamic>>? routes = [
   GetPage(
     name: AppRoutes.challengeInfo,
     page: () => const ChallengeInfoPage(),
+  ),
+  GetPage(
+    name: AppRoutes.enrollChallenge,
+    page: () => const EnrollChallengePage(),
   ),
 ];

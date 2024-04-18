@@ -43,4 +43,6 @@ class AppLink {
   //challenge
   static const String allChallenges = '$root/allchallenges';
   static const String challengeInfo = '$root/getChallInfo';
+  static const String enrollChallenge = '$root/enroll';
+  static const String doneChallenge = '$root/completed';
 }

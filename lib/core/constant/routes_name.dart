@@ -51,4 +51,5 @@ class AppRoutes {
   //challenge
   static const String getAllChallenges = "/get_all_challenges";
   static const String challengeInfo = "/challenge_info";
+  static const String enrollChallenge = "/enroll_challenge";
 }
