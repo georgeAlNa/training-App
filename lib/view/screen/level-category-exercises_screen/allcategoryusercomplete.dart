@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:training_app/controller/level-category-exercises/allcategoryusercomplete_controller.dart';
 import 'package:training_app/core/class/handlingdataview.dart';
 import 'package:training_app/core/constant/color.dart';
+import 'package:training_app/view/widget/challenge/custombuttonchallengedetail.dart';
 
 class AllCategoryCompletePage extends StatelessWidget {
   const AllCategoryCompletePage({super.key});
@@ -27,8 +28,15 @@ class AllCategoryCompletePage extends StatelessWidget {
                     child: ListView.builder(
                       itemCount: controller.completeCategory.length,
                       itemBuilder: (context, index) {
-                        return Text(
-                          '\n all : ${controller.completeCategory[index]}\n',
+                        return CustomButtonChallengeDetail(
+                          textTitle:
+                              'id of category complete: ${controller.completeCategory[index]['id']}',
+                          color: AppColor.primaryColor,
+                          textSubject:
+                              'is done : ${controller.completeCategory[index]['is_done']}',
+                          textDate:
+                              'user id :${controller.completeCategory[index]['user_id']}',
+                          onPressed: () {},
                         );
                       },
                     ),
