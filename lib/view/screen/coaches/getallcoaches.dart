@@ -22,11 +22,11 @@ class AllCoachesPage extends StatelessWidget {
             widget: Container(
               padding: const EdgeInsets.all(10),
               child: ListView.builder(
-                itemCount: controller.allCoachesList.length,
+                itemCount: controller.allCoachesMap.length,
                 itemBuilder: (context, index) {
                   return CustomButtonAuth(
                     color: AppColor.primaryColor,
-                    text: '${controller.allCoachesList[index]['name']}',
+                    text: '${controller.allCoachesMap['${index + 1}']['name']}',
                     onPressed: () {
                       controller.goToAdviceCreateByCoach(index + 1);
                       print('advice');

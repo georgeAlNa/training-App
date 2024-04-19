@@ -4,6 +4,7 @@ class AppRoutes {
   //auth
   static const String login = "/login";
   static const String loginAdmin = "/login_admin";
+  static const String loginCoach = "/login_coach";
   static const String signup = "/signup";
   static const String forgetPassword = "/forget_password";
   static const String verifyCode = "/verify_code";
@@ -47,6 +48,7 @@ class AppRoutes {
   static const String getAllCoaches = "/get_all_coaches";
   static const String adviceByCoach = "/advice_by_coach";
   static const String rateAdvice = "/rate_advice";
+  static const String addAdvice = "/add_advice";
 
   //challenge
   static const String getAllChallenges = "/get_all_challenges";

@@ -6,18 +6,18 @@ import 'package:training_app/core/functions/handlingdatacontroller.dart';
 import 'package:training_app/core/services/services.dart';
 import 'package:training_app/data/datasource/remote/auth/login_data.dart';
 
-abstract class LoginConroller extends GetxController {
-  login();
-  goToSignup();
+abstract class LoginCoachController extends GetxController {
+  loginCoach();
+  goToSignin();
 }
 
-class LoginControllerImp extends LoginConroller {
+class LoginCoachControllerImp extends LoginCoachController {
   GlobalKey<FormState> formState = GlobalKey<FormState>();
   late TextEditingController email;
   late TextEditingController password;
   bool isShowwPassword = true;
   StatusRequest statusRequest = StatusRequest.none;
-  LoginData loginData = LoginData(Get.find());
+  LoginData loginCoachData = LoginData(Get.find());
   MyService myService = Get.find();
 
   showPassword() {
@@ -26,47 +26,38 @@ class LoginControllerImp extends LoginConroller {
   }
 
   @override
-  login() async {
+  loginCoach() async {
     if (password.text == '12345678' && email.text == 'admin@gmail.com') {
       return Get.defaultDialog(
-          title: 'warning', middleText: 'You cant sign in as Admin');
-    }
-    if (password.text == '12345678' && email.text == 'coutchAhmed@gmail.com') {
-      return Get.defaultDialog(
-          title: 'warning', middleText: 'You cant sign in as Coach');
-    }
-    if (password.text == '12345678' && email.text == 'coutchsamer@gmail.com') {
-      return Get.defaultDialog(
-          title: 'warning', middleText: 'You cant sign in as Coach');
-    }
-    if (password.text == '12345678' && email.text == 'coutchkarem@gmail.com') {
-      return Get.defaultDialog(
-          title: 'warning', middleText: 'You cant sign in as Coach');
+          title: 'warning', middleText: 'Email Should Not to Admin');
     }
     if (formState.currentState!.validate()) {
       statusRequest = StatusRequest.loading;
       update();
-      var response = await loginData.postLoginData(email.text, password.text);
+      var response = await loginCoachData.postLoginData(email.text, password.text);
       print('response ===== $response');
       statusRequest = handlingData(response);
       if (StatusRequest.success == statusRequest) {
         if (response['message'] == 'login ') {
           myService.sharedPreferences
-              .setString('name', response['data']['user']['name']);
+              .setInt('idCoach', response['data']['user']['id']);
           myService.sharedPreferences
-              .setString('email', response['data']['user']['email']);
-          myService.sharedPreferences.setString('token', response['token']);
-          myService.sharedPreferences.setString('stepLogin', '2');
-          Get.offAllNamed(AppRoutes.calories
+              .setString('tokenCoach', response['token']);
+          //myService.sharedPreferences.setString('stepLoginAdmin', '3');
+          Get.offAllNamed(AppRoutes.addAdvice,
               // arguments: {
-              //    'name' : response['data']['user']['name'],
-              //   'email' : response['data']['user']['email'],
+              //   'tok1': response['token'],
               // }
               );
         }
+        if (response['message'] == 'password is incorrecte') {
+          Get.defaultDialog(
+              title: 'warning', middleText: 'Sorry ! You Passwor not correct');
+        }
       } else {
         Get.defaultDialog(
-            title: 'warning', middleText: 'error in email or password');
+            title: 'warning',
+            middleText: 'Sorry ! You are not coach \n server fail');
         statusRequest = StatusRequest.failuer;
       }
       update();
@@ -77,8 +68,8 @@ class LoginControllerImp extends LoginConroller {
   }
 
   @override
-  goToSignup() {
-    Get.offAllNamed(AppRoutes.signup);
+  goToSignin() {
+    Get.offAllNamed(AppRoutes.login);
   }
 
   @override

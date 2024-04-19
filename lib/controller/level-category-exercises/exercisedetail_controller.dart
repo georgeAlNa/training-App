@@ -10,7 +10,7 @@ import 'package:training_app/data/datasource/remote/level-category-exercises/exe
 
 abstract class ExerciseDetailController extends GetxController {
   getExerciseDetailData();
-  addExersiceToFavorite();
+  addExersiceToFavorite(dynamic idofexerciseFav);
   doneExercise();
   startTimerCountDown();
 }
@@ -65,11 +65,11 @@ class ExerciseDetailControllerImp extends ExerciseDetailController {
   }
 
   @override
-  addExersiceToFavorite() async {
+  addExersiceToFavorite(idofexerciseFav) async {
     statusRequest = StatusRequest.loading;
     update();
     var response = await addFavoriteData.postAddFavoriteData(
-        token!, idOfExercise.toString());
+        token!, idofexerciseFav.toString());
     print('response ==== $response');
     statusRequest = handlingData(response);
     if (StatusRequest.success == statusRequest) {

@@ -18,3 +18,8 @@
 //current Weight User (currentWeightUser)
 //gender User (genderUser)
 //height User (heightUser)
+
+// language (lang)
+
+//id coach (idCoach)
+//token coach (tokenCoach)

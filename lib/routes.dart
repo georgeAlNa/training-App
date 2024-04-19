@@ -8,6 +8,7 @@ import 'package:training_app/view/screen/auth/forgetpassword/success_resetpasswo
 import 'package:training_app/view/screen/auth/forgetpassword/verifycode.dart';
 import 'package:training_app/view/screen/auth/login.dart';
 import 'package:training_app/view/screen/auth/login_admin.dart';
+import 'package:training_app/view/screen/auth/login_coach.dart';
 import 'package:training_app/view/screen/auth/signup.dart';
 import 'package:training_app/view/screen/auth/success_signup.dart';
 import 'package:training_app/view/screen/auth/verifycodesignup.dart';
@@ -16,6 +17,7 @@ import 'package:training_app/view/screen/calories%20-%20terget%20weight/tergetwe
 import 'package:training_app/view/screen/challenge/allchallenge.dart';
 import 'package:training_app/view/screen/challenge/challengeinfo.dart';
 import 'package:training_app/view/screen/challenge/enrollchallenge.dart';
+import 'package:training_app/view/screen/coaches/addadvice.dart';
 import 'package:training_app/view/screen/coaches/advicebycoach.dart';
 import 'package:training_app/view/screen/coaches/rateadvice.dart';
 import 'package:training_app/view/screen/favorite/allfavorite.dart';
@@ -54,6 +56,10 @@ List<GetPage<dynamic>>? routes = [
   GetPage(
     name: AppRoutes.loginAdmin,
     page: () => const LoginAdmin(),
+  ),
+  GetPage(
+    name: AppRoutes.loginCoach,
+    page: () => const LoginCoach(),
   ),
   GetPage(
     name: AppRoutes.signup,
@@ -167,6 +173,10 @@ List<GetPage<dynamic>>? routes = [
   GetPage(
     name: AppRoutes.rateAdvice,
     page: () => const RateAdvicePage(),
+  ),
+  GetPage(
+    name: AppRoutes.addAdvice,
+    page: () => const AddAdvicePage(),
   ),
 
   //challenge

@@ -16,7 +16,7 @@ class AllCoachesControllerImp extends AllCoachesController {
   AdviceByCoachData adviceByCoachData = AdviceByCoachData(Get.find());
   MyService myService = Get.find();
   StatusRequest statusRequest = StatusRequest.none;
-  List allCoachesList = [];
+  Map allCoachesMap = {};
   String? token;
 
   @override
@@ -35,7 +35,7 @@ class AllCoachesControllerImp extends AllCoachesController {
     statusRequest = handlingData(response);
     if (StatusRequest.success == statusRequest) {
       if (response['message'] == 'success') {
-        allCoachesList.addAll(response['coach']);
+        allCoachesMap.addAll(response['coach']);
       } else {
         Get.defaultDialog(title: 'Sorry !', middleText: 'No Coaches Yet');
         statusRequest = StatusRequest.failuer;

@@ -71,8 +71,9 @@ class ExerciseDetailPage extends StatelessWidget {
                           color: AppColor.greenColor,
                           text: 'Add to Favorite',
                           onPressed: () {
-                            controller.addExersiceToFavorite();
-                            print('add to fav');
+                            controller.addExersiceToFavorite(
+                                controller.idOfExercise + 1);
+                            print('add to fav ${controller.idOfExercise + 1}');
                           },
                         ),
                         // CustomButtonAuth(
