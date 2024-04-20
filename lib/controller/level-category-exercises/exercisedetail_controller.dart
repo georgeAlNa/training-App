@@ -10,7 +10,7 @@ import 'package:training_app/data/datasource/remote/level-category-exercises/exe
 
 abstract class ExerciseDetailController extends GetxController {
   getExerciseDetailData();
-  addExersiceToFavorite(dynamic idofexerciseFav);
+  addExersiceToFavorite();
   doneExercise();
   startTimerCountDown();
 }
@@ -31,6 +31,7 @@ class ExerciseDetailControllerImp extends ExerciseDetailController {
   dynamic idOfExercise;
   dynamic isDone = 1;
   dynamic timeLeft;
+  dynamic idOfExerciseResp;
 
   @override
   void onInit() {
@@ -41,6 +42,9 @@ class ExerciseDetailControllerImp extends ExerciseDetailController {
     idOfExercise = Get.arguments['selectedExercise'];
     print('id of Exercise $idOfExercise');
     token = myService.sharedPreferences.getString('token');
+    idOfExerciseResp =
+        myService.sharedPreferences.getInt('idExercisefromResponse');
+    print('id Of Exercise Response : $idOfExerciseResp');
     getExerciseDetailData();
     super.onInit();
   }
@@ -65,11 +69,11 @@ class ExerciseDetailControllerImp extends ExerciseDetailController {
   }
 
   @override
-  addExersiceToFavorite(idofexerciseFav) async {
+  addExersiceToFavorite() async {
     statusRequest = StatusRequest.loading;
     update();
     var response = await addFavoriteData.postAddFavoriteData(
-        token!, idofexerciseFav.toString());
+        token!, idOfExerciseResp.toString());
     print('response ==== $response');
     statusRequest = handlingData(response);
     if (StatusRequest.success == statusRequest) {

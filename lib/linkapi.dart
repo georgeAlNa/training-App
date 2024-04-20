@@ -32,7 +32,7 @@ class AppLink {
 
   //favorite
   static const String addFavorite = '$root/Favorite';
-  static const String getAllFavorites = '$root/GetFavorite';
+  static const String getAllFavorites = '$root/AllFavorite';
   static const String deleteFavorite = '$root/deleteFav';
 
   //coaches

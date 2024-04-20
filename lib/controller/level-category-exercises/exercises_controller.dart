@@ -55,5 +55,7 @@ class ExerciseControllerImp extends ExerciseController {
       'selectedCategoryE': idOfCategory,
       'selectedExercise': idOfExercise,
     });
+    myService.sharedPreferences
+        .setInt('idExercisefromResponse', exercise[idOfExercise]['id']);
   }
 }

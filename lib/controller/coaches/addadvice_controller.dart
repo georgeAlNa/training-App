@@ -48,10 +48,10 @@ class AddAdviceControllerImp extends AddAdviceController {
           Get.defaultDialog(
               title: "Warning",
               middleText: "Advice for this trainer already exists");
-        } else {
-          Get.defaultDialog(title: "Error", middleText: "Error in server");
-          statusRequest = StatusRequest.serverfailure;
         }
+      } else {
+        Get.defaultDialog(title: "Error", middleText: "Error in server");
+        statusRequest = StatusRequest.serverfailure;
       }
       update();
       print('valid');

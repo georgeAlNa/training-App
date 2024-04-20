@@ -27,9 +27,25 @@ class AllFavoritePage extends StatelessWidget {
                 itemBuilder: (context, index) {
                   return CustomButtonAuth(
                     color: AppColor.primaryColor,
-                    text:
-                        'id of exercise : ${controller.allFavoriteList[index]['exercise_id']}',
+                    text: 'Exercise Name: ${controller.allFavoriteList[index]}',
                     onPressed: () {
+                      Get.defaultDialog(
+                        title: 'Delete',
+                        middleText: 'Sure Want Delete From Favorite ?',
+                        onConfirm: () {
+                          controller.getDeleteFromFavoriteData();
+                          Get.snackbar(
+                            'Deleted',
+                            'Deleted Success',
+                          );
+                          print('deleted');
+                        },
+                        onCancel: () {
+                          Get.back();
+                        },
+                        cancelTextColor: AppColor.blackColor,
+                        confirmTextColor: AppColor.blackColor,
+                      );
                       print('done');
                     },
                   );
@@ -42,3 +58,4 @@ class AllFavoritePage extends StatelessWidget {
     );
   }
 }
+//                       

@@ -37,6 +37,10 @@ class ExerciseDetailPage extends StatelessWidget {
                           text:
                               '${controller.exercisedetail[controller.idOfExercise]['description']}',
                         ),
+                        CustomTextBodyAuth(
+                          text:
+                              'id : ${controller.exercisedetail[controller.idOfExercise]['id']}',
+                        ),
                         Container(
                           padding: const EdgeInsets.all(20),
                           child: GestureDetector(
@@ -71,9 +75,8 @@ class ExerciseDetailPage extends StatelessWidget {
                           color: AppColor.greenColor,
                           text: 'Add to Favorite',
                           onPressed: () {
-                            controller.addExersiceToFavorite(
-                                controller.idOfExercise + 1);
-                            print('add to fav ${controller.idOfExercise + 1}');
+                            controller.addExersiceToFavorite();
+                            print('add to fav');
                           },
                         ),
                         // CustomButtonAuth(
