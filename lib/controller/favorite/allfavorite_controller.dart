@@ -8,7 +8,7 @@ import 'package:training_app/data/datasource/remote/favorite/deletefavorite_data
 
 abstract class AllFavoriteController extends GetxController {
   getAllFAvoriteData();
-  getDeleteFromFavoriteData();
+  getDeleteFromFavoriteData(dynamic idofExerciseWantDelete);
 }
 
 class AllFavoriteControllerImp extends AllFavoriteController {
@@ -18,13 +18,13 @@ class AllFavoriteControllerImp extends AllFavoriteController {
   List allFavoriteList = [];
   MyService myService = Get.find();
   String? token;
-  dynamic idOfExerciseRespDel;
+  // dynamic idOfExerciseRespDel;
 
   @override
   void onInit() {
     token = myService.sharedPreferences.getString('token');
-    idOfExerciseRespDel =
-        myService.sharedPreferences.getInt('idExercisefromResponse');
+    // idOfExerciseRespDel =
+    //     myService.sharedPreferences.getInt('idExercisefromResponse');
 
     getAllFAvoriteData();
     super.onInit();
@@ -41,6 +41,9 @@ class AllFavoriteControllerImp extends AllFavoriteController {
       if (response['message'] == 'success') {
         allFavoriteList.addAll(response['favorites']);
       } else {
+        if (allFavoriteList.isEmpty) {
+          Get.defaultDialog(title: 'Empty!', middleText: 'Favorite Empty');
+        }
         statusRequest = StatusRequest.failuer;
       }
     }
@@ -48,22 +51,23 @@ class AllFavoriteControllerImp extends AllFavoriteController {
   }
 
   @override
-  getDeleteFromFavoriteData() async {
+  getDeleteFromFavoriteData(idofExerciseWantDelete) async {
     statusRequest = StatusRequest.loading;
     update();
-    var response =
-        await deleteFavoriteData.getDeleteFavoriteData(token!, idOfExerciseRespDel);
+    var response = await deleteFavoriteData.getDeleteFavoriteData(
+        token!, idofExerciseWantDelete);
     print('response ==== $response');
     statusRequest = handlingData(response);
     if (StatusRequest.success == statusRequest) {
       if (response['message'] == 'Favorite exercise deleted successfully') {
         //allFavoriteList.addAll(response['favorites']);
-        Get.toNamed(AppRoutes.getAllFavorites);
+
+        Get.offAllNamed(AppRoutes.home);
+        update();
       }
-      else if (response['message'] == 'not found') {
-        Get.defaultDialog(title: 'error', middleText: 'error');
-        statusRequest = StatusRequest.failuer;
-      }
+    } else if (response['message'] == 'not found') {
+      Get.defaultDialog(title: 'error', middleText: 'not found');
+      statusRequest = StatusRequest.failuer;
     }
     update();
   }

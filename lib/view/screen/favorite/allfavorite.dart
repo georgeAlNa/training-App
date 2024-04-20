@@ -33,7 +33,7 @@ class AllFavoritePage extends StatelessWidget {
                         title: 'Delete',
                         middleText: 'Sure Want Delete From Favorite ?',
                         onConfirm: () {
-                          controller.getDeleteFromFavoriteData();
+                          controller.getDeleteFromFavoriteData(index);
                           Get.snackbar(
                             'Deleted',
                             'Deleted Success',
