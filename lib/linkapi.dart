@@ -49,4 +49,8 @@ class AppLink {
 
   //search
   static const String search = '$root/search';
+
+  //plans to build muscles
+  static const String getAllWeeksBuild = '$root/GetWeek';
+  static const String getWeekDetailsBuild = '$root/PlanForUser';
 }

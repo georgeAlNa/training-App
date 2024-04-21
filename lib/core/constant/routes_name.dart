@@ -54,4 +54,8 @@ class AppRoutes {
   static const String getAllChallenges = "/get_all_challenges";
   static const String challengeInfo = "/challenge_info";
   static const String enrollChallenge = "/enroll_challenge";
+
+  //plan to build muscles
+  static const String getAllWeeksBuild = "/get_all_weeks_build";
+  static const String getWeekDetailsBuild = "/get_week_details_build";
 }

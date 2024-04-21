@@ -32,6 +32,8 @@ import 'package:training_app/view/screen/level-category-exercises_screen/exercis
 import 'package:training_app/view/screen/level-category-exercises_screen/exercises.dart';
 import 'package:training_app/view/screen/level-category-exercises_screen/level.dart';
 import 'package:training_app/view/screen/on_boarding.dart';
+import 'package:training_app/view/screen/plans/planToBuildMusclesScreens/getallweeksbuild.dart';
+import 'package:training_app/view/screen/plans/planToBuildMusclesScreens/getweekdetailsbuild.dart';
 import 'package:training_app/view/screen/userinfo.dart';
 import 'package:training_app/view/screen/coaches/getallcoaches.dart';
 
@@ -131,7 +133,6 @@ List<GetPage<dynamic>>? routes = [
     name: AppRoutes.allCategoryComplete,
     page: () => const AllCategoryCompletePage(),
   ),
-  
 
   //admin
   GetPage(
@@ -191,5 +192,15 @@ List<GetPage<dynamic>>? routes = [
   GetPage(
     name: AppRoutes.enrollChallenge,
     page: () => const EnrollChallengePage(),
+  ),
+
+  //plans to build muscles
+  GetPage(
+    name: AppRoutes.getAllWeeksBuild,
+    page: () => const GetAllWeeksBuildPage(),
+  ),
+  GetPage(
+    name: AppRoutes.getWeekDetailsBuild,
+    page: () => const GetWeekDetailsBuildPage(),
   ),
 ];

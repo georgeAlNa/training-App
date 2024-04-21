@@ -3,7 +3,7 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:training_app/core/class/statusrequest.dart';
-import 'package:training_app/core/functions/checkinternet.dart';
+// import 'package:training_app/core/functions/checkinternet.dart';
 
 class Crud {
   Future<Either<StatusRequest, Map>> postMethod({
@@ -12,7 +12,7 @@ class Crud {
     @required String? token,
   }) async {
     try {
-      if (await checkInternet()) {
+      // if (await checkInternet()) {
         Map<String, String> headers = {};
         if (token != null) {
           headers.addAll({'Authorization': 'Bearer $token'});
@@ -29,9 +29,9 @@ class Crud {
         } else {
           return const Left(StatusRequest.serverfailure);
         }
-      } else {
-        return const Left(StatusRequest.offlinefailure);
-      }
+      // } else {
+      //   return const Left(StatusRequest.offlinefailure);
+      // }
     } catch (e) {
       return const Left(StatusRequest.serverException);
     }
@@ -42,7 +42,7 @@ class Crud {
     @required String? token,
   }) async {
     try {
-      if (await checkInternet()) {
+      // if (await checkInternet()) {
         Map<String, String> headers = {};
         if (token != null) {
           headers.addAll({'Authorization': 'Bearer $token'});
@@ -57,9 +57,9 @@ class Crud {
         } else {
           return const Left(StatusRequest.serverfailure);
         }
-      } else {
-        return const Left(StatusRequest.offlinefailure);
-      }
+      // } else {
+      //   return const Left(StatusRequest.offlinefailure);
+      // }
     } catch (e) {
       return const Left(StatusRequest.serverException);
     }
@@ -71,7 +71,7 @@ class Crud {
     @required String? token,
   }) async {
     try {
-      if (await checkInternet()) {
+      // if (await checkInternet()) {
         Map<String, String> headers = {};
         if (token != null) {
           headers.addAll({'Authorization': 'Bearer $token'});
@@ -88,9 +88,9 @@ class Crud {
         } else {
           return const Left(StatusRequest.serverfailure);
         }
-      } else {
-        return const Left(StatusRequest.offlinefailure);
-      }
+      // } else {
+      //   return const Left(StatusRequest.offlinefailure);
+      // }
     } catch (e) {
       return const Left(StatusRequest.serverException);
     }

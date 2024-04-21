@@ -161,6 +161,14 @@ class HomePage extends StatelessWidget {
                                 print('All Challenge');
                               },
                             ),
+                            CustomButtonAuth(
+                              color: AppColor.primaryColor,
+                              text: 'Plan to Build Muscles',
+                              onPressed: () {
+                                Get.toNamed(AppRoutes.getAllWeeksBuild);
+                                print('plan to build muscles');
+                              },
+                            ),
                             const SizedBox(
                               height: 30,
                             ),

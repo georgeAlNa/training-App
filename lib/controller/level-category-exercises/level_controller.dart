@@ -18,10 +18,17 @@ class LevelControllerImp extends LevelController {
   String? token;
 
   @override
+  void onInit() {
+    token = myService.sharedPreferences.getString('token');
+    getLevelData();
+    super.onInit();
+  }
+
+  @override
   getLevelData() async {
     statusRequest = StatusRequest.loading;
     update();
-    token = myService.sharedPreferences.getString('token');
+    // token = myService.sharedPreferences.getString('token');
     var response = await levelData.getData(token!);
     print('response ==== $response');
     statusRequest = handlingData(response);
@@ -33,12 +40,6 @@ class LevelControllerImp extends LevelController {
       }
     }
     update();
-  }
-
-  @override
-  void onInit() {
-    getLevelData();
-    super.onInit();
   }
 
   @override
