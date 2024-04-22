@@ -20,6 +20,15 @@ class LoginControllerImp extends LoginConroller {
   LoginData loginData = LoginData(Get.find());
   MyService myService = Get.find();
 
+  @override
+  void onInit() {
+    // final token = FirebaseMessaging.instance.getToken();
+    // print(token);
+    email = TextEditingController();
+    password = TextEditingController();
+    super.onInit();
+  }
+
   showPassword() {
     isShowwPassword = isShowwPassword == true ? false : true;
     update();
@@ -56,7 +65,8 @@ class LoginControllerImp extends LoginConroller {
           myService.sharedPreferences
               .setString('email', response['data']['user']['email']);
           myService.sharedPreferences.setString('token', response['token']);
-          myService.sharedPreferences.setInt('id', response['data']['user']['id']);
+          myService.sharedPreferences
+              .setInt('id', response['data']['user']['id']);
           myService.sharedPreferences.setString('stepLogin', '2');
           Get.offAllNamed(AppRoutes.calories
               // arguments: {
@@ -80,15 +90,6 @@ class LoginControllerImp extends LoginConroller {
   @override
   goToSignup() {
     Get.offAllNamed(AppRoutes.signup);
-  }
-
-  @override
-  void onInit() {
-    // final token = FirebaseMessaging.instance.getToken();
-    // print(token);
-    email = TextEditingController();
-    password = TextEditingController();
-    super.onInit();
   }
 
   @override

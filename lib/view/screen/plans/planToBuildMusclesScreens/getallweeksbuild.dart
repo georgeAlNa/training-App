@@ -12,7 +12,7 @@ class GetAllWeeksBuildPage extends StatelessWidget {
     Get.put(GetAllWeeksBuildControllerImp());
     return Scaffold(
       appBar: AppBar(
-        title: const Text('All Weeks'),
+        title: const Text('All Weeks Build'),
         backgroundColor: AppColor.primaryColor,
       ),
       body: GetBuilder<GetAllWeeksBuildControllerImp>(

@@ -5,6 +5,7 @@ class CustomButtonPlanDetail extends StatelessWidget {
   final String textSubject;
   final String textDate;
   final String textVideo;
+  final String textId;
   final Color color;
   final void Function()? onPressed;
   const CustomButtonPlanDetail(
@@ -14,7 +15,8 @@ class CustomButtonPlanDetail extends StatelessWidget {
       required this.color,
       required this.textSubject,
       required this.textDate,
-      required this.textVideo})
+      required this.textVideo,
+      required this.textId})
       : super(key: key);
 
   @override
@@ -31,6 +33,13 @@ class CustomButtonPlanDetail extends StatelessWidget {
           children: [
             Text(
               textTitle,
+              style: const TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 16,
+              ),
+            ),
+            Text(
+              textId,
               style: const TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 16,

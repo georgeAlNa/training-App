@@ -1,12 +1,13 @@
 import 'package:get/get.dart';
 import 'package:training_app/core/class/statusrequest.dart';
+import 'package:training_app/core/constant/routes_name.dart';
 import 'package:training_app/core/functions/handlingdatacontroller.dart';
 import 'package:training_app/core/services/services.dart';
 import 'package:training_app/data/datasource/remote/plans/planToBuildMusclesData/getweekdetailsbuild_data.dart';
 
 abstract class GetWeekDetailBuildController extends GetxController {
   getWeekDetails();
-  // goToWeekDetails(dynamic idOfWeek);
+  goToUpdateExercise();
 }
 
 class GetWeekDetailBuildControllerImp extends GetWeekDetailBuildController {
@@ -42,6 +43,11 @@ class GetWeekDetailBuildControllerImp extends GetWeekDetailBuildController {
       }
     }
     update();
+  }
+
+  @override
+  goToUpdateExercise() {
+    Get.toNamed(AppRoutes.replacingExerciseBuild);
   }
 
   // @override

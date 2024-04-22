@@ -34,8 +34,10 @@ import 'package:training_app/view/screen/level-category-exercises_screen/level.d
 import 'package:training_app/view/screen/on_boarding.dart';
 import 'package:training_app/view/screen/plans/planToBuildMusclesScreens/getallweeksbuild.dart';
 import 'package:training_app/view/screen/plans/planToBuildMusclesScreens/getweekdetailsbuild.dart';
+import 'package:training_app/view/screen/plans/planToBuildMusclesScreens/replacingexercisebuild.dart';
 import 'package:training_app/view/screen/plans/planToLossWeightScreens/getallweeksloss.dart';
 import 'package:training_app/view/screen/plans/planToLossWeightScreens/getweekdetailsloss.dart';
+import 'package:training_app/view/screen/plans/planToLossWeightScreens/replacingexerciseloss.dart';
 import 'package:training_app/view/screen/userinfo.dart';
 import 'package:training_app/view/screen/coaches/getallcoaches.dart';
 
@@ -205,6 +207,10 @@ List<GetPage<dynamic>>? routes = [
     name: AppRoutes.getWeekDetailsBuild,
     page: () => const GetWeekDetailsBuildPage(),
   ),
+  GetPage(
+    name: AppRoutes.replacingExerciseBuild,
+    page: () => const ReplacingExerciseBuildPage(),
+  ),
 
   //plans to loss weight
   GetPage(
@@ -214,5 +220,9 @@ List<GetPage<dynamic>>? routes = [
   GetPage(
     name: AppRoutes.getWeekDetailsLoss,
     page: () => const GetWeekDetailsLossPage(),
+  ),
+  GetPage(
+    name: AppRoutes.replacingExerciseLoss,
+    page: () => const ReplacingExerciseLossPage(),
   ),
 ];

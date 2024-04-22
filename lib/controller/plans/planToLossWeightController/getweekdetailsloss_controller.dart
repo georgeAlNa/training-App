@@ -1,12 +1,13 @@
 import 'package:get/get.dart';
 import 'package:training_app/core/class/statusrequest.dart';
+import 'package:training_app/core/constant/routes_name.dart';
 import 'package:training_app/core/functions/handlingdatacontroller.dart';
 import 'package:training_app/core/services/services.dart';
 import 'package:training_app/data/datasource/remote/plans/planToLossWeightData/getweekdetailsloss_data.dart';
 
 abstract class GetWeekDetailLossController extends GetxController {
   getWeekDetails();
-  // goToWeekDetails(dynamic idOfWeek);
+  goToUpdateExercise();
 }
 
 class GetWeekDetailLossControllerImp extends GetWeekDetailLossController {
@@ -42,6 +43,11 @@ class GetWeekDetailLossControllerImp extends GetWeekDetailLossController {
       }
     }
     update();
+  }
+
+  @override
+  goToUpdateExercise() {
+    Get.toNamed(AppRoutes.replacingExerciseLoss);
   }
 
   // @override

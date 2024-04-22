@@ -9,11 +9,20 @@ class GetWeekDetailsLossPage extends StatelessWidget {
   const GetWeekDetailsLossPage({super.key});
   @override
   Widget build(BuildContext context) {
-    Get.put(GetWeekDetailLossControllerImp());
+    GetWeekDetailLossControllerImp controller1 =
+        Get.put(GetWeekDetailLossControllerImp());
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Week Details Loss'),
+        title: Text('Week ${controller1.idOfWeek} Details Loss'),
         backgroundColor: AppColor.primaryColor,
+        actions: [
+          IconButton(
+            onPressed: () {
+              controller1.goToUpdateExercise();
+            },
+            icon: const Icon(Icons.update_outlined),
+          ),
+        ],
       ),
       body: GetBuilder<GetWeekDetailLossControllerImp>(
         builder: (controller) {
@@ -27,12 +36,15 @@ class GetWeekDetailsLossPage extends StatelessWidget {
                   return CustomButtonPlanDetail(
                     color: AppColor.primaryColor,
                     textTitle:
-                        '${controller.getWeekDetailsList[index]['name']}\n',
+                        'Name : ${controller.getWeekDetailsList[index]['name']}\n',
+                    textId:
+                        'Id : ${controller.getWeekDetailsList[index]['id']}\n',
                     textSubject:
-                        '${controller.getWeekDetailsList[index]['description']}\n',
+                        'Description : ${controller.getWeekDetailsList[index]['description']}\n',
                     textVideo:
-                        '${controller.getWeekDetailsList[index]['video']}\n',
-                    textDate: '${controller.getWeekDetailsList[index]['date']}',
+                        'Video : ${controller.getWeekDetailsList[index]['video']}\n',
+                    textDate:
+                        'Date : ${controller.getWeekDetailsList[index]['date']}',
                     onPressed: () {
                       //controller.goToWeekDetails(index + 1);
                       print('Week Details');
