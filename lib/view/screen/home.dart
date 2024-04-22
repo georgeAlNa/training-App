@@ -169,6 +169,14 @@ class HomePage extends StatelessWidget {
                                 print('plan to build muscles');
                               },
                             ),
+                            CustomButtonAuth(
+                              color: AppColor.primaryColor,
+                              text: 'Plan to Loss Weight',
+                              onPressed: () {
+                                Get.toNamed(AppRoutes.getAllWeeksLoss);
+                                print('plan to loss weight');
+                              },
+                            ),
                             const SizedBox(
                               height: 30,
                             ),

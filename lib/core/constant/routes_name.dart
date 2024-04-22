@@ -58,4 +58,8 @@ class AppRoutes {
   //plan to build muscles
   static const String getAllWeeksBuild = "/get_all_weeks_build";
   static const String getWeekDetailsBuild = "/get_week_details_build";
+
+  //plan to loss weight
+  static const String getAllWeeksLoss = "/get_all_weeks_loss";
+  static const String getWeekDetailsLoss = "/get_week_details_loss";
 }

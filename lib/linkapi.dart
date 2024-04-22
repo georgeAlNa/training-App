@@ -53,4 +53,9 @@ class AppLink {
   //plans to build muscles
   static const String getAllWeeksBuild = '$root/GetWeek';
   static const String getWeekDetailsBuild = '$root/PlanForUser';
+
+  //plans to loss weight
+  static const String getAllWeeksLoss = '$root/GetWeek';
+  static const String getWeekDetailsLoss = '$root/PlanForWeightLoss';
+
 }
