@@ -33,11 +33,17 @@ import 'package:training_app/view/screen/level-category-exercises_screen/exercis
 import 'package:training_app/view/screen/level-category-exercises_screen/level.dart';
 import 'package:training_app/view/screen/on_boarding.dart';
 import 'package:training_app/view/screen/plans/planToBuildMusclesScreens/getallweeksbuild.dart';
+import 'package:training_app/view/screen/plans/planToBuildMusclesScreens/getexersicedetailbuild.dart';
 import 'package:training_app/view/screen/plans/planToBuildMusclesScreens/getweekdetailsbuild.dart';
 import 'package:training_app/view/screen/plans/planToBuildMusclesScreens/replacingexercisebuild.dart';
 import 'package:training_app/view/screen/plans/planToLossWeightScreens/getallweeksloss.dart';
+import 'package:training_app/view/screen/plans/planToLossWeightScreens/getexersicedetailloss.dart';
 import 'package:training_app/view/screen/plans/planToLossWeightScreens/getweekdetailsloss.dart';
 import 'package:training_app/view/screen/plans/planToLossWeightScreens/replacingexerciseloss.dart';
+import 'package:training_app/view/screen/store/addtocart.dart';
+import 'package:training_app/view/screen/store/allcategorystore.dart';
+import 'package:training_app/view/screen/store/allproductsbycategory.dart';
+import 'package:training_app/view/screen/store/productdetails.dart';
 import 'package:training_app/view/screen/userinfo.dart';
 import 'package:training_app/view/screen/coaches/getallcoaches.dart';
 
@@ -211,6 +217,10 @@ List<GetPage<dynamic>>? routes = [
     name: AppRoutes.replacingExerciseBuild,
     page: () => const ReplacingExerciseBuildPage(),
   ),
+  GetPage(
+    name: AppRoutes.getExerciseDetailsBuild,
+    page: () => ExerciseDetailBuildPage(),
+  ),
 
   //plans to loss weight
   GetPage(
@@ -224,5 +234,27 @@ List<GetPage<dynamic>>? routes = [
   GetPage(
     name: AppRoutes.replacingExerciseLoss,
     page: () => const ReplacingExerciseLossPage(),
+  ),
+  GetPage(
+    name: AppRoutes.getExerciseDetailsLoss,
+    page: () => ExerciseDetailLossPage(),
+  ),
+
+  //store
+  GetPage(
+    name: AppRoutes.storeCategory,
+    page: () => const StoreCategoryPage(),
+  ),
+  GetPage(
+    name: AppRoutes.storeProductByCategory,
+    page: () => const StoreProductByCategoryPage(),
+  ),
+  GetPage(
+    name: AppRoutes.storeProductDetails,
+    page: () => const StoreProductDetailsPage(),
+  ),
+  GetPage(
+    name: AppRoutes.storeAddToCart,
+    page: () => const AddToCartPage(),
   ),
 ];

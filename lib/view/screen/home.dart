@@ -177,6 +177,14 @@ class HomePage extends StatelessWidget {
                                 print('plan to loss weight');
                               },
                             ),
+                            CustomButtonAuth(
+                              color: AppColor.primaryColor,
+                              text: 'Store',
+                              onPressed: () {
+                                Get.toNamed(AppRoutes.storeCategory);
+                                print('store');
+                              },
+                            ),
                             const SizedBox(
                               height: 30,
                             ),

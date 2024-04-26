@@ -46,8 +46,8 @@ class GetWeekDetailsLossPage extends StatelessWidget {
                     textDate:
                         'Date : ${controller.getWeekDetailsList[index]['date']}',
                     onPressed: () {
-                      //controller.goToWeekDetails(index + 1);
-                      print('Week Details');
+                      controller.goToExerciseDetail(index);
+                      print('exercise Details');
                     },
                   );
                 },

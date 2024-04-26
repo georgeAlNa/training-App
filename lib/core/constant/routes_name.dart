@@ -59,9 +59,17 @@ class AppRoutes {
   static const String getAllWeeksBuild = "/get_all_weeks_build";
   static const String getWeekDetailsBuild = "/get_week_details_build";
   static const String replacingExerciseBuild = "/replacing_exercise_build";
+  static const String getExerciseDetailsBuild = "/get_exercise_details_build";
 
   //plan to loss weight
   static const String getAllWeeksLoss = "/get_all_weeks_loss";
   static const String getWeekDetailsLoss = "/get_week_details_loss";
   static const String replacingExerciseLoss = "/replacing_exercise_loss";
+  static const String getExerciseDetailsLoss = "/get_exercise_details_loss";
+
+  //store
+  static const String storeCategory = "/store_category";
+  static const String storeProductByCategory = "/store_product_by_category";
+  static const String storeProductDetails = "/store_product_details";
+  static const String storeAddToCart = "/store_add_to_cart";
 }

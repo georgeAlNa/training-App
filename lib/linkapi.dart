@@ -1,6 +1,6 @@
 class AppLink {
   //auth
-  static const String root = 'http://192.168.1.103:8000/api';
+  static const String root = 'http://192.168.1.105:8000/api';
 
   static const String signUp = '$root/register';
   static const String verifycodeSignup = '$root/verify';
@@ -60,4 +60,8 @@ class AppLink {
   static const String getWeekDetailsLoss = '$root/PlanForWeightLoss';
   static const String replacingExerciseLoss = '$root/UpdatePlaneForWeightLoss';
 
+  //store
+  static const String storeCategory = '$root/GetCategory';
+  static const String storeProductByCategory = '$root/GetProduct';
+  static const String storeAddToCart = '$root/addtocart';
 }

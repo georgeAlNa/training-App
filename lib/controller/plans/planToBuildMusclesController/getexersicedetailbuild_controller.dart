@@ -1,35 +1,38 @@
+import 'dart:async';
 import 'package:get/get.dart';
 import 'package:training_app/core/class/statusrequest.dart';
-import 'package:training_app/core/constant/routes_name.dart';
 import 'package:training_app/core/functions/handlingdatacontroller.dart';
 import 'package:training_app/core/services/services.dart';
 import 'package:training_app/data/datasource/remote/plans/planToBuildMusclesData/getweekdetailsbuild_data.dart';
 
-abstract class GetWeekDetailBuildController extends GetxController {
-  getWeekDetails();
-  goToUpdateExercise();
-  goToExerciseDetail(dynamic selectedExercise);
+abstract class GetExercieDetailBuildController extends GetxController {
+  getExerciseDetails();
+  startTimerCountDown();
 }
 
-class GetWeekDetailBuildControllerImp extends GetWeekDetailBuildController {
+class GetExercieDetailBuildControllerImp
+    extends GetExercieDetailBuildController {
   GetWeekDetailsBuilddData getWeekDetailsBuilddData =
       GetWeekDetailsBuilddData(Get.find());
   StatusRequest statusRequest = StatusRequest.none;
-  List getWeekDetailsList = [];
+  List getExerciseDetailsList = [];
   MyService myService = Get.find();
   String? token;
   dynamic idOfWeek;
+  dynamic idOfExercise;
+  dynamic timeLeft;
 
   @override
   void onInit() {
     token = myService.sharedPreferences.getString('token');
     idOfWeek = Get.arguments['idOfweek'];
-    getWeekDetails();
+    idOfExercise = Get.arguments['exercisesDetailBuild'];
+    getExerciseDetails();
     super.onInit();
   }
 
   @override
-  getWeekDetails() async {
+  getExerciseDetails() async {
     statusRequest = StatusRequest.loading;
     update();
     var response = await getWeekDetailsBuilddData.getData(token!, idOfWeek);
@@ -37,7 +40,8 @@ class GetWeekDetailBuildControllerImp extends GetWeekDetailBuildController {
     statusRequest = handlingData(response);
     if (StatusRequest.success == statusRequest) {
       if (response['message'] == 'success') {
-        getWeekDetailsList.addAll(response['data']);
+        getExerciseDetailsList.addAll(response['data']);
+        timeLeft = getExerciseDetailsList[idOfExercise]['date'];
       } else {
         Get.defaultDialog(title: 'Not Found', middleText: 'Empty Data!');
         statusRequest = StatusRequest.failuer;
@@ -47,18 +51,16 @@ class GetWeekDetailBuildControllerImp extends GetWeekDetailBuildController {
   }
 
   @override
-  goToUpdateExercise() {
-    Get.toNamed(AppRoutes.replacingExerciseBuild);
-  }
-
-  @override
-  goToExerciseDetail(selectedExercise) async {
-    Get.toNamed(AppRoutes.getExerciseDetailsBuild, arguments: {
-      'idOfweek': idOfWeek,
-      'exercisesDetailBuild': selectedExercise,
+  startTimerCountDown() {
+    Timer.periodic(const Duration(seconds: 1), (timer) {
+      if (timeLeft > 0) {
+        update();
+        timeLeft--;
+      } else {
+        Get.defaultDialog(title: 'Done', middleText: 'Done');
+        // doneExercise();
+        timer.cancel();
+      }
     });
   }
-
-  // @override
-  // goToWeekDetails(idOfWeek) {}
 }
