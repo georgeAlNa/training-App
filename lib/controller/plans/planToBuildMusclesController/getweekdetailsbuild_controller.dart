@@ -59,6 +59,7 @@ class GetWeekDetailBuildControllerImp extends GetWeekDetailBuildController {
     });
   }
 
+
   // @override
   // goToWeekDetails(idOfWeek) {}
 }

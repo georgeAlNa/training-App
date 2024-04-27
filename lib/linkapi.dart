@@ -64,4 +64,5 @@ class AppLink {
   static const String storeCategory = '$root/GetCategory';
   static const String storeProductByCategory = '$root/GetProduct';
   static const String storeAddToCart = '$root/addtocart';
+  static const String storeSearch = '$root/searchproduct';
 }

@@ -33,7 +33,8 @@ class AllCategoryCompleteControllerImp extends AllCategoryCompleteController {
     if (StatusRequest.success == statusRequest) {
       if (response['message'] == 'completed category') {
         completeCategory.addAll(response['data']);
-      } else {
+      }
+      if (completeCategory.isEmpty) {
         Get.defaultDialog(title: 'Empty', middleText: 'No Data ! Still Empty');
         statusRequest = StatusRequest.failuer;
       }

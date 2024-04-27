@@ -72,4 +72,5 @@ class AppRoutes {
   static const String storeProductByCategory = "/store_product_by_category";
   static const String storeProductDetails = "/store_product_details";
   static const String storeAddToCart = "/store_add_to_cart";
+  static const String storeGetAllOrders = "/store_get_all_orders";
 }

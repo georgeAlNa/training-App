@@ -34,7 +34,7 @@ class AddToCartControllerImp extends AddToCartController {
       statusRequest = StatusRequest.loading;
       update();
       var response = await addToCartData.postData(
-          token!, productId.toString(), orderId.toString(), amount.toString());
+          token!, productId.toString(), orderId.text, amount.text);
       print('response ===== $response');
       statusRequest = handlingData(response);
       if (StatusRequest.success == statusRequest) {
