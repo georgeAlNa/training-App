@@ -26,7 +26,7 @@ class StoreCategoryPage extends StatelessWidget {
                     mycontroller: controller.searchContent,
                     titleappbar: 'Find Product',
                     onPressedIconCart: () {
-                      Get.toNamed(AppRoutes.storeGetAllOrders);
+                      controller.goToCart();
                     },
                     onPressedSearch: () {
                       controller.onSearchItems();

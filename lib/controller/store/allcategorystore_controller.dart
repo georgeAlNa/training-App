@@ -11,6 +11,7 @@ abstract class StoreCategoryController extends GetxController {
   getCategory();
   goToProductByCategory(dynamic idOfCategoryStore);
   getSearchData();
+  goToCart();
 }
 
 class StoreCategoryControllerImp extends StoreCategoryController {
@@ -93,5 +94,10 @@ class StoreCategoryControllerImp extends StoreCategoryController {
     isSearch = true;
     getSearchData();
     update();
+  }
+
+  @override
+  goToCart() {
+    Get.toNamed(AppRoutes.storeGetAllOrders);
   }
 }
