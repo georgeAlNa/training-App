@@ -8,6 +8,7 @@ class CustomButtonCart extends StatelessWidget {
   final String imagePath;
   final Color color;
   final void Function()? onPressed;
+  final void Function()? onLongPress;
   const CustomButtonCart({
     Key? key,
     required this.textTitle,
@@ -17,6 +18,7 @@ class CustomButtonCart extends StatelessWidget {
     required this.imagePath,
     required this.color,
     this.onPressed,
+    this.onLongPress,
   }) : super(key: key);
 
   @override
@@ -27,6 +29,7 @@ class CustomButtonCart extends StatelessWidget {
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
         padding: const EdgeInsets.all(13),
         onPressed: onPressed,
+        onLongPress: onLongPress,
         color: color,
         textColor: Colors.white,
         child: Column(

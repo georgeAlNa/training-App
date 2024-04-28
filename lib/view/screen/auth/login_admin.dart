@@ -18,6 +18,7 @@ class LoginAdmin extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final currentWidth = MediaQuery.of(context).size.width;
     Get.put(LoginAdminControllerImp());
     return Scaffold(
       appBar: AppBar(
@@ -43,11 +44,11 @@ class LoginAdmin extends StatelessWidget {
                 key: controller.formState,
                 child: ListView(
                   children: [
-                    Image.asset(
-                      AppImageAsset.logo,
-                      height: 200,
-                      width: 200,
-                    ),
+                    // Image.asset(
+                    //   AppImageAsset.logo,
+                    //   height: 200,
+                    //   width: 200,
+                    // ),
                     const SizedBox(height: 20),
                     CustomTextTitleAuth(
                       text: '10'.tr,
@@ -57,30 +58,64 @@ class LoginAdmin extends StatelessWidget {
                       text: '11'.tr,
                     ),
                     const SizedBox(height: 45),
-                    CustomTextFormAuth(
-                      isNumber: false,
-                      mycontroller: controller.email,
-                      valid: (value) {
-                        return validInput(value!, 5, 100, 'email');
-                      },
-                      hinttext: '12'.tr,
-                      labeltext: '18'.tr,
-                      iconData: Icons.email_outlined,
-                    ),
-                    CustomTextFormAuth(
-                      obscureText: controller.isShowwPassword,
-                      onTapIcon: () {
-                        controller.showPassword();
-                      },
-                      isNumber: false,
-                      mycontroller: controller.password,
-                      valid: (value) {
-                        return validInput(value!, 5, 35, 'password');
-                      },
-                      hinttext: '13'.tr,
-                      labeltext: '19'.tr,
-                      iconData: Icons.lock_clock_outlined,
-                    ),
+                    currentWidth > 550
+                        ? SizedBox(
+                            height: 130,
+                            width: 50,
+                            child: CustomTextFormAuth(
+                              isNumber: false,
+                              mycontroller: controller.email,
+                              valid: (value) {
+                                return validInput(value!, 5, 100, 'email');
+                              },
+                              hinttext: '12'.tr,
+                              labeltext: '18'.tr,
+                              iconData: Icons.email_outlined,
+                            ),
+                          )
+                        : CustomTextFormAuth(
+                            isNumber: false,
+                            mycontroller: controller.email,
+                            valid: (value) {
+                              return validInput(value!, 5, 100, 'email');
+                            },
+                            hinttext: '12'.tr,
+                            labeltext: '18'.tr,
+                            iconData: Icons.email_outlined,
+                          ),
+                    currentWidth > 550
+                        ? SizedBox(
+                            height: 130,
+                            width: 50,
+                            child: CustomTextFormAuth(
+                              obscureText: controller.isShowwPassword,
+                              onTapIcon: () {
+                                controller.showPassword();
+                              },
+                              isNumber: false,
+                              mycontroller: controller.password,
+                              valid: (value) {
+                                return validInput(value!, 5, 35, 'password');
+                              },
+                              hinttext: '13'.tr,
+                              labeltext: '19'.tr,
+                              iconData: Icons.lock_clock_outlined,
+                            ),
+                          )
+                        : CustomTextFormAuth(
+                            obscureText: controller.isShowwPassword,
+                            onTapIcon: () {
+                              controller.showPassword();
+                            },
+                            isNumber: false,
+                            mycontroller: controller.password,
+                            valid: (value) {
+                              return validInput(value!, 5, 35, 'password');
+                            },
+                            hinttext: '13'.tr,
+                            labeltext: '19'.tr,
+                            iconData: Icons.lock_clock_outlined,
+                          ),
                     GestureDetector(
                       onTap: () {
                         Get.toNamed(AppRoutes.forgetPassword);
@@ -109,6 +144,7 @@ class LoginAdmin extends StatelessWidget {
                         controller.goToSignin();
                       },
                     ),
+                    Text(currentWidth.toString()),
                   ],
                 ),
               ),

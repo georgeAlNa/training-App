@@ -36,6 +36,9 @@ class OrderDetailsPage extends StatelessWidget {
                     imagePath: '${controller.orderDetailsList[index]['image']}',
                     color: AppColor.primaryColor,
                     onPressed: () {},
+                    onLongPress: (){
+                      
+                    },
                   );
                 },
               ),

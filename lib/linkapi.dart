@@ -67,4 +67,7 @@ class AppLink {
   static const String storeSearch = '$root/searchproduct';
   static const String storeOrdersInCart = '$root/getorder';
   static const String storeOrderDetails = '$root/getorderwithproduct';
+
+  //chat
+  static const String chat = '$root/chat';
 }

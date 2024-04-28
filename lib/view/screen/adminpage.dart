@@ -9,6 +9,7 @@ class AdminPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final currentWidth = MediaQuery.of(context).size.width;
     AdminControllerImp controller = Get.put(AdminControllerImp());
     return Scaffold(
       appBar: AppBar(
@@ -45,27 +46,52 @@ class AdminPage extends StatelessWidget {
       ),
       body: Container(
         padding: const EdgeInsets.all(15),
-        child: ListView(
-          children: [
-            CustomButtonAuth(
-              text: 'Add Exercise',
-              color: AppColor.primaryColor,
-              onPressed: () {
-                controller.goToAddExercise();
-                print('add exercise');
-              },
-            ),
-            CustomButtonAuth(
-              text: 'Add Challenge',
-              color: AppColor.primaryColor,
-              onPressed: () {
-                controller.goToAddChallenge();
-                print('add challenge');
-              },
-            ),
-            //Text('${controller.tok}'),
-          ],
-        ),
+        child: currentWidth > 550
+            ? Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    CustomButtonAuth(
+                      text: 'Add Exercise',
+                      color: AppColor.primaryColor,
+                      onPressed: () {
+                        controller.goToAddExercise();
+                        print('add exercise');
+                      },
+                    ),
+                    CustomButtonAuth(
+                      text: 'Add Challenge',
+                      color: AppColor.primaryColor,
+                      onPressed: () {
+                        controller.goToAddChallenge();
+                        print('add challenge');
+                      },
+                    ),
+                  ],
+                ),
+              )
+            : ListView(
+                children: [
+                  CustomButtonAuth(
+                    text: 'Add Exercise',
+                    color: AppColor.primaryColor,
+                    onPressed: () {
+                      controller.goToAddExercise();
+                      print('add exercise');
+                    },
+                  ),
+                  CustomButtonAuth(
+                    text: 'Add Challenge',
+                    color: AppColor.primaryColor,
+                    onPressed: () {
+                      controller.goToAddChallenge();
+                      print('add challenge');
+                    },
+                  ),
+                  //Text('${controller.tok}'),
+                ],
+              ),
       ),
     );
   }
