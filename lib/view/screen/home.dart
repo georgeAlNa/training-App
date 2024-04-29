@@ -64,9 +64,16 @@ class HomePage extends StatelessWidget {
                             );
                           },
                         )
-                      : ListView(
+                      : GridView(
                           shrinkWrap: true,
                           physics: const NeverScrollableScrollPhysics(),
+                          gridDelegate:
+                              const SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 2,
+                            childAspectRatio: 1.3,
+                            mainAxisSpacing: 5,
+                            crossAxisSpacing: 10,
+                          ),
                           children: [
                             // Container(
                             //   margin: const EdgeInsets.symmetric(vertical: 15),
@@ -106,7 +113,7 @@ class HomePage extends StatelessWidget {
                             //   ),
                             // ),
                             CustomButtonAuth(
-                              color: AppColor.blueColor,
+                              color: AppColor.primaryColor,
                               text: 'Level',
                               onPressed: () {
                                 Get.toNamed(AppRoutes.level);
@@ -122,11 +129,11 @@ class HomePage extends StatelessWidget {
                               },
                             ),
                             CustomButtonAuth(
-                              color: AppColor.blueColor,
-                              text: 'All Category Complete',
+                              color: AppColor.primaryColor,
+                              text: 'All Exercise Complete',
                               onPressed: () {
-                                Get.toNamed(AppRoutes.allCategoryComplete);
-                                print('All Category Complete');
+                                Get.toNamed(AppRoutes.allExerciseComplete);
+                                print('All Exercise Complete');
                               },
                             ),
                             CustomButtonAuth(
@@ -154,7 +161,7 @@ class HomePage extends StatelessWidget {
                               },
                             ),
                             CustomButtonAuth(
-                              color: AppColor.blueColor,
+                              color: AppColor.primaryColor,
                               text: 'All Challenge with Completed Challenge',
                               onPressed: () {
                                 Get.toNamed(AppRoutes.getAllChallenges);

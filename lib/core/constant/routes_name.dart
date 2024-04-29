@@ -28,6 +28,7 @@ class AppRoutes {
   static const String addExercise = "/add_exercise";
   static const String addChallenge = "/add_challenge";
   static const String allCategoryComplete = "/all_category_complete";
+  static const String allExerciseComplete = "/all_exercise_complete";
   //static const String doneExercise = "/done_exercise";
 
   //admin page
@@ -49,6 +50,7 @@ class AppRoutes {
   static const String adviceByCoach = "/advice_by_coach";
   static const String rateAdvice = "/rate_advice";
   static const String addAdvice = "/add_advice";
+  static const String allExerciseCompleteByUserId = "/all_exercise_complete_by_user_id";
 
   //challenge
   static const String getAllChallenges = "/get_all_challenges";

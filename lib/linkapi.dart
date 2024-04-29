@@ -19,12 +19,14 @@ class AppLink {
   static const String addChallenge = '$root/challenge';
   static const String addExercise = '$root/exercise';
   static const String allCategoryComplete = '$root/record';
+  static const String allExerciseComplete = '$root/getExerciseRecord';
 
   //user info
   static const String userInfo = '$root/GetDetails';
 
-  // done  exercise
-  static const String doneExercises = '$root/is_done';
+  // done  exercise + category
+  static const String doneExercises = '$root/verifyExercise';
+  static const String doneCategory = '$root/is_done';
 
   //calories + target weight
   static const String calories = '$root/calculate';
@@ -40,6 +42,7 @@ class AppLink {
   static const String adviceByCoach = '$root/Get';
   static const String rateAdvice = '$root/experience';
   static const String addAdvice = '$root/advice';
+  static const String allExerciseCompleteByUserId = '$root/getExerciseRecord';
 
   //challenge
   static const String allChallenges = '$root/allchallenges';

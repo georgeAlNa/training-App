@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:training_app/controller/coaches/addadvice_controller.dart';
 import 'package:training_app/core/class/handlingdataview.dart';
 import 'package:training_app/core/constant/color.dart';
+import 'package:training_app/core/constant/routes_name.dart';
 import 'package:training_app/core/functions/validinput.dart';
 import 'package:training_app/view/widget/auth/custombuttonauth.dart';
 import 'package:training_app/view/widget/auth/customtextformauth.dart';
@@ -81,6 +82,13 @@ class AddAdvicePage extends StatelessWidget {
                     color: AppColor.primaryColor,
                     onPressed: () {
                       controller.addAdvice();
+                    },
+                  ),
+                  CustomButtonAuth(
+                    text: 'All Exercise Complete By UserId ',
+                    color: AppColor.primaryColor,
+                    onPressed: () {
+                      Get.toNamed(AppRoutes.allExerciseCompleteByUserId);
                     },
                   ),
                   //Text('${controller.token}'),

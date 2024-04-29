@@ -19,6 +19,7 @@ import 'package:training_app/view/screen/challenge/challengeinfo.dart';
 import 'package:training_app/view/screen/challenge/enrollchallenge.dart';
 import 'package:training_app/view/screen/coaches/addadvice.dart';
 import 'package:training_app/view/screen/coaches/advicebycoach.dart';
+import 'package:training_app/view/screen/coaches/allexercisecompletebyuserid.dart';
 import 'package:training_app/view/screen/coaches/rateadvice.dart';
 import 'package:training_app/view/screen/favorite/allfavorite.dart';
 import 'package:training_app/view/screen/home.dart';
@@ -142,8 +143,8 @@ List<GetPage<dynamic>>? routes = [
     page: () => const AddChallengePage(),
   ),
   GetPage(
-    name: AppRoutes.allCategoryComplete,
-    page: () => const AllCategoryCompletePage(),
+    name: AppRoutes.allExerciseComplete,
+    page: () => const AllCategoryAndExerciseCompletePage(),
   ),
 
   //admin
@@ -190,6 +191,10 @@ List<GetPage<dynamic>>? routes = [
   GetPage(
     name: AppRoutes.addAdvice,
     page: () => const AddAdvicePage(),
+  ),
+  GetPage(
+    name: AppRoutes.allExerciseCompleteByUserId,
+    page: () => const AllExerciseCompleteByUserIdPage(),
   ),
 
   //challenge

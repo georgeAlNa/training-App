@@ -93,28 +93,58 @@ class ExerciseDetailControllerImp extends ExerciseDetailController {
     update();
   }
 
+  // @override
+  // doneExercise() async {
+  //   statusRequest = StatusRequest.loading;
+  //   update();
+  //   var response = await doneExerciseData.postDoneExerciseData(token!,
+  //       idOfLevel.toString(), idOfCategory.toString(), isDone.toString());
+  //   print('response ===== $response');
+  //   statusRequest = handlingData(response);
+  //   if (StatusRequest.success == statusRequest) {
+  //     if (response['message'] == 'Workout verification recorded successfully') {
+  //       //doneExerciseMap.addAll(response['message']);
+  //       //Get.offAllNamed(AppRoutes.home);
+  //       Get.snackbar(
+  //         "Done",
+  //         "Workout verification recorded successfully",
+  //         duration: const Duration(seconds: 7),
+  //       );
+  //     }
+  //     if (response['message'] == 'Workout already completed for today') {
+  //       Get.defaultDialog(
+  //           title: "Sorry !",
+  //           middleText: "This Workout already completed for today");
+  //     }
+  //   } else {
+  //     statusRequest = StatusRequest.failuer;
+  //     Get.defaultDialog(title: 'warning', middleText: 'error');
+  //   }
+  //   update();
+  // }
+
   @override
   doneExercise() async {
     statusRequest = StatusRequest.loading;
     update();
     var response = await doneExerciseData.postDoneExerciseData(token!,
-        idOfLevel.toString(), idOfCategory.toString(), isDone.toString());
+        idOfExerciseResp.toString(), isDone.toString());
     print('response ===== $response');
     statusRequest = handlingData(response);
     if (StatusRequest.success == statusRequest) {
-      if (response['message'] == 'Workout verification recorded successfully') {
+      if (response['message'] == 'The exercise has been recorded successfully') {
         //doneExerciseMap.addAll(response['message']);
         //Get.offAllNamed(AppRoutes.home);
         Get.snackbar(
           "Done",
-          "Workout verification recorded successfully",
+          "The exercise has been recorded successfully",
           duration: const Duration(seconds: 7),
         );
       }
-      if (response['message'] == 'Workout already completed for today') {
+      if (response['message'] == 'The exercise for this day is already marked as done') {
         Get.defaultDialog(
             title: "Sorry !",
-            middleText: "This Workout already completed for today");
+            middleText: "The exercise for this day is already marked as done");
       }
     } else {
       statusRequest = StatusRequest.failuer;
