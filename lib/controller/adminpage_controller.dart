@@ -6,6 +6,7 @@ abstract class AdminController extends GetxController {
   goToAddExercise();
   goToAddChallenge();
   goToAddProduct();
+  goToUpdatePaymentState();
   logoutAdmin();
 }
 
@@ -39,6 +40,11 @@ class AdminControllerImp extends AdminController {
     myService.sharedPreferences.remove('emailAdmin');
     myService.sharedPreferences.remove('tokenAdmin');
     Get.offAllNamed(AppRoutes.loginAdmin);
+  }
+
+  @override
+  goToUpdatePaymentState() {
+    Get.toNamed(AppRoutes.storeUpdatePaymentStateByAdmin);
   }
 
   @override

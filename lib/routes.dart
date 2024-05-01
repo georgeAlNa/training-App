@@ -49,6 +49,7 @@ import 'package:training_app/view/screen/store/allproductsbycategory.dart';
 import 'package:training_app/view/screen/store/orderdetails.dart';
 import 'package:training_app/view/screen/store/orederincart.dart';
 import 'package:training_app/view/screen/store/productdetails.dart';
+import 'package:training_app/view/screen/store/updatepaymentstatebyadmin.dart';
 import 'package:training_app/view/screen/userinfo.dart';
 import 'package:training_app/view/screen/coaches/getallcoaches.dart';
 
@@ -277,6 +278,10 @@ List<GetPage<dynamic>>? routes = [
   GetPage(
     name: AppRoutes.storeAddProductByAdmin,
     page: () => const AddProductPage(),
+  ),
+  GetPage(
+    name: AppRoutes.storeUpdatePaymentStateByAdmin,
+    page: () => const UpdatePaymentStateByAdminPage(),
   ),
 
   //chat

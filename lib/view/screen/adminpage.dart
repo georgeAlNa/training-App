@@ -76,6 +76,14 @@ class AdminPage extends StatelessWidget {
                         print('add product');
                       },
                     ),
+                    CustomButtonAuth(
+                      text: 'Update Payment State',
+                      color: AppColor.primaryColor,
+                      onPressed: () {
+                        controller.goToUpdatePaymentState();
+                        print('update payment');
+                      },
+                    ),
                   ],
                 ),
               )
@@ -103,6 +111,14 @@ class AdminPage extends StatelessWidget {
                     onPressed: () {
                       controller.goToAddProduct();
                       print('add product');
+                    },
+                  ),
+                  CustomButtonAuth(
+                    text: 'Update Payment State',
+                    color: AppColor.primaryColor,
+                    onPressed: () {
+                      controller.goToUpdatePaymentState();
+                      print('update payment');
                     },
                   ),
                   //Text('${controller.tok}'),

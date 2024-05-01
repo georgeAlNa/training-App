@@ -73,6 +73,7 @@ class AppLink {
   static const String storeDeleteOrder = '$root/DeleteOrder';
   static const String storeBuyProductByPoints = '$root/buywithpoints';
   static const String storeAddProductByAdmin = '$root/addproduct';
+  static const String storeUpdatePaymentStateByAdmin = '$root/updatepayment';
 
   //chat
   static const String chat = '$root/chat';

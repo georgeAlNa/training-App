@@ -78,6 +78,8 @@ class AppRoutes {
   static const String storeGetAllOrders = "/store_get_all_orders";
   static const String storeOrederDetails = "/store_oreder_details";
   static const String storeAddProductByAdmin = "/store_add_product_by_admin";
+  static const String storeUpdatePaymentStateByAdmin =
+      "/store_update_payment_state_by_admin";
 
   // chat
   static const String chat = "/chat";

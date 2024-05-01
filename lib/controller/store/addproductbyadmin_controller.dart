@@ -22,6 +22,7 @@ class AddProductByAdminControllerImp extends AddProductByAdminController {
   late TextEditingController categoryIdProduct;
   late TextEditingController pointsCostProduct;
   String? token;
+
   @override
   void onInit() {
     token = myService.sharedPreferences.getString('tokenAdmin');
@@ -50,7 +51,7 @@ class AddProductByAdminControllerImp extends AddProductByAdminController {
       print('response ===== $response');
       statusRequest = handlingData(response);
       if (StatusRequest.success == statusRequest) {
-        if (response['message'] == 'success') {
+        if (response['message'] == 'Product add successfully') {
           Get.defaultDialog(title: 'Done', middleText: 'Done Add Product');
         }
       } else {
