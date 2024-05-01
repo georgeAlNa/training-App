@@ -17,6 +17,7 @@ import 'package:training_app/view/screen/calories%20-%20terget%20weight/tergetwe
 import 'package:training_app/view/screen/challenge/allchallenge.dart';
 import 'package:training_app/view/screen/challenge/challengeinfo.dart';
 import 'package:training_app/view/screen/challenge/enrollchallenge.dart';
+import 'package:training_app/view/screen/chat/chat.dart';
 import 'package:training_app/view/screen/coaches/addadvice.dart';
 import 'package:training_app/view/screen/coaches/advicebycoach.dart';
 import 'package:training_app/view/screen/coaches/allexercisecompletebyuserid.dart';
@@ -25,8 +26,8 @@ import 'package:training_app/view/screen/favorite/allfavorite.dart';
 import 'package:training_app/view/screen/home.dart';
 import 'package:training_app/view/screen/language.dart';
 import 'package:training_app/view/screen/adminpage.dart';
-import 'package:training_app/view/screen/level-category-exercises_screen/addchallenge.dart';
-import 'package:training_app/view/screen/level-category-exercises_screen/addexercise.dart';
+import 'package:training_app/view/screen/level-category-exercises_screen/addchallengebyadmin.dart';
+import 'package:training_app/view/screen/level-category-exercises_screen/addexercisebyadmin.dart';
 import 'package:training_app/view/screen/level-category-exercises_screen/allcategoryusercomplete.dart';
 import 'package:training_app/view/screen/level-category-exercises_screen/category.dart';
 import 'package:training_app/view/screen/level-category-exercises_screen/exercisedetail.dart';
@@ -41,6 +42,7 @@ import 'package:training_app/view/screen/plans/planToLossWeightScreens/getallwee
 import 'package:training_app/view/screen/plans/planToLossWeightScreens/getexersicedetailloss.dart';
 import 'package:training_app/view/screen/plans/planToLossWeightScreens/getweekdetailsloss.dart';
 import 'package:training_app/view/screen/plans/planToLossWeightScreens/replacingexerciseloss.dart';
+import 'package:training_app/view/screen/store/addproductbyadmin.dart';
 import 'package:training_app/view/screen/store/addtocart.dart';
 import 'package:training_app/view/screen/store/allcategorystore.dart';
 import 'package:training_app/view/screen/store/allproductsbycategory.dart';
@@ -271,5 +273,15 @@ List<GetPage<dynamic>>? routes = [
   GetPage(
     name: AppRoutes.storeOrederDetails,
     page: () => const OrderDetailsPage(),
+  ),
+  GetPage(
+    name: AppRoutes.storeAddProductByAdmin,
+    page: () => const AddProductPage(),
+  ),
+
+  //chat
+  GetPage(
+    name: AppRoutes.chat,
+    page: () => const ChatPage(),
   ),
 ];

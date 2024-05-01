@@ -28,17 +28,30 @@ class OrderDetailsPage extends StatelessWidget {
                     textTitle:
                         '\n${controller.orderDetailsList[index]['name']}\n',
                     textCost:
-                        'Cost : ${controller.orderDetailsList[index]['cost']} \$\n',
+                        '     Cost : ${controller.orderDetailsList[index]['cost']} \$ \n\n Point Cost : ${controller.orderDetailsList[index]['points_cost']}\n',
                     textAmount:
                         'Amount : ${controller.orderDetailsList[index]['amount']}\n',
                     textId:
                         'Id : ${controller.orderDetailsList[index]['id']}\n',
                     imagePath: '${controller.orderDetailsList[index]['image']}',
                     color: AppColor.primaryColor,
-                    onPressed: () {},
-                    onLongPress: (){
-                      
+                    onPressed: () {
+                      Get.defaultDialog(
+                        title: 'Buy Product',
+                        middleText: 'Sure Want Buy Product ?',
+                        onConfirm: () {
+                          controller.buyProductByPoints(
+                              controller.orderDetailsList[index]['id']);
+                          print('Buy Success');
+                        },
+                        onCancel: () {
+                          Get.back();
+                        },
+                        cancelTextColor: AppColor.blackColor,
+                        confirmTextColor: AppColor.blackColor,
+                      );
                     },
+                    onLongPress: () {},
                   );
                 },
               ),

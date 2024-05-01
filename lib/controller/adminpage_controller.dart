@@ -5,6 +5,7 @@ import 'package:training_app/core/services/services.dart';
 abstract class AdminController extends GetxController {
   goToAddExercise();
   goToAddChallenge();
+  goToAddProduct();
   logoutAdmin();
 }
 
@@ -25,6 +26,11 @@ class AdminControllerImp extends AdminController {
         //   'token' : tok,
         // }
         );
+  }
+
+  @override
+  goToAddProduct() {
+    Get.toNamed(AppRoutes.storeAddProductByAdmin);
   }
 
   @override

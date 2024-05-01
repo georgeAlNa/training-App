@@ -192,6 +192,14 @@ class HomePage extends StatelessWidget {
                                 print('store');
                               },
                             ),
+                            CustomButtonAuth(
+                              color: AppColor.primaryColor,
+                              text: 'Chat With GPT',
+                              onPressed: () {
+                                Get.toNamed(AppRoutes.chat);
+                                print('chat');
+                              },
+                            ),
                             const SizedBox(
                               height: 30,
                             ),

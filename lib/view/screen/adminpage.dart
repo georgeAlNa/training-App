@@ -68,6 +68,14 @@ class AdminPage extends StatelessWidget {
                         print('add challenge');
                       },
                     ),
+                    CustomButtonAuth(
+                      text: 'Add Product',
+                      color: AppColor.primaryColor,
+                      onPressed: () {
+                        controller.goToAddProduct();
+                        print('add product');
+                      },
+                    ),
                   ],
                 ),
               )
@@ -87,6 +95,14 @@ class AdminPage extends StatelessWidget {
                     onPressed: () {
                       controller.goToAddChallenge();
                       print('add challenge');
+                    },
+                  ),
+                  CustomButtonAuth(
+                    text: 'Add Product',
+                    color: AppColor.primaryColor,
+                    onPressed: () {
+                      controller.goToAddProduct();
+                      print('add product');
                     },
                   ),
                   //Text('${controller.tok}'),

@@ -29,7 +29,15 @@ class ChatControllerImp extends ChatController {
       print('response ===== $response');
       statusRequest = handlingData(response);
       if (StatusRequest.success == statusRequest) {
-        if (response['message'] == 'success') {}
+        if (response['message'] == 'success') {
+          Get.defaultDialog(
+              title: 'Answer From Chat AI: ',
+              middleText: '${response['data']}');
+        } else {
+          Get.defaultDialog(
+              title: 'warning', middleText: 'Not Valid Message Send Again');
+          statusRequest = StatusRequest.failuer;
+        }
       } else {
         Get.defaultDialog(
             title: 'warning', middleText: 'Not Valid Message Send Again');

@@ -33,7 +33,7 @@ class StoreProductDetailsPage extends StatelessWidget {
                         ),
                         CustomTextBodyAuth(
                           text:
-                              'cost : ${controller.productDetailsStoreList[controller.idOfProduct]['cost']} \$',
+                              'Points Cost : ${controller.productDetailsStoreList[controller.idOfProduct]['points_cost']}\n Cost : ${controller.productDetailsStoreList[controller.idOfProduct]['cost']} \$',
                         ),
                         CustomTextBodyAuth(
                           text:
@@ -54,7 +54,8 @@ class StoreProductDetailsPage extends StatelessWidget {
                           text: 'Add to Cart',
                           onPressed: () {
                             controller.goToAddToCart();
-                            print('add to cart ${controller.idOfProductToAddToCart}');
+                            print(
+                                'add to cart ${controller.idOfProductToAddToCart}');
                           },
                         ),
 

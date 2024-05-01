@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:training_app/controller/level-category-exercises/addchallenge_controller.dart';
+import 'package:training_app/controller/level-category-exercises/addchallengebyadmin_controller.dart';
 import 'package:training_app/core/class/handlingdataview.dart';
 import 'package:training_app/core/constant/color.dart';
 import 'package:training_app/core/functions/validinput.dart';

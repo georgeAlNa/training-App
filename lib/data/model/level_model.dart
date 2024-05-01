@@ -1,8 +1,8 @@
 class LevelModel {
   int? id;
   String? level;
-  Null createdAt;
-  Null updatedAt;
+  dynamic createdAt;
+  dynamic updatedAt;
 
   LevelModel({this.id, this.level, this.createdAt, this.updatedAt});
 
@@ -14,11 +14,11 @@ class LevelModel {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['id'] = this.id;
-    data['level'] = this.level;
-    data['created_at'] = this.createdAt;
-    data['updated_at'] = this.updatedAt;
+    final Map<String, dynamic> data =  Map<String, dynamic>();
+    data['id'] = id;
+    data['level'] = level;
+    data['created_at'] = createdAt;
+    data['updated_at'] = updatedAt;
     return data;
   }
 }

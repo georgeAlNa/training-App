@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:training_app/core/class/statusrequest.dart';
 import 'package:training_app/core/functions/handlingdatacontroller.dart';
 import 'package:training_app/core/services/services.dart';
-import 'package:training_app/data/datasource/remote/level-category-exercises/addchallenge_data.dart';
+import 'package:training_app/data/datasource/remote/level-category-exercises/addchallengebyadmin_data.dart';
 
 abstract class AddChallengeController extends GetxController {
   challenge();

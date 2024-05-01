@@ -50,7 +50,8 @@ class AppRoutes {
   static const String adviceByCoach = "/advice_by_coach";
   static const String rateAdvice = "/rate_advice";
   static const String addAdvice = "/add_advice";
-  static const String allExerciseCompleteByUserId = "/all_exercise_complete_by_user_id";
+  static const String allExerciseCompleteByUserId =
+      "/all_exercise_complete_by_user_id";
 
   //challenge
   static const String getAllChallenges = "/get_all_challenges";
@@ -76,4 +77,8 @@ class AppRoutes {
   static const String storeAddToCart = "/store_add_to_cart";
   static const String storeGetAllOrders = "/store_get_all_orders";
   static const String storeOrederDetails = "/store_oreder_details";
+  static const String storeAddProductByAdmin = "/store_add_product_by_admin";
+
+  // chat
+  static const String chat = "/chat";
 }

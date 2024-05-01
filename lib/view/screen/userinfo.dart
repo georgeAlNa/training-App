@@ -34,6 +34,13 @@ class UserInfoPage extends StatelessWidget {
                           ),
                         ),
                         Text(
+                          'Points : ${controller.info[0]['points']}\n',
+                          style: const TextStyle(
+                            fontSize: 30,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        Text(
                           'Current weight : ${controller.info[0]['Current_weight']}\n',
                           style: const TextStyle(
                             fontSize: 30,
