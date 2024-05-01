@@ -22,9 +22,10 @@ class ChatControllerImp extends ChatController {
 
   @override
   sendMessage() async {
-    statusRequest = StatusRequest.loading;
-    update();
     if (formState.currentState!.validate()) {
+      statusRequest = StatusRequest.loading;
+      update();
+
       var response = chatData.postData(message.text);
       print('response ===== $response');
       statusRequest = handlingData(response);
