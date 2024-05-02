@@ -1,11 +1,11 @@
 import 'package:training_app/core/class/crud.dart';
 import 'package:training_app/linkapi.dart';
 
-class AnnualReportData {
+class AnnualReportStoreData {
   Crud crud;
-  AnnualReportData(this.crud);
+  AnnualReportStoreData(this.crud);
   getData(String token , dynamic year) async {
-    var response = await crud.getMethod(linkurl: '${AppLink.annualReportProgress}?year=$year', token: token);
+    var response = await crud.getMethod(linkurl: '${AppLink.annualReportStore}?year=$year', token: token);
     return response.fold((l) => l, (r) => r);
   }
 }

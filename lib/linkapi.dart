@@ -78,9 +78,20 @@ class AppLink {
   //chat
   static const String chat = '$root/chat';
 
-  //report
-  static const String dailyReport = '$root/DailyProgress';
-  static const String weeklyReport = '$root/WeeklyProgress';
-  static const String monthlyReport = '$root/MonthlyProgress';
-  static const String annualReport = '$root/annualProgress';
+  //report progress
+  static const String dailyReportProgress = '$root/DailyProgress';
+  static const String weeklyReportProgress = '$root/WeeklyProgress';
+  static const String monthlyReportProgress = '$root/MonthlyProgress';
+  static const String annualReportProgress = '$root/annualProgress';
+  //report store
+  static const String dailyReportStore = '$root/Dailyorder';
+  static const String weeklyReportStore = '$root/Weeklyorder';
+  static const String monthlyReportStore = '$root/Monthlyorder';
+  static const String annualReportStore = '$root/annualorder';
+  //report exercise
+  static const String dailyReportExercise = '$root/DailyExe';
+  static const String weeklyReportExercise = '$root/WeeklyExe';
+  static const String monthlyReportExercise = '$root/MonthExe';
+  static const String annualReportExercise = '$root/annualExe';
+  static const String getExerciseByIdReport = '$root/GetExercise';
 }

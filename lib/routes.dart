@@ -42,11 +42,22 @@ import 'package:training_app/view/screen/plans/planToLossWeightScreens/getallwee
 import 'package:training_app/view/screen/plans/planToLossWeightScreens/getexersicedetailloss.dart';
 import 'package:training_app/view/screen/plans/planToLossWeightScreens/getweekdetailsloss.dart';
 import 'package:training_app/view/screen/plans/planToLossWeightScreens/replacingexerciseloss.dart';
+import 'package:training_app/view/screen/report/reportexercise/allreportexercise.dart';
+import 'package:training_app/view/screen/report/reportexercise/annualreportexercise.dart';
+import 'package:training_app/view/screen/report/reportexercise/dailyreportexercise.dart';
+import 'package:training_app/view/screen/report/reportexercise/getexercisebyid.dart';
+import 'package:training_app/view/screen/report/reportexercise/monthlyreportexercise.dart';
+import 'package:training_app/view/screen/report/reportexercise/weeklyreportexercise.dart';
 import 'package:training_app/view/screen/report/reportporgress/allreportprogress.dart';
 import 'package:training_app/view/screen/report/reportporgress/annualreportprogress.dart';
 import 'package:training_app/view/screen/report/reportporgress/dailyreportprogress.dart';
 import 'package:training_app/view/screen/report/reportporgress/monthlyreportprogress.dart';
 import 'package:training_app/view/screen/report/reportporgress/weeklyreportprogress.dart';
+import 'package:training_app/view/screen/report/reportstroe/allreportstore.dart';
+import 'package:training_app/view/screen/report/reportstroe/annualreportstore.dart';
+import 'package:training_app/view/screen/report/reportstroe/dailyreportstore.dart';
+import 'package:training_app/view/screen/report/reportstroe/monthlyreportstore.dart';
+import 'package:training_app/view/screen/report/reportstroe/weeklyreportstore.dart';
 import 'package:training_app/view/screen/store/addproductbyadmin.dart';
 import 'package:training_app/view/screen/store/addtocart.dart';
 import 'package:training_app/view/screen/store/allcategorystore.dart';
@@ -295,7 +306,7 @@ List<GetPage<dynamic>>? routes = [
     page: () => const ChatPage(),
   ),
 
-  //report
+  //report progress
   GetPage(
     name: AppRoutes.reportProgress,
     page: () => const AllReportProgressPage(),
@@ -315,5 +326,53 @@ List<GetPage<dynamic>>? routes = [
   GetPage(
     name: AppRoutes.annualReportProgress,
     page: () => const AnnualReportProgressPage(),
+  ),
+
+  //report store
+  GetPage(
+    name: AppRoutes.reportStore,
+    page: () => const AllReportStorePage(),
+  ),
+  GetPage(
+    name: AppRoutes.dailyReportStore,
+    page: () => const DailyReportStorePage(),
+  ),
+  GetPage(
+    name: AppRoutes.weeklyReportStore,
+    page: () => const WeeklyReportStorePage(),
+  ),
+  GetPage(
+    name: AppRoutes.monthlyReportStore,
+    page: () => const MonthlyReportStorePage(),
+  ),
+  GetPage(
+    name: AppRoutes.annualReportStore,
+    page: () => const AnnualReportStorePage(),
+  ),
+
+  //report exercise
+  GetPage(
+    name: AppRoutes.reportExercise,
+    page: () => const AllReportExercisePage(),
+  ),
+  GetPage(
+    name: AppRoutes.dailyReportExercise,
+    page: () => const DailyReportExercisePage(),
+  ),
+  GetPage(
+    name: AppRoutes.weeklyReportExercise,
+    page: () => const WeeklyReportExercisePage(),
+  ),
+  GetPage(
+    name: AppRoutes.monthlyReportExercise,
+    page: () => const MonthlyReportExercisePage(),
+  ),
+  GetPage(
+    name: AppRoutes.annualReportExercise,
+    page: () => const AnnualReportExercisePage(),
+  ),
+  GetPage(
+    name: AppRoutes.getExerciseByIdReport,
+    page: () => const GetExerciseByIdReportPage(),
   ),
 ];

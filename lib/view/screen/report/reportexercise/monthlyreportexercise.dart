@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:training_app/controller/report/reportprogress/monthlyreportprogress_controller.dart';
+import 'package:training_app/controller/report/reportexercise/monthlyreportexercise_controller.dart';
 import 'package:training_app/core/class/handlingdataview.dart';
 import 'package:training_app/core/constant/color.dart';
 import 'package:training_app/core/functions/validinput.dart';
@@ -8,23 +8,23 @@ import 'package:training_app/view/widget/auth/custombuttonauth.dart';
 import 'package:training_app/view/widget/auth/customtextformauth.dart';
 import 'package:training_app/view/widget/report/customreportprogress.dart';
 
-class MonthlyReportProgressPage extends StatelessWidget {
-  const MonthlyReportProgressPage({super.key});
+class MonthlyReportExercisePage extends StatelessWidget {
+  const MonthlyReportExercisePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    Get.put(MonthlyReportProgressControllerImp());
+    Get.put(MonthlyReportExerciseControllerImp());
     return Scaffold(
       appBar: AppBar(
         backgroundColor: AppColor.primaryColor,
-        title: const Text('Monthly Report Progress'),
+        title: const Text('Monthly Report Exercise'),
       ),
-      body: GetBuilder<MonthlyReportProgressControllerImp>(
+      body: GetBuilder<MonthlyReportExerciseControllerImp>(
         builder: (controller) => HandlingDataView(
           statusRequest: controller.statusRequest,
           widget: Container(
             padding: const EdgeInsets.all(15),
-            child: controller.monthlyReportList.isEmpty
+            child: controller.monthlyReportExerciseList.isEmpty
                 ? Form(
                     key: controller.formState,
                     child: ListView(
@@ -43,36 +43,31 @@ class MonthlyReportProgressPage extends StatelessWidget {
                           color: AppColor.primaryColor,
                           text: 'Submit',
                           onPressed: () {
-                            controller.getMonthlyReport();
+                            controller.getMonthlyReportExercise();
                             print('month report');
                           },
                         ),
                       ],
                     ),
                   )
-                : ListView(
-                    physics: const NeverScrollableScrollPhysics(),
+                : ListView.builder(
+                    itemCount: controller.monthlyReportExerciseList.length,
                     shrinkWrap: true,
-                    children: [
-                      CustomReportProgress(
+                    physics: const NeverScrollableScrollPhysics(),
+                    itemBuilder: ((context, index) {
+                      return CustomReportProgress(
                         textCurrentweight:
-                            'Current Weight ${controller.monthlyReportList[0]['Current_weight']}',
-                        textAge:
-                            'Age : ${controller.monthlyReportList[0]['age']}',
-                        textHeight:
-                            'Height : ${controller.monthlyReportList[0]['height']}',
-                        textGender:
-                            'Gender : ${controller.monthlyReportList[0]['gender']}',
-                        textTargetWeight:
-                            'Target Weight : ${controller.monthlyReportList[0]['Target_weight']}',
-                        textTimeToReachTheSpecifiedWeight:
-                            'Time To Reach The Specified Weight : ${controller.monthlyReportList[0]['Time_to_reach_the_specified_weight']}',
-                        textCalories:
-                            'Calories : ${controller.monthlyReportList[0]['Calories']}',
+                            'exercise_id ${controller.monthlyReportExerciseList[index]['exercise_id']}',
+                        textAge: '',
+                        textHeight: '',
+                        textGender: '',
+                        textTargetWeight: '',
+                        textTimeToReachTheSpecifiedWeight: '',
+                        textCalories: '',
                         color: AppColor.primaryColor,
                         onPressed: () {},
-                      ),
-                    ],
+                      );
+                    }),
                   ),
           ),
         ),

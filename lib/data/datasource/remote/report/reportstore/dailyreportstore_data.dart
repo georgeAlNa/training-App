@@ -1,11 +1,11 @@
 import 'package:training_app/core/class/crud.dart';
 import 'package:training_app/linkapi.dart';
 
-class DailyReportData {
+class DailyReportStoreData {
   Crud crud;
-  DailyReportData(this.crud);
+  DailyReportStoreData(this.crud);
   getData(String token) async {
-    var response = await crud.getMethod(linkurl: AppLink.dailyReportProgress, token: token);
+    var response = await crud.getMethod(linkurl: AppLink.dailyReportStore, token: token);
     return response.fold((l) => l, (r) => r);
   }
 }

@@ -5,7 +5,7 @@ class WeeklyReportData {
   Crud crud;
   WeeklyReportData(this.crud);
   getData(String token) async {
-    var response = await crud.getMethod(linkurl: AppLink.weeklyReport, token: token);
+    var response = await crud.getMethod(linkurl: AppLink.weeklyReportProgress, token: token);
     return response.fold((l) => l, (r) => r);
   }
 }

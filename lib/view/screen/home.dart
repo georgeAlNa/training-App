@@ -216,6 +216,22 @@ class HomePage extends StatelessWidget {
                                 print('Report');
                               },
                             ),
+                            CustomButtonAuth(
+                              color: AppColor.primaryColor,
+                              text: 'Report Store',
+                              onPressed: () {
+                                Get.toNamed(AppRoutes.reportStore);
+                                print('Report');
+                              },
+                            ),
+                            CustomButtonAuth(
+                              color: AppColor.primaryColor,
+                              text: 'Report Exercise',
+                              onPressed: () {
+                                Get.toNamed(AppRoutes.reportExercise);
+                                print('Report');
+                              },
+                            ),
                             const SizedBox(
                               height: 30,
                             ),

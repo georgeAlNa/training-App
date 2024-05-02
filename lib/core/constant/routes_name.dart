@@ -84,10 +84,23 @@ class AppRoutes {
   // chat
   static const String chat = "/chat";
 
-  //report
+  //report progress
   static const String reportProgress = "/report_proress";
   static const String dailyReportProgress = "/daily_report_proress";
   static const String weeklyReportProgress = "/weekly_report_proress";
   static const String monthlyReportProgress = "/monthly_report_proress";
   static const String annualReportProgress = "/annual_report_proress";
+  //report store
+  static const String reportStore = "/report_store";
+  static const String dailyReportStore = "/daily_report_store";
+  static const String weeklyReportStore = "/weekly_report_store";
+  static const String monthlyReportStore = "/monthly_report_store";
+  static const String annualReportStore = "/annual_report_store";
+  //report exercise
+  static const String reportExercise = "/report_exercise";
+  static const String dailyReportExercise = "/daily_report_exercise";
+  static const String weeklyReportExercise = "/weekly_report_exercise";
+  static const String monthlyReportExercise = "/monthly_report_exercise";
+  static const String annualReportExercise = "/annual_report_exercise";
+  static const String getExerciseByIdReport = "/get_exercise_by_id_report";
 }

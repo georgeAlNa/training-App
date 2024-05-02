@@ -25,3 +25,5 @@
 //token coach (tokenCoach)
 
 //  id Exercise from Response : int(idExercisefromResponse)
+
+//  id Exercise from Response to report: int(idExerciseReportfromResponse)
