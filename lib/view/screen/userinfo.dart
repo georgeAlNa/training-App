@@ -34,7 +34,7 @@ class UserInfoPage extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          'Points : ${controller.info[0]['points']}\n',
+                          'Points : ${controller.pointsofuser}\n',
                           style: const TextStyle(
                             fontSize: 30,
                             fontWeight: FontWeight.bold,

@@ -32,6 +32,7 @@ class ExerciseDetailControllerImp extends ExerciseDetailController {
   dynamic isDone = 1;
   dynamic timeLeft;
   dynamic idOfExerciseResp;
+  dynamic idOfUser;
 
   @override
   void onInit() {
@@ -42,8 +43,10 @@ class ExerciseDetailControllerImp extends ExerciseDetailController {
     idOfExercise = Get.arguments['selectedExercise'];
     print('id of Exercise $idOfExercise');
     token = myService.sharedPreferences.getString('token');
+    idOfUser = myService.sharedPreferences.getInt('id');
     idOfExerciseResp =
         myService.sharedPreferences.getInt('idExercisefromResponse');
+    
     print('id Of Exercise Response : $idOfExerciseResp');
     getExerciseDetailData();
     super.onInit();
@@ -128,7 +131,7 @@ class ExerciseDetailControllerImp extends ExerciseDetailController {
     statusRequest = StatusRequest.loading;
     update();
     var response = await doneExerciseData.postDoneExerciseData(token!,
-        idOfExerciseResp.toString(), isDone.toString());
+        idOfExerciseResp.toString(), isDone.toString() , idOfUser.toString());
     print('response ===== $response');
     statusRequest = handlingData(response);
     if (StatusRequest.success == statusRequest) {

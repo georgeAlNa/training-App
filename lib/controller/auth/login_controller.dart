@@ -67,6 +67,8 @@ class LoginControllerImp extends LoginConroller {
           myService.sharedPreferences.setString('token', response['token']);
           myService.sharedPreferences
               .setInt('id', response['data']['user']['id']);
+          myService.sharedPreferences
+              .setInt('points', response['data']['user']['points']);
           myService.sharedPreferences.setString('stepLogin', '2');
           Get.offAllNamed(AppRoutes.calories
               // arguments: {

@@ -5,9 +5,9 @@ class DoneExerciseData {
   Crud crud;
   DoneExerciseData(this.crud);
   postDoneExerciseData(
-      String token, dynamic exerciseId, dynamic isDone) async {
+      String token, dynamic exerciseId, dynamic isDone , dynamic idOfUser) async {
     var response = await crud.postMethod(
-        linkurl: AppLink.doneExercises,
+        linkurl: '${AppLink.doneExercises}/$idOfUser',
         data: {
           'exercise_id' : exerciseId,
           'is_done': isDone,

@@ -83,4 +83,11 @@ class AppRoutes {
 
   // chat
   static const String chat = "/chat";
+
+  //report
+  static const String reportProgress = "/report_proress";
+  static const String dailyReportProgress = "/daily_report_proress";
+  static const String weeklyReportProgress = "/weekly_report_proress";
+  static const String monthlyReportProgress = "/monthly_report_proress";
+  static const String annualReportProgress = "/annual_report_proress";
 }

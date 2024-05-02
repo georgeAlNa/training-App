@@ -42,6 +42,11 @@ import 'package:training_app/view/screen/plans/planToLossWeightScreens/getallwee
 import 'package:training_app/view/screen/plans/planToLossWeightScreens/getexersicedetailloss.dart';
 import 'package:training_app/view/screen/plans/planToLossWeightScreens/getweekdetailsloss.dart';
 import 'package:training_app/view/screen/plans/planToLossWeightScreens/replacingexerciseloss.dart';
+import 'package:training_app/view/screen/report/reportporgress/allreportprogress.dart';
+import 'package:training_app/view/screen/report/reportporgress/annualreportprogress.dart';
+import 'package:training_app/view/screen/report/reportporgress/dailyreportprogress.dart';
+import 'package:training_app/view/screen/report/reportporgress/monthlyreportprogress.dart';
+import 'package:training_app/view/screen/report/reportporgress/weeklyreportprogress.dart';
 import 'package:training_app/view/screen/store/addproductbyadmin.dart';
 import 'package:training_app/view/screen/store/addtocart.dart';
 import 'package:training_app/view/screen/store/allcategorystore.dart';
@@ -288,5 +293,27 @@ List<GetPage<dynamic>>? routes = [
   GetPage(
     name: AppRoutes.chat,
     page: () => const ChatPage(),
+  ),
+
+  //report
+  GetPage(
+    name: AppRoutes.reportProgress,
+    page: () => const AllReportProgressPage(),
+  ),
+  GetPage(
+    name: AppRoutes.dailyReportProgress,
+    page: () => const DailyReportProgressPage(),
+  ),
+  GetPage(
+    name: AppRoutes.weeklyReportProgress,
+    page: () => const WeeklyReportProgressPage(),
+  ),
+  GetPage(
+    name: AppRoutes.monthlyReportProgress,
+    page: () => const MonthlyReportProgressPage(),
+  ),
+  GetPage(
+    name: AppRoutes.annualReportProgress,
+    page: () => const AnnualReportProgressPage(),
   ),
 ];

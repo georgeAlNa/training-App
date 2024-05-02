@@ -25,6 +25,7 @@ class EnrollChallengeControllerImp extends EnrollChallengeController {
   Map enrollChallengeMap = {};
   List enrollChallengeExerciseList = [];
   String? token;
+  dynamic idOfUser;
   dynamic idOfChallenge;
   // dynamic idOfExercise;
   dynamic timeLeft = 0;
@@ -33,6 +34,7 @@ class EnrollChallengeControllerImp extends EnrollChallengeController {
   @override
   void onInit() {
     token = myService.sharedPreferences.getString('token');
+    idOfUser = myService.sharedPreferences.getInt('id');
     idOfChallenge = Get.arguments['idofchallenge'];
     pageController = PageController();
 
@@ -69,7 +71,8 @@ class EnrollChallengeControllerImp extends EnrollChallengeController {
   doneChallenge() async {
     statusRequest = StatusRequest.loading;
     update();
-    var response = await doneChallengeData.putData(token!, idOfChallenge);
+    var response =
+        await doneChallengeData.putData(token!, idOfChallenge, idOfUser);
     print('response ===== $response');
     statusRequest = handlingData(response);
     if (StatusRequest.success == statusRequest) {

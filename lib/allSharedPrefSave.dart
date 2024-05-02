@@ -1,6 +1,6 @@
 //admin token (tokenAdmin) + admin email (emailAdmin)
 
-//user name (name) + user email (email) + user token (token) + user id (id)
+//user name (name) + user email (email) + user token (token) + user id int (id) + user points int (points)
 
 //signup token (tokenSignUp)
 

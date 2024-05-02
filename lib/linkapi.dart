@@ -77,4 +77,10 @@ class AppLink {
 
   //chat
   static const String chat = '$root/chat';
+
+  //report
+  static const String dailyReport = '$root/DailyProgress';
+  static const String weeklyReport = '$root/WeeklyProgress';
+  static const String monthlyReport = '$root/MonthlyProgress';
+  static const String annualReport = '$root/annualProgress';
 }

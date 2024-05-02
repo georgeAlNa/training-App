@@ -200,6 +200,22 @@ class HomePage extends StatelessWidget {
                                 print('chat');
                               },
                             ),
+                            CustomButtonAuth(
+                              color: AppColor.primaryColor,
+                              text: 'Edit Your Information',
+                              onPressed: () {
+                                Get.toNamed(AppRoutes.calories);
+                                print('Edit Your Information');
+                              },
+                            ),
+                            CustomButtonAuth(
+                              color: AppColor.primaryColor,
+                              text: 'Report Progress',
+                              onPressed: () {
+                                Get.toNamed(AppRoutes.reportProgress);
+                                print('Report');
+                              },
+                            ),
                             const SizedBox(
                               height: 30,
                             ),

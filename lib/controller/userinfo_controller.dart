@@ -17,12 +17,14 @@ class UserInfoControllerImp extends UserInfoController {
   dynamic idOfCalories;
   dynamic emailofuser;
   dynamic nameofuser;
+  dynamic pointsofuser;
 
   @override
   void onInit() {
     idOfCalories = myService.sharedPreferences.getInt('idOfCalories');
     emailofuser = myService.sharedPreferences.getString('email');
     nameofuser = myService.sharedPreferences.getString('name');
+    pointsofuser = myService.sharedPreferences.getInt('points');
     getUserInfo();
     super.onInit();
   }
