@@ -26,27 +26,26 @@ class DailyReportProgressPage extends StatelessWidget {
                   ? const Center(
                       child: CircularProgressIndicator(),
                     )
-                  : ListView(
-                      children: [
-                        CustomReportProgress(
-                          textCurrentweight:
-                              'Current Weight ${controller.dailyReportList[0]['Current_weight']}',
-                          textAge:
-                              'Age : ${controller.dailyReportList[0]['age']}',
-                          textHeight:
-                              'Height : ${controller.dailyReportList[0]['height']}',
-                          textGender:
-                              'Gender : ${controller.dailyReportList[0]['gender']}',
-                          textTargetWeight:
-                              'Target Weight : ${controller.dailyReportList[0]['Target_weight']}',
-                          textTimeToReachTheSpecifiedWeight:
-                              'Time To Reach The Specified Weight : ${controller.dailyReportList[0]['Time_to_reach_the_specified_weight']}',
-                          textCalories:
-                              'Calories : ${controller.dailyReportList[0]['Calories']}',
-                          color: AppColor.primaryColor,
-                          onPressed: () {},
-                        ),
-                      ],
+                  : ListView.builder(
+                      itemCount: controller.dailyReportList.length,
+                      itemBuilder: (context, index) => CustomReportProgress(
+                        textCurrentweight:
+                            'Current Weight ${controller.dailyReportList[index]['Current_weight']}\n',
+                        textAge:
+                            'Age : ${controller.dailyReportList[index]['age']}\n',
+                        textHeight:
+                            'Height : ${controller.dailyReportList[index]['height']}\n',
+                        textGender:
+                            'Gender : ${controller.dailyReportList[index]['gender']}\n',
+                        textTargetWeight:
+                            'Target Weight : ${controller.dailyReportList[index]['Target_weight']}\n',
+                        textTimeToReachTheSpecifiedWeight:
+                            'Time To Reach The Specified Weight : ${controller.dailyReportList[0]['Time_to_reach_the_specified_weight']}\n',
+                        textCalories:
+                            'Calories : ${controller.dailyReportList[index]['Calories']} \n \n Created At : ${controller.dailyReportList[index]['created_at']}\n',
+                        color: AppColor.primaryColor,
+                        onPressed: () {},
+                      ),
                     ),
             ),
           );

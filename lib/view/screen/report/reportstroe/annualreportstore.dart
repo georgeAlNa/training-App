@@ -50,26 +50,25 @@ class AnnualReportStorePage extends StatelessWidget {
                       ],
                     ),
                   )
-                : ListView(
-                    physics: const NeverScrollableScrollPhysics(),
+                : ListView.builder(
                     shrinkWrap: true,
-                    children: [
-                      CustomReportProgress(
-                        textCurrentweight:
-                            'Product Id ${controller.annualReportStoreList[0]['product_id']}',
-                        textAge:
-                            'Order Id : ${controller.annualReportStoreList[0]['order_id']}',
-                        textHeight:
-                            'Amount : ${controller.annualReportStoreList[0]['amount']}',
-                        textGender:
-                            'Payment : ${controller.annualReportStoreList[0]['Payment']}',
-                        textTargetWeight: '',
-                        textTimeToReachTheSpecifiedWeight: '',
-                        textCalories: '',
-                        color: AppColor.primaryColor,
-                        onPressed: () {},
-                      ),
-                    ],
+                    itemCount: controller.annualReportStoreList.length,
+                    itemBuilder: (context, index) => CustomReportProgress(
+                      textCurrentweight:
+                          'Product Id ${controller.annualReportStoreList[index]['product_id']}\n',
+                      textAge:
+                          'Order Id : ${controller.annualReportStoreList[index]['order_id']}\n',
+                      textHeight:
+                          'Amount : ${controller.annualReportStoreList[index]['amount']}\n',
+                      textGender:
+                          'Payment : ${controller.annualReportStoreList[index]['Payment']}\n',
+                      textTargetWeight:
+                          'Created At : ${controller.annualReportStoreList[index]['created_at']}\n',
+                      textTimeToReachTheSpecifiedWeight: '',
+                      textCalories: '',
+                      color: AppColor.primaryColor,
+                      onPressed: () {},
+                    ),
                   ),
           ),
         ),

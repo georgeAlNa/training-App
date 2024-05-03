@@ -50,29 +50,28 @@ class MonthlyReportProgressPage extends StatelessWidget {
                       ],
                     ),
                   )
-                : ListView(
-                    physics: const NeverScrollableScrollPhysics(),
+                : ListView.builder(
+                    // physics: const NeverScrollableScrollPhysics(),
                     shrinkWrap: true,
-                    children: [
-                      CustomReportProgress(
-                        textCurrentweight:
-                            'Current Weight ${controller.monthlyReportList[0]['Current_weight']}',
-                        textAge:
-                            'Age : ${controller.monthlyReportList[0]['age']}',
-                        textHeight:
-                            'Height : ${controller.monthlyReportList[0]['height']}',
-                        textGender:
-                            'Gender : ${controller.monthlyReportList[0]['gender']}',
-                        textTargetWeight:
-                            'Target Weight : ${controller.monthlyReportList[0]['Target_weight']}',
-                        textTimeToReachTheSpecifiedWeight:
-                            'Time To Reach The Specified Weight : ${controller.monthlyReportList[0]['Time_to_reach_the_specified_weight']}',
-                        textCalories:
-                            'Calories : ${controller.monthlyReportList[0]['Calories']}',
-                        color: AppColor.primaryColor,
-                        onPressed: () {},
-                      ),
-                    ],
+                    itemCount: controller.monthlyReportList.length,
+                    itemBuilder: (context, index) => CustomReportProgress(
+                      textCurrentweight:
+                          'Current Weight ${controller.monthlyReportList[index]['Current_weight']}\n',
+                      textAge:
+                          'Age : ${controller.monthlyReportList[index]['age']}\n',
+                      textHeight:
+                          'Height : ${controller.monthlyReportList[index]['height']}\n',
+                      textGender:
+                          'Gender : ${controller.monthlyReportList[index]['gender']}\n',
+                      textTargetWeight:
+                          'Target Weight : ${controller.monthlyReportList[index]['Target_weight']}\n',
+                      textTimeToReachTheSpecifiedWeight:
+                          'Time To Reach The Specified Weight : ${controller.monthlyReportList[0]['Time_to_reach_the_specified_weight']}\n',
+                      textCalories:
+                          'Calories : ${controller.monthlyReportList[index]['Calories']} \n \n Created At : ${controller.monthlyReportList[index]['created_at']}\n',
+                      color: AppColor.primaryColor,
+                      onPressed: () {},
+                    ),
                   ),
           ),
         ),

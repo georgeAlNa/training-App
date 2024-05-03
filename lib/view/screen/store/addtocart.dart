@@ -29,16 +29,16 @@ class AddToCartPage extends StatelessWidget {
               key: controller.formState,
               child: ListView(
                 children: [
-                  CustomTextFormAuth(
-                    isNumber: true,
-                    valid: (val) {
-                      return validInput(val!, 1, 100, 'number');
-                    },
-                    mycontroller: controller.orderId,
-                    hinttext: 'Order Id',
-                    labeltext: 'Oreder Id',
-                    iconData: Icons.numbers_outlined,
-                  ),
+                  // CustomTextFormAuth(
+                  //   isNumber: true,
+                  //   valid: (val) {
+                  //     return validInput(val!, 1, 100, 'number');
+                  //   },
+                  //   mycontroller: controller.orderId,
+                  //   hinttext: 'Order Id',
+                  //   labeltext: 'Oreder Id',
+                  //   iconData: Icons.numbers_outlined,
+                  // ),
                   CustomTextFormAuth(
                     isNumber: true,
                     valid: (val) {

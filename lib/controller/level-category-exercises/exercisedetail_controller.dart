@@ -46,7 +46,7 @@ class ExerciseDetailControllerImp extends ExerciseDetailController {
     idOfUser = myService.sharedPreferences.getInt('id');
     idOfExerciseResp =
         myService.sharedPreferences.getInt('idExercisefromResponse');
-    
+
     print('id Of Exercise Response : $idOfExerciseResp');
     getExerciseDetailData();
     super.onInit();
@@ -131,20 +131,22 @@ class ExerciseDetailControllerImp extends ExerciseDetailController {
     statusRequest = StatusRequest.loading;
     update();
     var response = await doneExerciseData.postDoneExerciseData(token!,
-        idOfExerciseResp.toString(), isDone.toString() , idOfUser.toString());
+        idOfExerciseResp.toString(), isDone.toString(), idOfUser.toString());
     print('response ===== $response');
     statusRequest = handlingData(response);
     if (StatusRequest.success == statusRequest) {
-      if (response['message'] == 'The exercise has been recorded successfully') {
+      if (response['message'] ==
+          'The exercise has been recorded successfully') {
         //doneExerciseMap.addAll(response['message']);
         //Get.offAllNamed(AppRoutes.home);
         Get.snackbar(
           "Done",
-          "The exercise has been recorded successfully",
+          "The exercise has been recorded successfully and accept 30 point",
           duration: const Duration(seconds: 7),
         );
       }
-      if (response['message'] == 'The exercise for this day is already marked as done') {
+      if (response['message'] ==
+          'The exercise for this day is already marked as done') {
         Get.defaultDialog(
             title: "Sorry !",
             middleText: "The exercise for this day is already marked as done");

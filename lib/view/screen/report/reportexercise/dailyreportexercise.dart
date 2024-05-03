@@ -29,7 +29,7 @@ class DailyReportExercisePage extends StatelessWidget {
                   : ListView.builder(
                       itemCount: controller.dailyReportExerciseList.length,
                       shrinkWrap: true,
-                      physics: const NeverScrollableScrollPhysics(),
+                      // physics: const NeverScrollableScrollPhysics(),
                       itemBuilder: ((context, index) {
                         return CustomReportProgress(
                           textCurrentweight:

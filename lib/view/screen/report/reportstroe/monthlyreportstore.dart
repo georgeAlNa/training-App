@@ -10,7 +10,7 @@ import 'package:training_app/view/widget/report/customreportprogress.dart';
 
 class MonthlyReportStorePage extends StatelessWidget {
   const MonthlyReportStorePage({super.key});
-  
+
   @override
   Widget build(BuildContext context) {
     Get.put(MonthlyReportStoreControllerImp());
@@ -50,26 +50,25 @@ class MonthlyReportStorePage extends StatelessWidget {
                       ],
                     ),
                   )
-                : ListView(
-                    physics: const NeverScrollableScrollPhysics(),
+                : ListView.builder(
                     shrinkWrap: true,
-                    children: [
-                      CustomReportProgress(
-                          textCurrentweight:
-                              'Product Id ${controller.monthlyReportStoreList[0]['product_id']}',
-                          textAge:
-                              'Order Id : ${controller.monthlyReportStoreList[0]['order_id']}',
-                          textHeight:
-                              'Amount : ${controller.monthlyReportStoreList[0]['amount']}',
-                          textGender:
-                              'Payment : ${controller.monthlyReportStoreList[0]['Payment']}',
-                          textTargetWeight: '',
-                          textTimeToReachTheSpecifiedWeight: '',
-                          textCalories: '',
-                          color: AppColor.primaryColor,
-                          onPressed: () {},
-                        ),
-                    ],
+                    itemCount: controller.monthlyReportStoreList.length,
+                    itemBuilder: (context, index) => CustomReportProgress(
+                      textCurrentweight:
+                          'Product Id ${controller.monthlyReportStoreList[index]['product_id']}\n',
+                      textAge:
+                          'Order Id : ${controller.monthlyReportStoreList[index]['order_id']}\n',
+                      textHeight:
+                          'Amount : ${controller.monthlyReportStoreList[index]['amount']}\n',
+                      textGender:
+                          'Payment : ${controller.monthlyReportStoreList[index]['Payment']}\n',
+                      textTargetWeight:
+                          'Created At : ${controller.monthlyReportStoreList[index]['created_at']}\n',
+                      textTimeToReachTheSpecifiedWeight: '',
+                      textCalories: '',
+                      color: AppColor.primaryColor,
+                      onPressed: () {},
+                    ),
                   ),
           ),
         ),

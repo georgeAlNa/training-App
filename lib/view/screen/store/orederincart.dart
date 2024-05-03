@@ -21,39 +21,30 @@ class OrdersInCartPage extends StatelessWidget {
             statusRequest: controller.statusRequest,
             widget: Container(
               padding: const EdgeInsets.all(10),
-              child: ListView.builder(
-                itemCount: controller.allOrdersList.length,
-                itemBuilder: (context, index) {
-                  return CustomButtonOrderInCart(
-                    // pathImage: '${controller.category[index]['image']}',
-                    color: AppColor.primaryColor,
-                    text: 'Order -> ${controller.allOrdersList[index]['id']}',
-                    onPressed: () {
-                      controller.goToOrderDetails(index + 1);
-                      print('order details');
-                    },
-                    onLongPress: () {
-                      Get.defaultDialog(
-                        title: 'Delete',
-                        middleText: 'Sure Want Delete Order ?',
-                        onConfirm: () {
-                          controller.deleteOreder(index);
-                          Get.snackbar(
-                            'Delete',
-                            'Delete Success',
-                          );
-                          print('Delete Success');
-                        },
-                        onCancel: () {
-                          Get.back();
-                        },
-                        cancelTextColor: AppColor.blackColor,
-                        confirmTextColor: AppColor.blackColor,
-                      );
-                    },
-                  );
-                },
-              ),
+              child: controller.allOrdersList.isEmpty
+                  ? const Center(
+                      child: CircularProgressIndicator(
+                        color: AppColor.primaryColor,
+                      ),
+                    )
+                  : ListView(
+                      // itemCount: controller.allOrdersList.length,
+                      // itemBuilder: (context, index) {
+                      // return
+                      children: [
+                        CustomButtonOrderInCart(
+                          // pathImage: '${controller.category[index]['image']}',
+                          color: AppColor.primaryColor,
+                          text: 'Order -> ${controller.allOrdersList[0]['id']}',
+                          onPressed: () {
+                            controller.goToOrderDetails(1);
+                            print('order details');
+                          },
+                          onLongPress: () {},
+                        ),
+                      ],
+                      // },
+                    ),
             ),
           );
         },

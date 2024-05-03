@@ -29,7 +29,7 @@ class WeeklyReportExercisePage extends StatelessWidget {
                   : ListView.builder(
                       itemCount: controller.weeklyReportexerciseList.length,
                       shrinkWrap: true,
-                      physics: const NeverScrollableScrollPhysics(),
+                      // physics: const NeverScrollableScrollPhysics(),
                       itemBuilder: ((context, index) {
                         return CustomReportProgress(
                           textCurrentweight:
@@ -41,7 +41,9 @@ class WeeklyReportExercisePage extends StatelessWidget {
                           textTimeToReachTheSpecifiedWeight: '',
                           textCalories: '',
                           color: AppColor.primaryColor,
-                          onPressed: () {},
+                          onPressed: () {
+                            controller.goToExerciseDetailReport(index);
+                          },
                         );
                       }),
                     ),

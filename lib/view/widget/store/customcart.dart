@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:training_app/core/constant/color.dart';
 
 class CustomButtonCart extends StatelessWidget {
   final String textTitle;
@@ -8,6 +9,8 @@ class CustomButtonCart extends StatelessWidget {
   final String imagePath;
   final Color color;
   final void Function()? onPressed;
+  final void Function()? onPressedIconDelete;
+  final void Function()? onPressedIconBuy;
   final void Function()? onLongPress;
   const CustomButtonCart({
     Key? key,
@@ -19,6 +22,8 @@ class CustomButtonCart extends StatelessWidget {
     required this.color,
     this.onPressed,
     this.onLongPress,
+    this.onPressedIconDelete,
+    this.onPressedIconBuy,
   }) : super(key: key);
 
   @override
@@ -62,6 +67,20 @@ class CustomButtonCart extends StatelessWidget {
                 // fontWeight: FontWeight.bold,
                 fontSize: 16,
               ),
+            ),
+            IconButton(
+              icon: const Icon(
+                Icons.attach_money_outlined,
+                color: AppColor.redColor,
+              ),
+              onPressed: onPressedIconBuy,
+            ),
+            IconButton(
+              icon: const Icon(
+                Icons.delete,
+                color: AppColor.redColor,
+              ),
+              onPressed: onPressedIconDelete,
             ),
           ],
         ),

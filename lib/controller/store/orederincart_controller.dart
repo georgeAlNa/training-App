@@ -9,7 +9,7 @@ import 'package:training_app/data/datasource/remote/store/orederincart_data.dart
 abstract class OredersInCartController extends GetxController {
   getAllOrdersForUser();
   goToOrderDetails(dynamic idOfOrder);
-  deleteOreder(dynamic idOfOrderForDelete);
+  // deleteOreder(dynamic idOfOrderForDelete);
 }
 
 class OredersInCartControllerImp extends OredersInCartController {
@@ -54,29 +54,29 @@ class OredersInCartControllerImp extends OredersInCartController {
     });
   }
 
-  @override
-  deleteOreder(idOfOrderForDelete) async {
-    statusRequest = StatusRequest.loading;
-    update();
-    var response =
-        await deleteOrderData.getDeleteData(token!, idOfOrderForDelete);
-    print('response ===== $response');
-    statusRequest = handlingData(response);
-    if (statusRequest == StatusRequest.success) {
-      if (response['message'] == 'Order Delete Successfully') {
-        Get.defaultDialog(
-            title: 'Success', middleText: 'Deleted Order Success');
-        Get.offAllNamed(AppRoutes.storeCategory);
-      } else {
-        Get.defaultDialog(title: 'Error !', middleText: 'Error In delete');
-        statusRequest = StatusRequest.failuer;
-      }
-    }
-    update();
-    // else {
-    //   Get.defaultDialog(title: 'Error 1!', middleText: 'Error In delete');
-    //   statusRequest = StatusRequest.failuer;
-    // }
-    // update();
-  }
+  // @override
+  // deleteOreder(idOfOrderForDelete) async {
+  //   statusRequest = StatusRequest.loading;
+  //   update();
+  //   var response =
+  //       await deleteOrderData.getDeleteData(token!, idOfOrderForDelete);
+  //   print('response ===== $response');
+  //   statusRequest = handlingData(response);
+  //   if (statusRequest == StatusRequest.success) {
+  //     if (response['message'] == 'Order Delete Successfully') {
+  //       Get.defaultDialog(
+  //           title: 'Success', middleText: 'Deleted Order Success');
+  //       Get.offAllNamed(AppRoutes.storeCategory);
+  //     } else {
+  //       Get.defaultDialog(title: 'Error !', middleText: 'Error In delete');
+  //       statusRequest = StatusRequest.failuer;
+  //     }
+  //   }
+  //   update();
+  //   // else {
+  //   //   Get.defaultDialog(title: 'Error 1!', middleText: 'Error In delete');
+  //   //   statusRequest = StatusRequest.failuer;
+  //   // }
+  //   // update();
+  // }
 }

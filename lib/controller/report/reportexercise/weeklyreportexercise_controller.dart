@@ -1,20 +1,22 @@
 import 'package:get/get.dart';
 import 'package:training_app/core/class/statusrequest.dart';
+import 'package:training_app/core/constant/routes_name.dart';
 import 'package:training_app/core/functions/handlingdatacontroller.dart';
 import 'package:training_app/core/services/services.dart';
 import 'package:training_app/data/datasource/remote/report/reportexercise/weeklyreportexercise_data.dart';
 
 abstract class WeeklyReportExerciseController extends GetxController {
   getWeeklyReportExercise();
+  goToExerciseDetailReport(dynamic idOfExerciseReport);
 }
 
 class WeeklyReportExerciseControllerImp extends WeeklyReportExerciseController {
-  WeeklyReportExerciseData weeklyReportExerciseData = WeeklyReportExerciseData(Get.find());
+  WeeklyReportExerciseData weeklyReportExerciseData =
+      WeeklyReportExerciseData(Get.find());
   StatusRequest statusRequest = StatusRequest.none;
   MyService myService = Get.find();
   List weeklyReportexerciseList = [];
   String? token;
-
 
   @override
   void onInit() {
@@ -38,5 +40,14 @@ class WeeklyReportExerciseControllerImp extends WeeklyReportExerciseController {
       }
     }
     update();
+  }
+
+  @override
+  goToExerciseDetailReport(idOfExerciseReport) {
+    Get.toNamed(AppRoutes.getExerciseByIdReport, arguments: {
+      'idOfExe': idOfExerciseReport,
+    });
+    myService.sharedPreferences.setInt('idExerciseReportfromResponse',
+        weeklyReportexerciseList[idOfExerciseReport]['exercise_id']);
   }
 }

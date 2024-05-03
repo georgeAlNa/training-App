@@ -44,10 +44,10 @@ class DailyReportExerciseControllerImp extends DailyReportExerciseController {
 
   @override
   goToExerciseDetailReport(idOfExerciseReport) {
-    Get.toNamed(AppRoutes.getExerciseByIdReport , arguments: {
-      'idOfExe' : idOfExerciseReport,
+    Get.toNamed(AppRoutes.getExerciseByIdReport, arguments: {
+      'idOfExe': idOfExerciseReport,
     });
-    myService.sharedPreferences
-        .setInt('idExerciseReportfromResponse', dailyReportExerciseList[idOfExerciseReport]['exercise_id']);
+    myService.sharedPreferences.setInt('idExerciseReportfromResponse',
+        dailyReportExerciseList[idOfExerciseReport]['exercise_id']);
   }
 }

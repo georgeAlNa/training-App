@@ -35,7 +35,7 @@ class OrderDetailsPage extends StatelessWidget {
                         'Id : ${controller.orderDetailsList[index]['id']}\n',
                     imagePath: '${controller.orderDetailsList[index]['image']}',
                     color: AppColor.primaryColor,
-                    onPressed: () {
+                    onPressedIconBuy: () {
                       Get.defaultDialog(
                         title: 'Buy Product',
                         middleText: 'Sure Want Buy Product ?',
@@ -51,7 +51,28 @@ class OrderDetailsPage extends StatelessWidget {
                         confirmTextColor: AppColor.blackColor,
                       );
                     },
+                    onPressed: () {},
                     onLongPress: () {},
+                    onPressedIconDelete: () {
+                      Get.defaultDialog(
+                        title: 'Delete',
+                        middleText: 'Sure Want Delete Order ?',
+                        onConfirm: () {
+                          controller.deleteOreder(
+                              controller.orderDetailsList[index]['id'], 1);
+                          Get.snackbar(
+                            'Delete',
+                            'Delete Success',
+                          );
+                          print('Delete Success');
+                        },
+                        onCancel: () {
+                          Get.back();
+                        },
+                        cancelTextColor: AppColor.blackColor,
+                        confirmTextColor: AppColor.blackColor,
+                      );
+                    },
                   );
                 },
               ),

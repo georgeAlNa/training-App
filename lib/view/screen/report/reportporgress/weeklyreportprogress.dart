@@ -26,27 +26,26 @@ class WeeklyReportProgressPage extends StatelessWidget {
                   ? const Center(
                       child: CircularProgressIndicator(),
                     )
-                  : ListView(
-                      children: [
-                        CustomReportProgress(
-                          textCurrentweight:
-                              'Current Weight ${controller.weeklyReportList[0]['Current_weight']}',
-                          textAge:
-                              'Age : ${controller.weeklyReportList[0]['age']}',
-                          textHeight:
-                              'Height : ${controller.weeklyReportList[0]['height']}',
-                          textGender:
-                              'Gender : ${controller.weeklyReportList[0]['gender']}',
-                          textTargetWeight:
-                              'Target Weight : ${controller.weeklyReportList[0]['Target_weight']}',
-                          textTimeToReachTheSpecifiedWeight:
-                              'Time To Reach The Specified Weight : ${controller.weeklyReportList[0]['Time_to_reach_the_specified_weight']}',
-                          textCalories:
-                              'Calories : ${controller.weeklyReportList[0]['Calories']}',
-                          color: AppColor.primaryColor,
-                          onPressed: () {},
-                        ),
-                      ],
+                  : ListView.builder(
+                      itemCount: controller.weeklyReportList.length,
+                      itemBuilder: (context, index) => CustomReportProgress(
+                        textCurrentweight:
+                            'Current Weight ${controller.weeklyReportList[index]['Current_weight']}\n',
+                        textAge:
+                            'Age : ${controller.weeklyReportList[index]['age']}\n',
+                        textHeight:
+                            'Height : ${controller.weeklyReportList[index]['height']}\n',
+                        textGender:
+                            'Gender : ${controller.weeklyReportList[index]['gender']}\n',
+                        textTargetWeight:
+                            'Target Weight : ${controller.weeklyReportList[index]['Target_weight']}\n',
+                        textTimeToReachTheSpecifiedWeight:
+                            'Time To Reach The Specified Weight : ${controller.weeklyReportList[0]['Time_to_reach_the_specified_weight']}\n',
+                        textCalories:
+                            'Calories : ${controller.weeklyReportList[index]['Calories']} \n \n Created At : ${controller.weeklyReportList[index]['created_at']}\n',
+                        color: AppColor.primaryColor,
+                        onPressed: () {},
+                      ),
                     ),
             ),
           );

@@ -26,24 +26,24 @@ class WeeklyReportStorePage extends StatelessWidget {
                   ? const Center(
                       child: CircularProgressIndicator(),
                     )
-                  : ListView(
-                      children: [
-                        CustomReportProgress(
-                          textCurrentweight:
-                              'Product Id ${controller.weeklyReportStoreList[0]['product_id']}',
-                          textAge:
-                              'Order Id : ${controller.weeklyReportStoreList[0]['order_id']}',
-                          textHeight:
-                              'Amount : ${controller.weeklyReportStoreList[0]['amount']}',
-                          textGender:
-                              'Payment : ${controller.weeklyReportStoreList[0]['Payment']}',
-                          textTargetWeight: '',
-                          textTimeToReachTheSpecifiedWeight: '',
-                          textCalories: '',
-                          color: AppColor.primaryColor,
-                          onPressed: () {},
-                        ),
-                      ],
+                  : ListView.builder(
+                      itemCount: controller.weeklyReportStoreList.length,
+                      itemBuilder: (context, index) => CustomReportProgress(
+                        textCurrentweight:
+                            'Product Id ${controller.weeklyReportStoreList[index]['product_id']}\n',
+                        textAge:
+                            'Order Id : ${controller.weeklyReportStoreList[index]['order_id']}\n',
+                        textHeight:
+                            'Amount : ${controller.weeklyReportStoreList[index]['amount']}\n',
+                        textGender:
+                            'Payment : ${controller.weeklyReportStoreList[index]['Payment']}\n',
+                        textTargetWeight:
+                            'Created At : ${controller.weeklyReportStoreList[index]['created_at']}\n',
+                        textTimeToReachTheSpecifiedWeight: '',
+                        textCalories: '',
+                        color: AppColor.primaryColor,
+                        onPressed: () {},
+                      ),
                     ),
             ),
           );

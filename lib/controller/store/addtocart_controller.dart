@@ -11,18 +11,19 @@ abstract class AddToCartController extends GetxController {
 
 class AddToCartControllerImp extends AddToCartController {
   GlobalKey<FormState> formState = GlobalKey<FormState>();
-  late TextEditingController orderId;
+  // late TextEditingController orderId;
   late TextEditingController amount;
   StatusRequest statusRequest = StatusRequest.none;
   AddToCartData addToCartData = AddToCartData(Get.find());
   MyService myService = Get.find();
   String? token;
   dynamic productId;
+  dynamic orederid = 1;
 
   @override
   void onInit() {
     token = myService.sharedPreferences.getString('token');
-    orderId = TextEditingController();
+    // orderId = TextEditingController();
     amount = TextEditingController();
     productId = Get.arguments['proId'];
     super.onInit();
@@ -34,7 +35,7 @@ class AddToCartControllerImp extends AddToCartController {
       statusRequest = StatusRequest.loading;
       update();
       var response = await addToCartData.postData(
-          token!, productId.toString(), orderId.text, amount.text);
+          token!, productId.toString(), orederid.toString(), amount.text);
       print('response ===== $response');
       statusRequest = handlingData(response);
       if (StatusRequest.success == statusRequest) {
@@ -55,7 +56,7 @@ class AddToCartControllerImp extends AddToCartController {
 
   @override
   void dispose() {
-    orderId.dispose();
+    // orderId.dispose();
     amount.dispose();
     super.dispose();
   }
