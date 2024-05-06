@@ -6,6 +6,7 @@ import 'package:training_app/core/constant/color.dart';
 import 'package:training_app/view/widget/auth/custombuttonauth.dart';
 import 'package:training_app/view/widget/auth/customtextbodyauth.dart';
 import 'package:training_app/view/widget/auth/customtexttitleauth.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 // ignore: must_be_immutable
 class ExerciseDetailPage extends StatelessWidget {
@@ -43,11 +44,18 @@ class ExerciseDetailPage extends StatelessWidget {
                         ),
                         Container(
                           padding: const EdgeInsets.all(20),
+                          color: AppColor.greyColor,
                           child: GestureDetector(
                             child: Text(
                               '${controller.exercisedetail[controller.idOfExercise]['video']}',
                             ),
-                            onTap: () {},
+                            onTap: () async {
+                              await launchUrl(
+                                Uri.parse(
+                                  '${controller.exercisedetail[controller.idOfExercise]['video']}',
+                                ),
+                              );
+                            },
                           ),
                         ),
                         Center(

@@ -5,6 +5,7 @@ import 'package:training_app/core/class/handlingdataview.dart';
 import 'package:training_app/core/constant/color.dart';
 import 'package:training_app/view/widget/auth/customtextbodyauth.dart';
 import 'package:training_app/view/widget/auth/customtexttitleauth.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class GetExerciseByIdReportPage extends StatelessWidget {
   const GetExerciseByIdReportPage({super.key});
@@ -40,11 +41,18 @@ class GetExerciseByIdReportPage extends StatelessWidget {
                         ),
                         Container(
                           padding: const EdgeInsets.all(20),
+                          color: AppColor.greyColor,
                           child: GestureDetector(
                             child: Text(
-                              '${controller.exerciseByIdReportList[0]['video']}\n',
+                              '${controller.exerciseByIdReportList[0]['video']}',
                             ),
-                            onTap: () {},
+                            onTap: () async {
+                              await launchUrl(
+                                Uri.parse(
+                                  '${controller.exerciseByIdReportList[0]['video']}',
+                                ),
+                              );
+                            },
                           ),
                         ),
                         CustomTextBodyAuth(

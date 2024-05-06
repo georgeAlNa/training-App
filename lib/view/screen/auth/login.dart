@@ -99,14 +99,14 @@ class Login extends StatelessWidget {
                         print('sign in');
                       },
                     ),
-                    CustomButtonAuth(
-                      color: AppColor.primaryColor,
-                      text: 'Sign in As Admin',
-                      onPressed: () {
-                        Get.offAllNamed(AppRoutes.loginAdmin);
-                        print('sign in as admin');
-                      },
-                    ),
+                    // CustomButtonAuth(
+                    //   color: AppColor.primaryColor,
+                    //   text: 'Sign in As Admin',
+                    //   onPressed: () {
+                    //     Get.offAllNamed(AppRoutes.loginAdmin);
+                    //     print('sign in as admin');
+                    //   },
+                    // ),
                     CustomButtonAuth(
                       color: AppColor.primaryColor,
                       text: 'Sign in As Coach',
