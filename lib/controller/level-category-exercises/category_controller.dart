@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:training_app/core/class/statusrequest.dart';
+import 'package:training_app/core/constant/imageasset.dart';
 import 'package:training_app/core/constant/routes_name.dart';
 import 'package:training_app/core/functions/handlingdatacontroller.dart';
 import 'package:training_app/core/services/services.dart';
@@ -17,6 +18,31 @@ class CategoryControllerImp extends CategoryController {
   MyService myService = Get.find();
   String? token;
   dynamic idOfLevel;
+  List<dynamic> imageOfCategory = [
+    {
+      "image": AppImageAsset.abdominalExercises,
+    },
+    {
+      "image": AppImageAsset.chestExercises,
+    },
+    {
+      "image": AppImageAsset.armExercises,
+    },
+    {
+      "image": AppImageAsset.legExercises,
+    },
+    {
+      "image": AppImageAsset.backAndShoulderExercise,
+    },
+  ];
+
+  @override
+  void onInit() {
+    idOfLevel = Get.arguments['selectedLevel'];
+    print('id of Level $idOfLevel');
+    getCategoryData();
+    super.onInit();
+  }
 
   @override
   getCategoryData() async {
@@ -34,14 +60,6 @@ class CategoryControllerImp extends CategoryController {
       }
     }
     update();
-  }
-
-  @override
-  void onInit() {
-    idOfLevel = Get.arguments['selectedLevel'];
-    print('id of Level $idOfLevel');
-    getCategoryData();
-    super.onInit();
   }
 
   @override

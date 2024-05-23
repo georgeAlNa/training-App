@@ -27,3 +27,5 @@
 //  id Exercise from Response : int(idExercisefromResponse)
 
 //  id Exercise from Response to report: int(idExerciseReportfromResponse)
+
+// id exercise from response favorite : int (idExerciseFromResponseSearch)

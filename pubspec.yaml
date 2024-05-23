@@ -66,6 +66,7 @@ dependencies:
   show_up_animation: ^2.0.0
   sqflite: ^2.0.2
   url_launcher: ^6.1.2
+  # flutter_launcher_icons: ^0.13.1
   
   
   
@@ -76,6 +77,14 @@ dev_dependencies:
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
+  # flutter_launcher_icons: ^0.13.0
+
+# flutter_launcher_icons:
+#   android: true
+#   ios: true
+#   image_path: "assets/images/logo.png"
+#   min_sdk_android: 21
+
   flutter_lints: ^2.0.0
   flutter_test:
     sdk: flutter
@@ -92,6 +101,7 @@ flutter:
   assets:
     - assets/images/
     - assets/lottie/
+    - assets/images1/
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
   # For details regarding adding assets from package dependencies, see

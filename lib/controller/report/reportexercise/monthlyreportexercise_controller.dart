@@ -51,9 +51,12 @@ class MonthlyReportExerciseControllerImp
 
   @override
   goToExerciseDetailReport(idOfExerciseReport) {
-    Get.toNamed(AppRoutes.getExerciseByIdReport, arguments: {
-      'idOfExe': idOfExerciseReport,
-    });
+    Get.toNamed(
+      AppRoutes.getExerciseByIdReport,
+      //  arguments: {
+      //   'idOfExe': idOfExerciseReport,
+      // }
+    );
     myService.sharedPreferences.setInt('idExerciseReportfromResponse',
         monthlyReportExerciseList[idOfExerciseReport]['exercise_id']);
   }

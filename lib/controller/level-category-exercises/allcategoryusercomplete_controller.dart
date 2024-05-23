@@ -41,9 +41,12 @@ class AllCategoryAndExerciseCompleteControllerImp
         completeExerciseList.addAll(response['data']);
       }
       if (completeExerciseList.isEmpty) {
-        Get.defaultDialog(title: 'Empty', middleText: 'No Exercises ! Still Empty');
+        Get.defaultDialog(
+            title: 'Empty', middleText: 'No Exercises ! Still Empty');
         statusRequest = StatusRequest.failuer;
       }
+    } else {
+      Get.defaultDialog(title: 'Error', middleText: 'Something went wrong !');
     }
     update();
   }

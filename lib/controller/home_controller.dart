@@ -5,6 +5,12 @@ import 'package:training_app/core/constant/routes_name.dart';
 import 'package:training_app/core/functions/handlingdatacontroller.dart';
 import 'package:training_app/core/services/services.dart';
 import 'package:training_app/data/datasource/remote/search/search_data.dart';
+import 'package:training_app/view/screen/challenge%20+%20plan%20+%20chat.dart';
+import 'package:training_app/view/screen/favorite/allfavorite.dart';
+import 'package:training_app/view/screen/level-category-exercises_screen/level.dart';
+import 'package:training_app/view/screen/notfications.dart';
+import 'package:training_app/view/screen/personal/allitemsinpersonal.dart';
+import 'package:training_app/view/screen/report/gotoreport.dart';
 
 abstract class HomeController extends GetxController {
   initialData();
@@ -13,6 +19,14 @@ abstract class HomeController extends GetxController {
 }
 
 class HomeControllerImp extends HomeController {
+  List<Widget> listWidget = [
+    const LevelPage(),
+    const ChallengeAndPlanAndChat(),
+    const AllFavoritePage(),
+    const AllReportsPage(),
+    const NotficationsPage(),
+    const AllItemsInPersonalPage(),
+  ];
   SearchData searchData = SearchData(Get.find());
   StatusRequest statusRequest = StatusRequest.none;
   MyService myService = Get.find();
@@ -24,6 +38,7 @@ class HomeControllerImp extends HomeController {
   String? userName;
   String? userEmail;
   bool isSearch = false;
+  int selectedindex = 0;
 
   @override
   initialData() {
@@ -75,6 +90,8 @@ class HomeControllerImp extends HomeController {
     }
     update();
   }
+
+  
 
   checkSearch(val) {
     if (val == "") {

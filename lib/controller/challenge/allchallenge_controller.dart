@@ -8,6 +8,7 @@ import 'package:training_app/data/datasource/remote/challenge/allchallenge_date.
 abstract class AllChallengeController extends GetxController {
   getAllChallenge();
   goToChallengeDetail(dynamic idOfChallenge);
+  refreshPage();
 }
 
 class AllChallengeControllerImp extends AllChallengeController {
@@ -47,5 +48,11 @@ class AllChallengeControllerImp extends AllChallengeController {
     Get.toNamed(AppRoutes.challengeInfo, arguments: {
       'idOfChallenge': idOfChallenge,
     });
+  }
+
+  @override
+  refreshPage() async {
+    allChallengeList.clear();
+    await getAllChallenge();
   }
 }

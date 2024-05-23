@@ -3,9 +3,10 @@ import 'package:get/get.dart';
 import 'package:training_app/controller/report/reportstore/monthlyreportstore_controller.dart';
 import 'package:training_app/core/class/handlingdataview.dart';
 import 'package:training_app/core/constant/color.dart';
+import 'package:training_app/core/constant/imageasset.dart';
 import 'package:training_app/core/functions/validinput.dart';
-import 'package:training_app/view/widget/auth/custombuttonauth.dart';
 import 'package:training_app/view/widget/auth/customtextformauth.dart';
+import 'package:training_app/view/widget/container/Scaffold.dart';
 import 'package:training_app/view/widget/report/customreportprogress.dart';
 
 class MonthlyReportStorePage extends StatelessWidget {
@@ -14,64 +15,84 @@ class MonthlyReportStorePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Get.put(MonthlyReportStoreControllerImp());
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: AppColor.primaryColor,
-        title: const Text('Monthly Report Store'),
-      ),
-      body: GetBuilder<MonthlyReportStoreControllerImp>(
-        builder: (controller) => HandlingDataView(
-          statusRequest: controller.statusRequest,
-          widget: Container(
-            padding: const EdgeInsets.all(15),
-            child: controller.monthlyReportStoreList.isEmpty
-                ? Form(
-                    key: controller.formState,
-                    child: ListView(
-                      children: [
-                        CustomTextFormAuth(
-                          isNumber: true,
-                          mycontroller: controller.month,
-                          valid: (value) {
-                            return validInput(value!, 1, 2, 'number');
-                          },
-                          hinttext: 'Month',
-                          labeltext: 'Enter Month Number',
-                          iconData: Icons.numbers_outlined,
-                        ),
-                        CustomButtonAuth(
-                          color: AppColor.primaryColor,
-                          text: 'Submit',
-                          onPressed: () {
-                            controller.getMonthlyReportStore();
-                            print('month report');
-                          },
-                        ),
-                      ],
-                    ),
-                  )
-                : ListView.builder(
-                    shrinkWrap: true,
-                    itemCount: controller.monthlyReportStoreList.length,
-                    itemBuilder: (context, index) => CustomReportProgress(
-                      textCurrentweight:
-                          'Product Id ${controller.monthlyReportStoreList[index]['product_id']}\n',
-                      textAge:
-                          'Order Id : ${controller.monthlyReportStoreList[index]['order_id']}\n',
-                      textHeight:
-                          'Amount : ${controller.monthlyReportStoreList[index]['amount']}\n',
-                      textGender:
-                          'Payment : ${controller.monthlyReportStoreList[index]['Payment']}\n',
-                      textTargetWeight:
-                          'Created At : ${controller.monthlyReportStoreList[index]['created_at']}\n',
-                      textTimeToReachTheSpecifiedWeight: '',
-                      textCalories: '',
-                      color: AppColor.primaryColor,
-                      onPressed: () {},
-                    ),
-                  ),
+    return Scaffold1(
+      title: 'Monthly Report',
+      body: Stack(
+        children: [
+          SizedBox(
+            height: 50000,
+            child: Image.asset(
+              AppImageAsset.report,
+              fit: BoxFit.fill,
+            ),
           ),
-        ),
+          GetBuilder<MonthlyReportStoreControllerImp>(
+            builder: (controller) => HandlingDataView(
+              statusRequest: controller.statusRequest,
+              widget: Container(
+                padding: const EdgeInsets.all(15),
+                child: controller.monthlyReportStoreList.isEmpty
+                    ? Form(
+                        key: controller.formState,
+                        child: ListView(
+                          children: [
+                            CustomTextFormAuth(
+                              isNumber: true,
+                              mycontroller: controller.month,
+                              valid: (value) {
+                                return validInput(value!, 1, 2, 'number');
+                              },
+                              hinttext: 'Month',
+                              labeltext: 'Enter Month Number',
+                              iconData: Icons.numbers_outlined,
+                            ),
+                            // CustomButtonAuth(
+                            //   color: AppColor.color,
+                            //   text: 'Submit',
+                            //   onPressed: () {
+                            //     controller.getMonthlyReportStore();
+                            //     print('month report');
+                            //   },
+                            // ),
+                            IconButton(
+                              onPressed: () {
+                                controller.getMonthlyReportStore();
+                              },
+                              icon: const Icon(
+                                Icons.search,
+                                color: AppColor.color,
+                                size: 80,
+                              ),
+                            ),
+                          ],
+                        ),
+                      )
+                    : ListView.builder(
+                        shrinkWrap: true,
+                        itemCount: controller.monthlyReportStoreList.length,
+                        itemBuilder: (context, index) => CustomReportProgress(
+                          textTitle: 'Monthly',
+                          textCurrentweight:
+                              'Product Id ${controller.monthlyReportStoreList[index]['product_id']}\n',
+                          textAge:
+                              'Order Id : ${controller.monthlyReportStoreList[index]['order_id']}\n',
+                          textHeight:
+                              'Amount : ${controller.monthlyReportStoreList[index]['amount']}\n',
+                          textGender:
+                              'Payment : ${controller.monthlyReportStoreList[index]['Payment']}\n',
+                          textCreatedAt:
+                              'Created At : ${controller.monthlyReportStoreList[index]['created_at']}\n',
+                          textTimeToReachTheSpecifiedWeight: '',
+                          textCalories: '',
+                          textTargetWeight: '',
+                          color: AppColor.primaryColor,
+                          onPressed: () {},
+                        ),
+                      ),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }

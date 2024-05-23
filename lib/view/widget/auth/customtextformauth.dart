@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:training_app/core/constant/color.dart';
 
 class CustomTextFormAuth extends StatelessWidget {
   final String hinttext;
@@ -27,6 +28,7 @@ class CustomTextFormAuth extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.only(bottom: 20),
       child: TextFormField(
+        cursorColor: AppColor.color,
         keyboardType: isNumber
             ? const TextInputType.numberWithOptions(decimal: true)
             : TextInputType.text,
@@ -34,22 +36,42 @@ class CustomTextFormAuth extends StatelessWidget {
         validator: valid,
         controller: mycontroller,
         decoration: InputDecoration(
-            hintText: hinttext,
-            hintStyle: const TextStyle(
-              fontSize: 14,
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(20),
+          ),
+          hintText: hinttext,
+          hintStyle: TextStyle(
+            fontSize: 15,
+            color: AppColor.yellow100Color,
+            // fontWeight: FontWeight.bold,
+          ),
+          floatingLabelBehavior: FloatingLabelBehavior.always,
+          contentPadding: const EdgeInsets.symmetric(
+            vertical: 15,
+            horizontal: 30,
+          ),
+          label: Container(
+            margin: const EdgeInsets.symmetric(horizontal: 9),
+            child: Text(
+              labeltext,
+              style: const TextStyle(
+                color: AppColor.greyColor,
+                fontWeight: FontWeight.bold,
+                fontSize: 20,
+              ),
             ),
-            floatingLabelBehavior: FloatingLabelBehavior.always,
-            contentPadding:
-                const EdgeInsets.symmetric(vertical: 5, horizontal: 30),
-            label: Container(
-                margin: const EdgeInsets.symmetric(horizontal: 9),
-                child: Text(labeltext)),
-            suffixIcon: InkWell(
-              onTap: onTapIcon,
-              child: Icon(iconData),
+          ),
+          suffixIcon: InkWell(
+            onTap: onTapIcon,
+            child: Icon(
+              iconData,
+              color: AppColor.yellow100Color,
             ),
-            border:
-                OutlineInputBorder(borderRadius: BorderRadius.circular(30))),
+          ),
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(30),
+          ),
+        ),
       ),
     );
   }

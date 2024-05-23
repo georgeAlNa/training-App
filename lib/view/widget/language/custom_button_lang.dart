@@ -10,16 +10,21 @@ class CustomButtonLanguage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 250,
+    return SizedBox(
+      width: 200,
       height: 50,
       child: MaterialButton(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(30),
+        ),
         onPressed: onPressed,
-        color: AppColor.primaryColor,
+        color: AppColor.color,
         child: Text(
           langType,
           style: const TextStyle(
-            color: Colors.white,
+            color: AppColor.blackColor,
+            fontWeight: FontWeight.bold,
+            fontSize: 16,
           ),
         ),
       ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:training_app/core/constant/color.dart';
 
 class CustomTextBodyAuth extends StatelessWidget {
   final String text;
@@ -11,8 +12,8 @@ class CustomTextBodyAuth extends StatelessWidget {
       child: Text(
         text,
         textAlign: TextAlign.center,
-        style: const TextStyle(
-          color: Colors.grey,
+        style: TextStyle(
+          color: AppColor.yellow100Color,
           fontSize: 15,
           fontWeight: FontWeight.bold,
         ),

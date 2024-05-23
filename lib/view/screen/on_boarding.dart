@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:training_app/controller/onboarding_controller.dart';
 import 'package:training_app/view/widget/onboardingwidgets/bodypageview.dart';
 import 'package:training_app/view/widget/onboardingwidgets/customButton.dart';
-import 'package:training_app/view/widget/onboardingwidgets/dotcontainer.dart';
+// import 'package:training_app/view/widget/onboardingwidgets/dotcontainer.dart';
 
 class OnBoarding extends StatelessWidget {
   const OnBoarding({super.key});
@@ -15,27 +15,34 @@ class OnBoarding extends StatelessWidget {
     return const Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
-        child: Column(
+        child: Stack(
+          fit: StackFit.expand,
           children: [
-            Expanded(
-              flex: 2,
-              child: PageViewOnBoarding(),
-            ),
-            Expanded(
-              flex: 1,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  DotContainerOnBoarding(),
-                  Spacer(
-                    flex: 1,
-                  ),
-                  CustomButtonOnBoarding(),
-                ],
-              ),
-            ),
+            PageViewOnBoarding(),
+            CustomButtonOnBoarding(),
           ],
         ),
+        // child: Column(
+        //   children: [
+        //     Expanded(
+        //       flex: 2,
+        //       child: PageViewOnBoarding(),
+        //     ),
+        //     Expanded(
+        //       flex: 1,
+        //       child: Column(
+        //         mainAxisAlignment: MainAxisAlignment.center,
+        //         children: [
+        //           // DotContainerOnBoarding(),
+        //           Spacer(
+        //             flex: 1,
+        //           ),
+        //           CustomButtonOnBoarding(),
+        //         ],
+        //       ),
+        //     ),
+        //   ],
+        // ),
       ),
     );
   }

@@ -13,6 +13,9 @@ class AppRoutes {
   static const String successSignup = "/success_signup";
   static const String verifyCodeSignUp = "/verify_code_signup";
 
+  //search
+  static const String search = '/search';
+  static const String getExerciseByIdSearch = '/get_exercise_by_id_search';
   //lang + on boarding
   static const String language = "/language";
   static const String onBoarding = "/on_boarding";

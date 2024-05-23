@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:training_app/controller/report/reportexercise/allreportexercise_controller.dart';
-import 'package:training_app/core/constant/color.dart';
-import 'package:training_app/view/widget/auth/custombuttonauth.dart';
+import 'package:training_app/core/constant/imageasset.dart';
+import 'package:training_app/view/widget/container/Container2.dart';
+import 'package:training_app/view/widget/container/Scaffold.dart';
 
 class AllReportExercisePage extends StatelessWidget {
   const AllReportExercisePage({super.key});
@@ -11,52 +12,55 @@ class AllReportExercisePage extends StatelessWidget {
   Widget build(BuildContext context) {
     AllReportExerciseControllerImp controller =
         Get.put(AllReportExerciseControllerImp());
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: AppColor.primaryColor,
-        title: const Text(
-          'Report Exercise Page',
-        ),
-      ),
-      body: Container(
-        padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 15),
-        child: ListView(
-          children: [
-            CustomButtonAuth(
-              color: AppColor.primaryColor,
-              text: 'Daily Report',
-              onPressed: () {
-                controller.goToDailyReport();
-                print('go To Daily Report');
-              },
+    return Scaffold1(
+      title: 'Exercise Report',
+      body: Stack(
+        children: [
+          SizedBox(
+            height: 50000,
+            child: Image.asset(
+              AppImageAsset.challeng,
+              fit: BoxFit.fill,
             ),
-            CustomButtonAuth(
-              color: AppColor.primaryColor,
-              text: 'Weekly Report',
-              onPressed: () {
-                controller.goToWeeklyReport();
-                print('go To Weekly Report');
-              },
+          ),
+          Container(
+            padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 15),
+            child: ListView(
+              physics: const NeverScrollableScrollPhysics(),
+              children: [
+                Container2(
+                  title: 'Daily Report',
+                  onTap: () {
+                    controller.goToDailyReport();
+                    print('go To Daily Report');
+                  },
+                ),
+                Container2(
+                  title: 'Weekly Report',
+                  onTap: () {
+                    controller.goToWeeklyReport();
+                    print('go To Weekly Report');
+                  },
+                ),
+                Container2(
+                  title: 'Monthly Report',
+                  onTap: () {
+                    controller.goToMonthlyReport();
+                    print('go To Monthly Report');
+                  },
+                ),
+                Container2(
+                  title: 'Annual Report',
+                  onTap: () {
+                    controller.goToAnnualReport();
+                    print('go To Annual Report');
+                  },
+                ),
+                // Text('${controller.productId}'),
+              ],
             ),
-            CustomButtonAuth(
-              color: AppColor.primaryColor,
-              text: 'Monthly Report',
-              onPressed: () {
-                controller.goToMonthlyReport();
-                print('go To Monthly Report');
-              },
-            ),
-            CustomButtonAuth(
-              color: AppColor.primaryColor,
-              text: 'Annual Report',
-              onPressed: () {
-                controller.goToAnnualReport();
-                print('go To Annual Report');
-              },
-            ),
-            // Text('${controller.productId}'),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

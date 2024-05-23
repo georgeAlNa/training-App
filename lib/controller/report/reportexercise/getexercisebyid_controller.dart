@@ -23,6 +23,7 @@ class GetExerciseByIdReportControllerImp
     token = myService.sharedPreferences.getString('token');
     idOfExe =
         myService.sharedPreferences.getInt('idExerciseReportfromResponse');
+
     getExerciseByIdReport();
     super.onInit();
   }

@@ -77,6 +77,10 @@ class LoginControllerImp extends LoginConroller {
               // }
               );
         }
+        if (response['message'] == 'password is incorrecte') {
+          Get.defaultDialog(
+              title: 'Warning', middleText: 'password is incorrecte');
+        }
       } else {
         Get.defaultDialog(
             title: 'warning', middleText: 'error in email or password');

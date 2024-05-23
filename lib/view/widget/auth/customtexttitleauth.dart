@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:training_app/core/constant/color.dart';
 
 class CustomTextTitleAuth extends StatelessWidget {
   final String text;
@@ -9,8 +10,8 @@ class CustomTextTitleAuth extends StatelessWidget {
     return Text(
       text,
       textAlign: TextAlign.center,
-      style: const TextStyle(
-        color: Colors.black,
+      style: TextStyle(
+        color: AppColor.yellow100Color,
         fontSize: 25,
         fontWeight: FontWeight.bold,
       ),

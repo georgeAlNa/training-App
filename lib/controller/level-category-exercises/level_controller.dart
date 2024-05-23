@@ -8,6 +8,7 @@ import 'package:training_app/data/datasource/remote/level-category-exercises/lev
 abstract class LevelController extends GetxController {
   getLevelData();
   goToCategory(int selectedLevel);
+  goToAllExerciseComplete();
 }
 
 class LevelControllerImp extends LevelController {
@@ -49,5 +50,10 @@ class LevelControllerImp extends LevelController {
     Get.toNamed(AppRoutes.category, arguments: {
       'selectedLevel': selectedLevel,
     });
+  }
+
+  @override
+  goToAllExerciseComplete() {
+    Get.toNamed(AppRoutes.allExerciseComplete);
   }
 }

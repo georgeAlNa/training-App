@@ -58,6 +58,8 @@ import 'package:training_app/view/screen/report/reportstroe/annualreportstore.da
 import 'package:training_app/view/screen/report/reportstroe/dailyreportstore.dart';
 import 'package:training_app/view/screen/report/reportstroe/monthlyreportstore.dart';
 import 'package:training_app/view/screen/report/reportstroe/weeklyreportstore.dart';
+import 'package:training_app/view/screen/search/getexercisebyidsearch.dart';
+import 'package:training_app/view/screen/search/search.dart';
 import 'package:training_app/view/screen/store/addproductbyadmin.dart';
 import 'package:training_app/view/screen/store/addtocart.dart';
 import 'package:training_app/view/screen/store/allcategorystore.dart';
@@ -66,7 +68,7 @@ import 'package:training_app/view/screen/store/orderdetails.dart';
 import 'package:training_app/view/screen/store/orederincart.dart';
 import 'package:training_app/view/screen/store/productdetails.dart';
 import 'package:training_app/view/screen/store/updatepaymentstatebyadmin.dart';
-import 'package:training_app/view/screen/userinfo.dart';
+import 'package:training_app/view/screen/personal/userinfo.dart';
 import 'package:training_app/view/screen/coaches/getallcoaches.dart';
 
 List<GetPage<dynamic>>? routes = [
@@ -122,6 +124,16 @@ List<GetPage<dynamic>>? routes = [
   GetPage(
     name: AppRoutes.verifyCodeSignUp,
     page: () => const VerifyCodeSignUp(),
+  ),
+
+  //search
+  GetPage(
+    name: AppRoutes.search,
+    page: () => const SearchPage(),
+  ),
+  GetPage(
+    name: AppRoutes.getExerciseByIdSearch,
+    page: () => const GetExerciseByIdSearchPage(),
   ),
 
   //onboarding

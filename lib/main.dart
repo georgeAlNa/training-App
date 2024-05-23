@@ -22,6 +22,7 @@ class TrainingApp extends StatelessWidget {
     LocaleController controller = Get.put(LocaleController());
 
     return GetMaterialApp(
+      theme: ThemeData.dark(),
       debugShowCheckedModeBanner: false,
       locale: controller.language,
       translations: MyTranslations(),

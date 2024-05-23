@@ -9,6 +9,7 @@ import 'package:training_app/data/datasource/remote/favorite/deletefavorite_data
 abstract class AllFavoriteController extends GetxController {
   getAllFAvoriteData();
   getDeleteFromFavoriteData(dynamic idofExerciseWantDelete);
+  refreshPage();
 }
 
 class AllFavoriteControllerImp extends AllFavoriteController {
@@ -60,7 +61,7 @@ class AllFavoriteControllerImp extends AllFavoriteController {
     statusRequest = handlingData(response);
     if (StatusRequest.success == statusRequest) {
       if (response['message'] == 'Favorite exercise deleted successfully') {
-        //allFavoriteList.addAll(response['favorites']);
+        // allFavoriteList.addAll(response['favorites']);
 
         Get.offAllNamed(AppRoutes.home);
         update();
@@ -70,5 +71,11 @@ class AllFavoriteControllerImp extends AllFavoriteController {
       statusRequest = StatusRequest.failuer;
     }
     update();
+  }
+
+  @override
+  refreshPage() async {
+    allFavoriteList.clear();
+    await getAllFAvoriteData();
   }
 }

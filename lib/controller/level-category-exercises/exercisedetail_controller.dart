@@ -34,6 +34,8 @@ class ExerciseDetailControllerImp extends ExerciseDetailController {
   dynamic idOfExerciseResp;
   dynamic idOfUser;
 
+  bool colorOfFavorite = false;
+
   @override
   void onInit() {
     idOfLevel = Get.arguments['selectedLevelE'];
@@ -81,9 +83,12 @@ class ExerciseDetailControllerImp extends ExerciseDetailController {
     statusRequest = handlingData(response);
     if (StatusRequest.success == statusRequest) {
       if (response['message'] == 'success') {
-        //fav.addAll(response['data']);
+        // fav.addAll(response['data']['exercise_id']);
+
         Get.rawSnackbar(
             title: 'Done', message: 'Success Add Exercise to Favorite');
+        // colorOfFavorite.add(response['data']['exercise_id']);
+        colorOfFavorite = true;
         //Get.toNamed(AppRoutes.exercisesDetail);
       } else {
         statusRequest = StatusRequest.failuer;

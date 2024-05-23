@@ -13,35 +13,39 @@ class HandlingDataView extends StatelessWidget {
     return statusRequest == StatusRequest.loading
         ? const Center(
             child: CircularProgressIndicator(
-            color: AppColor.primaryColor,
-          ))
+              color: AppColor.color,
+            ),
+          )
         : statusRequest == StatusRequest.offlinefailure
             ? const Center(
                 child: Text(
-                'Offline Failure',
-                style: TextStyle(
-                  fontSize: 35,
-                  fontWeight: FontWeight.bold,
+                  'Offline Failure',
+                  style: TextStyle(
+                    fontSize: 35,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
-              ))
+              )
             : statusRequest == StatusRequest.serverfailure
                 ? const Center(
                     child: Text(
-                    'Server Failure',
-                    style: TextStyle(
-                      fontSize: 35,
-                      fontWeight: FontWeight.bold,
+                      'Server Failure',
+                      style: TextStyle(
+                        fontSize: 35,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
-                  ))
+                  )
                 : statusRequest == StatusRequest.failuer
                     ? const Center(
                         child: Text(
-                        'No Data',
-                        style: TextStyle(
-                          fontSize: 35,
-                          fontWeight: FontWeight.bold,
+                          'No Data',
+                          style: TextStyle(
+                            fontSize: 35,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
-                      ))
+                      )
                     : widget;
   }
 }
@@ -57,26 +61,29 @@ class HandlingDataRequest extends StatelessWidget {
     return statusRequest == StatusRequest.loading
         ? const Center(
             child: CircularProgressIndicator(
-            color: AppColor.primaryColor,
-          ))
+              color: AppColor.color,
+            ),
+          )
         : statusRequest == StatusRequest.offlinefailure
             ? const Center(
                 child: Text(
-                'Offline Failure',
-                style: TextStyle(
-                  fontSize: 35,
-                  fontWeight: FontWeight.bold,
+                  'Offline Failure',
+                  style: TextStyle(
+                    fontSize: 35,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
-              ))
+              )
             : statusRequest == StatusRequest.serverfailure
                 ? const Center(
                     child: Text(
-                    'Server Failure',
-                    style: TextStyle(
-                      fontSize: 35,
-                      fontWeight: FontWeight.bold,
+                      'Server Failure',
+                      style: TextStyle(
+                        fontSize: 35,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
-                  ))
+                  )
                 : widget;
   }
 }

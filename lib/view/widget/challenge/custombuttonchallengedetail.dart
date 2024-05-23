@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:training_app/core/constant/color.dart';
 
 class CustomButtonChallengeDetail extends StatelessWidget {
   final String textTitle;
@@ -18,38 +19,74 @@ class CustomButtonChallengeDetail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(top: 10),
-      child: MaterialButton(
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-        padding: const EdgeInsets.all(13),
-        onPressed: onPressed,
-        color: color,
-        textColor: Colors.white,
-        child: Column(
-          children: [
-            Text(
-              textTitle,
-              style: const TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 16,
-              ),
-            ),
-            Text(
-              textSubject,
-              style: const TextStyle(
-                // fontWeight: FontWeight.bold,
-                fontSize: 16,
-              ),
-            ),
-            Text(
-              textDate,
-              style: const TextStyle(
-                // fontWeight: FontWeight.bold,
-                fontSize: 16,
-              ),
-            ),
-          ],
+      decoration: BoxDecoration(
+        color: AppColor.black54Color,
+        border: Border.all(
+          color: color,
+          width: 3,
         ),
+        borderRadius: const BorderRadius.all(
+          Radius.circular(40),
+        ),
+      ),
+      margin: const EdgeInsets.all(20),
+      padding: const EdgeInsets.all(16),
+      child: Stack(
+        children: [
+          Positioned(
+            bottom: -100,
+            left: -20,
+            child: Container(
+              height: 160,
+              width: 160,
+              decoration: BoxDecoration(
+                color: AppColor.yellowForDesign,
+                borderRadius: BorderRadius.circular(160),
+              ),
+            ),
+          ),
+          Positioned(
+            bottom: 100,
+            left: 100,
+            child: Container(
+              height: 50,
+              width: 50,
+              decoration: BoxDecoration(
+                color: AppColor.yellowForDesign2,
+                borderRadius: BorderRadius.circular(160),
+              ),
+            ),
+          ),
+          Column(
+            children: [
+              Text(
+                textTitle,
+                style: const TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16,
+                  color: AppColor.yellowForDesign,
+                ),
+              ),
+              Text(
+                textSubject,
+                style: TextStyle(
+                  // fontWeight: FontWeight.bold,
+                  fontSize: 16,
+                  color: AppColor.yellow100Color,
+                ),
+                textAlign: TextAlign.center,
+              ),
+              Text(
+                textDate,
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16,
+                  color: AppColor.yellow100Color,
+                ),
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }

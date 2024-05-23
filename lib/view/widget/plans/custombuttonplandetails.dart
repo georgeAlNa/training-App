@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:training_app/core/constant/color.dart';
 
 class CustomButtonPlanDetail extends StatelessWidget {
   final String textTitle;
@@ -21,52 +22,76 @@ class CustomButtonPlanDetail extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.only(top: 10),
-      child: MaterialButton(
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-        padding: const EdgeInsets.all(13),
-        onPressed: onPressed,
-        color: color,
-        textColor: Colors.white,
-        child: Column(
-          children: [
-            Text(
-              textTitle,
-              style: const TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 16,
+    return GestureDetector(
+      onTap: onPressed,
+      child: Container(
+        decoration: BoxDecoration(
+          // color: AppColor.blackColor,
+          border: Border.all(
+            color: color,
+            width: 3,
+          ),
+          color: AppColor.black54Color,
+          borderRadius: const BorderRadius.all(
+            Radius.circular(40),
+          ),
+        ),
+        margin: const EdgeInsets.all(20),
+        padding: const EdgeInsets.all(15),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                textTitle,
+                style: const TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                  color: AppColor.yellowForDesign,
+                ),
               ),
-            ),
-            Text(
-              textId,
-              style: const TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 16,
+              Text(
+                textId,
+                style: const TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16,
+                ),
               ),
-            ),
-            Text(
-              textSubject,
-              style: const TextStyle(
-                // fontWeight: FontWeight.bold,
-                fontSize: 16,
+              Text(
+                textSubject,
+                style: TextStyle(
+                  // fontWeight: FontWeight.bold,
+                  fontSize: 16,
+                  color: AppColor.yellow100Color,
+                ),
+                textAlign: TextAlign.center,
               ),
-            ),
-            Text(
-              textVideo,
-              style: const TextStyle(
-                // fontWeight: FontWeight.bold,
-                fontSize: 16,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Icon(
+                    Icons.videocam,
+                    color: AppColor.color,
+                  ),
+                  Text(
+                    textVideo,
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                    ),
+                  ),
+                ],
               ),
-            ),
-            Text(
-              textDate,
-              style: const TextStyle(
-                // fontWeight: FontWeight.bold,
-                fontSize: 16,
+              Text(
+                textDate,
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16,
+                  color: AppColor.yellow100Color,
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

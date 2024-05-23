@@ -25,6 +25,7 @@ class UserInfoControllerImp extends UserInfoController {
     emailofuser = myService.sharedPreferences.getString('email');
     nameofuser = myService.sharedPreferences.getString('name');
     pointsofuser = myService.sharedPreferences.getInt('points');
+    token = myService.sharedPreferences.getString('token');
     getUserInfo();
     super.onInit();
   }
@@ -33,7 +34,6 @@ class UserInfoControllerImp extends UserInfoController {
   getUserInfo() async {
     statusRequest = StatusRequest.loading;
     update();
-    token = myService.sharedPreferences.getString('token');
     var response = await userInfoData.getData(token!, idOfCalories);
     print('response ==== $response');
     statusRequest = handlingData(response);

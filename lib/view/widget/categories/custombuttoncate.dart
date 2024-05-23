@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-class CustomButtonCategory extends StatelessWidget {
+class CustomButtonCategoryNotUsed extends StatelessWidget {
   final String text;
   final String? pathImage;
   final Color color;
   final void Function()? onPressed;
 
-  const CustomButtonCategory(
+  const CustomButtonCategoryNotUsed(
       {Key? key,
       required this.text,
       this.onPressed,
