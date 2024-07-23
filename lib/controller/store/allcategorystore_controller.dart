@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:training_app/core/class/statusrequest.dart';
+import 'package:training_app/core/constant/imageasset.dart';
 import 'package:training_app/core/constant/routes_name.dart';
 import 'package:training_app/core/functions/handlingdatacontroller.dart';
 import 'package:training_app/core/services/services.dart';
@@ -21,6 +22,18 @@ class StoreCategoryControllerImp extends StoreCategoryController {
   StatusRequest statusRequest = StatusRequest.none;
   List allCategoryStoreList = [];
   List allProductsSearchList = [];
+  List allImages = [
+    {
+      'image': AppImageAsset.sportsCategory,
+    },
+    {
+      'image': AppImageAsset.shoesCategory,
+    },
+    {
+      'image': AppImageAsset.equCategory,
+    },
+  ];
+
   String? token;
   bool isSearch = false;
   late TextEditingController searchContent;

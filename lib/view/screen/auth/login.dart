@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:training_app/controller/auth/login_controller.dart';
 import 'package:training_app/core/class/handlingdataview.dart';
@@ -13,6 +14,7 @@ import 'package:training_app/view/widget/auth/customtexttitleauth.dart';
 import 'package:training_app/view/widget/auth/textsignup.dart';
 import 'package:training_app/view/widget/container/customappbarauth.dart';
 import 'package:training_app/core/constant/imageasset.dart';
+
 class Login extends StatelessWidget {
   const Login({super.key});
 
@@ -33,8 +35,11 @@ class Login extends StatelessWidget {
       //   ),
       // ),
       title: '9'.tr,
-      body: WillPopScope(
-        onWillPop: alertDialog,
+      body: PopScope(
+        canPop: false,
+        onPopInvoked: (didPop) {
+          alertDialog();
+        },
         child: Stack(
           children: [
             SizedBox(
@@ -68,11 +73,12 @@ class Login extends StatelessWidget {
                           child: ListView(
                             children: [
                               CircleAvatar(
+                                backgroundColor: AppColor.blackColor,
                                 radius: 100,
                                 child: Image.asset(
                                   'assets/images/logo.png',
-                                  height: 150,
-                                  width: 190,
+                                  height: 200,
+                                  width: 300,
                                 ),
                               ),
                               const SizedBox(height: 20),

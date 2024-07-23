@@ -45,6 +45,7 @@ class LevelControllerImp extends LevelController {
     update();
   }
 
+  // StatusRequest.success == statusRequest
   @override
   goToCategory(selectedLevel) {
     Get.toNamed(AppRoutes.category, arguments: {

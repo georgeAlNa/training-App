@@ -12,8 +12,11 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Get.put(HomeControllerImp());
-    return WillPopScope(
-      onWillPop: alertDialog,
+    return PopScope(
+      canPop: false,
+      onPopInvoked: (didPop) {
+        alertDialog();
+      },
       child: Scaffold(
         appBar: AppBar(
           title: const Row(
@@ -71,6 +74,7 @@ class HomePage extends StatelessWidget {
             ),
           ],
         ),
+
         bottomNavigationBar: GetBuilder<HomeControllerImp>(
           builder: (controllerBottomNav) => BottomNavigationBar(
             selectedItemColor: Colors.white,

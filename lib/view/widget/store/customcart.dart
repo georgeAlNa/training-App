@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:training_app/core/constant/color.dart';
+// import 'package:training_app/core/constant/imageasset.dart';
 
 class CustomButtonCart extends StatelessWidget {
   final String textTitle;
@@ -28,18 +29,53 @@ class CustomButtonCart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.only(top: 10),
-      child: MaterialButton(
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-        padding: const EdgeInsets.all(13),
-        onPressed: onPressed,
-        onLongPress: onLongPress,
-        color: color,
-        textColor: Colors.white,
+    return GestureDetector(
+      onTap: onPressed,
+      child: Container(
+        decoration: const BoxDecoration(
+          // gradient: LinearGradient(
+          //   begin: Alignment.topRight,
+          //   end: Alignment.bottomLeft,
+          //   colors: [
+          //     AppColor.yellowForDesign2,
+          //     AppColor.blackColor,
+          //   ],
+          // ),
+          borderRadius: BorderRadius.all(
+            Radius.circular(100),
+          ),
+          color: AppColor.black54Color,
+        ),
+        margin: const EdgeInsets.all(10),
         child: Column(
           children: [
-            Image.network(imagePath),
+            Container(
+              margin: const EdgeInsets.all(20),
+              height: 300,
+              width: 250,
+              decoration: BoxDecoration(
+                gradient: const LinearGradient(
+                  begin: Alignment.topRight,
+                  end: Alignment.bottomLeft,
+                  colors: [
+                    AppColor.black54Color,
+                    AppColor.color,
+                  ],
+                ),
+                image: DecorationImage(
+                  image: NetworkImage(imagePath),
+                  fit: BoxFit.fill,
+                ),
+                color: AppColor.blackColor,
+                borderRadius: BorderRadius.circular(70),
+                border: Border.all(
+                  color: AppColor.blackColor,
+                  width: 3,
+                ),
+              ),
+            ),
+
+            // Image.network(imagePath),
             Text(
               textTitle,
               style: const TextStyle(
@@ -71,7 +107,7 @@ class CustomButtonCart extends StatelessWidget {
             IconButton(
               icon: const Icon(
                 Icons.attach_money_outlined,
-                color: AppColor.redColor,
+                color: AppColor.color,
               ),
               onPressed: onPressedIconBuy,
             ),

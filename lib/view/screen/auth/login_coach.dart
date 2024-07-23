@@ -68,11 +68,12 @@ class LoginCoach extends StatelessWidget {
                           child: ListView(
                             children: [
                               CircleAvatar(
+                                backgroundColor: AppColor.blackColor,
                                 radius: 100,
                                 child: Image.asset(
                                   'assets/images/logo.png',
-                                  height: 150,
-                                  width: 190,
+                                  height: 200,
+                                  width: 200,
                                 ),
                               ),
                               const SizedBox(height: 20),

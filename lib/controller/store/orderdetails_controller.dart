@@ -10,6 +10,7 @@ import 'package:training_app/data/datasource/remote/store/orderdetails_data.dart
 abstract class OrederDetailsController extends GetxController {
   getOrderDetails();
   buyProductByPoints(dynamic idOfProductRes);
+  paymentByStripe();
   deleteOreder(dynamic idOfProduct, dynamic idOfOrderForDelete);
 }
 
@@ -100,4 +101,7 @@ class OrederDetailsControllerImp extends OrederDetailsController {
     }
     update();
   }
+
+  @override
+  paymentByStripe() {}
 }

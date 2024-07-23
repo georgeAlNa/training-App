@@ -41,7 +41,7 @@ class AllFavoritePage extends StatelessWidget {
                         return Container2(
                           // color: AppColor.primaryColor,
                           title:
-                              'Exercise Name: ${controller.allFavoriteList[index]}',
+                              '${controller.allFavoriteList[index]}',
                           onTap: () {
                             Get.defaultDialog(
                               title: 'Delete',

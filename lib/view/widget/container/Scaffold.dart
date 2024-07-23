@@ -6,16 +6,19 @@ import 'package:training_app/core/constant/color.dart';
 class Scaffold1 extends StatelessWidget {
   final String title;
   final Widget body;
+  final Widget? floatingActionButton;
 
   const Scaffold1({
     super.key,
     required this.title,
     required this.body,
+    this.floatingActionButton,
   });
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: floatingActionButton,
       appBar: AppBar(
         title: Text(
           title,

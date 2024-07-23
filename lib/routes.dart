@@ -20,6 +20,7 @@ import 'package:training_app/view/screen/challenge/enrollchallenge.dart';
 import 'package:training_app/view/screen/chat/chat.dart';
 import 'package:training_app/view/screen/coaches/addadvice.dart';
 import 'package:training_app/view/screen/coaches/advicebycoach.dart';
+import 'package:training_app/view/screen/coaches/alladvicerequestbycoach.dart';
 import 'package:training_app/view/screen/coaches/allexercisecompletebyuserid.dart';
 import 'package:training_app/view/screen/coaches/rateadvice.dart';
 import 'package:training_app/view/screen/favorite/allfavorite.dart';
@@ -226,6 +227,10 @@ List<GetPage<dynamic>>? routes = [
   GetPage(
     name: AppRoutes.allExerciseCompleteByUserId,
     page: () => const AllExerciseCompleteByUserIdPage(),
+  ),
+  GetPage(
+    name: AppRoutes.allAdviceRequestByCoach,
+    page: () => const AllAdviceRequestByCoachPage(),
   ),
 
   //challenge

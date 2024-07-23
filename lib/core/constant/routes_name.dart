@@ -55,6 +55,7 @@ class AppRoutes {
   static const String addAdvice = "/add_advice";
   static const String allExerciseCompleteByUserId =
       "/all_exercise_complete_by_user_id";
+  static const String allAdviceRequestByCoach = "/all_advice_request_by_coach";
 
   //challenge
   static const String getAllChallenges = "/get_all_challenges";

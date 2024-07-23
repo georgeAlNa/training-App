@@ -9,6 +9,7 @@ import 'package:training_app/data/datasource/remote/coaches/addadvice_date.dart'
 abstract class AddAdviceController extends GetxController {
   addAdvice();
   logoutcoach();
+  refreshPage();
 }
 
 class AddAdviceControllerImp extends AddAdviceController {
@@ -72,5 +73,10 @@ class AddAdviceControllerImp extends AddAdviceController {
     myService.sharedPreferences.remove('idCoach');
     myService.sharedPreferences.remove('tokenCoach');
     Get.offAllNamed(AppRoutes.loginCoach);
+  }
+
+  @override
+  refreshPage() {
+    Get.offAllNamed(AppRoutes.addAdvice);
   }
 }

@@ -43,6 +43,8 @@ class AppLink {
   static const String rateAdvice = '$root/experience';
   static const String addAdvice = '$root/advice';
   static const String allExerciseCompleteByUserId = '$root/getExerciseRecord';
+  static const String askForAdvice = '$root/requestAdvice';
+  static const String allAdviceRequestByCoach = '$root/getrequest';
 
   //challenge
   static const String allChallenges = '$root/allchallenges';
@@ -74,6 +76,7 @@ class AppLink {
   static const String storeBuyProductByPoints = '$root/buywithpoints';
   static const String storeAddProductByAdmin = '$root/addproduct';
   static const String storeUpdatePaymentStateByAdmin = '$root/updatepayment';
+  static const String storePaymentByStripe = '$root/Payment';
 
   //chat
   static const String chat = '$root/chat';

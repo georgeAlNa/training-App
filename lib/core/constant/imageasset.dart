@@ -26,4 +26,12 @@ class AppImageAsset {
   static const String level = '$rootImage/level.png';
   static const String report = '$rootImage/Report.png';
   static const String language = '$rootImage/language.jpg';
+
+  static const String discount = '$rootImage/discount.jpg';
+  static const String sportsCategory = '$rootImage/store1.jpg';
+  static const String shoesCategory = '$rootImage/store2.jpg';
+  static const String equCategory = '$rootImage/store3.jpg';
+  static const String backgroundStore = '$rootImage/store4.jpg';
+  static const String backgroundAddToCard = '$rootImage/store5.jpg';
+  static const String backgroundAddOrders = '$rootImage/store6.jpg';
 }

@@ -18,4 +18,5 @@ class AppColor {
   static const Color white10 = Colors.white10;
   static const Color yellowForDesign = Color.fromARGB(255, 173, 166, 100);
   static const Color yellowForDesign2 = Color.fromARGB(255, 144, 136, 66);
+  static const Color orangeAddToCartColor = Color(0xffF6C400);
 }

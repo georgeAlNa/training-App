@@ -4,7 +4,6 @@ import 'package:training_app/controller/coaches/addadvice_controller.dart';
 import 'package:training_app/core/class/handlingdataview.dart';
 import 'package:training_app/core/constant/color.dart';
 import 'package:training_app/core/constant/imageasset.dart';
-import 'package:training_app/core/constant/routes_name.dart';
 import 'package:training_app/core/functions/validinput.dart';
 import 'package:training_app/view/widget/auth/custombuttonauth.dart';
 import 'package:training_app/view/widget/auth/customtextformauth.dart';
@@ -19,6 +18,7 @@ class AddAdvicePage extends StatelessWidget {
     Get.put(AddAdviceControllerImp());
     return AppBarCoach(
       title: 'Add Advice',
+      onPressedIconRefresh: () => controller.refreshPage(),
       onPressed: () {
         Get.defaultDialog(
           title: 'Logout',
@@ -96,7 +96,7 @@ class AddAdvicePage extends StatelessWidget {
                         iconData: Icons.numbers,
                         mycontroller: controller.message,
                         valid: (value) {
-                          return validInput(value!, 1, 100, 'username');
+                          return validInput(value!, 1, 100, 'message');
                         },
                         isNumber: false,
                       ),
@@ -120,13 +120,23 @@ class AddAdvicePage extends StatelessWidget {
                       const SizedBox(
                         height: 50,
                       ),
-                      CustomButtonAuth(
-                        text: 'All Exercise Complete By UserId ',
-                        color: AppColor.color,
-                        onPressed: () {
-                          Get.toNamed(AppRoutes.allExerciseCompleteByUserId);
-                        },
-                      ),
+                      // CustomButtonAuth(
+                      //   text: 'All Exercise Complete By UserId ',
+                      //   color: AppColor.color,
+                      //   onPressed: () {
+                      //     Get.toNamed(AppRoutes.allExerciseCompleteByUserId);
+                      //   },
+                      // ),
+                      // const SizedBox(
+                      //   height: 50,
+                      // ),
+                      // CustomButtonAuth(
+                      //   text: 'All Request For Advice',
+                      //   color: AppColor.color,
+                      //   onPressed: () {
+                      //     Get.toNamed(AppRoutes.allAdviceRequestByCoach);
+                      //   },
+                      // ),
                       //Text('${controller.token}'),
                     ],
                   ),
