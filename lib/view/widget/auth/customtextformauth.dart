@@ -12,7 +12,7 @@ class CustomTextFormAuth extends StatelessWidget {
   final void Function()? onTapIcon;
 
   const CustomTextFormAuth({
-    Key? key,
+    super.key,
     required this.hinttext,
     required this.labeltext,
     required this.iconData,
@@ -21,7 +21,7 @@ class CustomTextFormAuth extends StatelessWidget {
     required this.isNumber,
     this.obscureText,
     this.onTapIcon,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

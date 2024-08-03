@@ -78,4 +78,10 @@ class AllFavoriteControllerImp extends AllFavoriteController {
     allFavoriteList.clear();
     await getAllFAvoriteData();
   }
+
+  @override
+  void dispose() {
+    getAllFAvoriteData();
+    super.dispose();
+  }
 }

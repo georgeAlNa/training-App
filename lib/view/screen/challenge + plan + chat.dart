@@ -65,7 +65,7 @@ class ChallengeAndPlanAndChat extends StatelessWidget {
                 child: Container2(
                   title: "Ask Chat GPT",
                   onTap: () {
-                    Get.to(const ChatPage());
+                    Get.to(ChatPage());
                   },
                 ),
               ),

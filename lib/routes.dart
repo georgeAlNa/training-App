@@ -320,7 +320,7 @@ List<GetPage<dynamic>>? routes = [
   //chat
   GetPage(
     name: AppRoutes.chat,
-    page: () => const ChatPage(),
+    page: () => ChatPage(),
   ),
 
   //report progress

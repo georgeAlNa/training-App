@@ -1,4 +1,5 @@
 class AppLink {
+  static const String geminiApiKey = 'AIzaSyAgGHyqlOjmQld5yED8t55t7K6kdXZvLHw';
   //auth
   static const String root = 'http://10.0.2.2:8000/api';
 

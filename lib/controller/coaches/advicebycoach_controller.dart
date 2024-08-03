@@ -70,7 +70,7 @@ class AdviceByCoachControllerImp extends AdviceByCoachController {
         askForAdviceMap.addAll(response['request_advice']);
       } else {
         Get.defaultDialog(
-            title: 'Sorry !', middleText: 'SomeThing Went Error!');
+            title: 'Sorry !', middleText: 'the request already send');
         statusRequest = StatusRequest.failuer;
       }
     }
